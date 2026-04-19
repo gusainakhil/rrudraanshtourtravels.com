@@ -1,0 +1,2813 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tour & Travel – Uttarakhand Tours. Char Dham, Do Dham, Rishikesh, Mussoorie, Nainital & more. Book your perfect Uttarakhand trip today."
+    />
+    <title>Uttarakhand Tours | Tour & Travel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --ink: #0a1a0f;
+        --ink-soft: #1c3322;
+        --forest: #183023;
+        --forest-mid: #214532;
+        --moss: #2d5c3a;
+        --sage: #4a8a58;
+        --terra: #b83a0a;
+        --terra-lt: #d4501e;
+        --amber: #c9861a;
+        --gold: #e8aa2e;
+        --gold-lt: #f5c95a;
+        --cream: #f5f0e8;
+        --paper: #fdfaf4;
+        --white: #ffffff;
+        --muted: #7a6e62;
+        --grad-fire: linear-gradient(
+          135deg,
+          #e8aa2e 0%,
+          #d4501e 50%,
+          #b83a0a 100%
+        );
+        --grad-forest: linear-gradient(135deg, #183023, #2d5c3a);
+        --grad-gold: linear-gradient(135deg, #e8aa2e, #f5c95a);
+        --sh-xs: 0 2px 10px rgba(10, 26, 15, 0.08);
+        --sh-sm: 0 6px 24px rgba(10, 26, 15, 0.12);
+        --sh-md: 0 16px 48px rgba(10, 26, 15, 0.16);
+        --sh-lg: 0 32px 80px rgba(10, 26, 15, 0.22);
+        --sh-fire: 0 10px 32px rgba(180, 58, 10, 0.3);
+        --r-sm: 6px;
+        --r-md: 12px;
+        --r-lg: 18px;
+        --r-xl: 28px;
+        --r-pill: 100px;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        --nav-h: 80px;
+        --font-display: "Playfair Display", serif;
+        --font-body: "DM Sans", sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-body);
+        background: white;
+        color: var(--ink);
+        overflow-x: hidden;
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font-family: var(--font-body);
+        cursor: pointer;
+      }
+      .wrap {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem);
+      }
+      .logo-img img {
+        height: 85px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        transition: all 0.3s ease;
+
+        filter: brightness(1.25) contrast(1.15)
+          drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+      }
+      #hdr {
+        height: 76px;
+      }
+
+      #hdr.scrolled {
+        height: 76px; /* same rakho */
+      }
+      /* scroll pe shrink */
+      #hdr.scrolled .logo-img img {
+        height: 64px;
+      }
+      @media (max-width: 768px) {
+        .logo-img img {
+          height: 72px;
+          transition: all 0.3s ease;
+        }
+
+        #hdr.scrolled .logo-img img {
+          height: 58px;
+        }
+      }
+
+      /* ===== GLOBAL OVERFLOW FIX ===== */
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      /* हर section safe रहे */
+      section,
+      div {
+        max-width: 100%;
+      }
+
+      /* wrap कभी बाहर न जाए */
+      .wrap {
+        width: 100%;
+        max-width: 1260px;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      /* ===== HERO FIX ===== */
+      @media (max-width: 640px) {
+        .page-hero {
+          width: 100%;
+          overflow: hidden;
+          min-height: auto;
+          height: auto;
+          padding-top: var(--nav-h);
+          padding-bottom: 20px;
+        }
+
+        .page-hero-body {
+          width: 100%;
+          overflow: hidden;
+          padding: 1.5rem 0 2rem;
+        }
+
+        .page-hero h1 {
+          font-size: 2.2rem;
+          line-height: 1.1;
+          word-break: break-word;
+        }
+
+        .page-hero h1 em {
+          display: block;
+          font-size: 1.8rem;
+        }
+
+        .page-hero-desc {
+          font-size: 0.8rem;
+          line-height: 1.6;
+          max-width: 100%;
+        }
+
+        /* stats overflow fix */
+        .hero-stats {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+
+        .hs {
+          flex: 1 1 45%;
+        }
+
+        .hs-n {
+          font-size: 1.3rem;
+        }
+
+        .hs-l {
+          font-size: 0.55rem;
+        }
+
+        /* background fix */
+        .page-hero-bg {
+          width: 100%;
+          overflow: hidden;
+          background-position: center;
+          background-size: cover;
+        }
+      }
+
+      /* ===== EXTRA IMPORTANT FIXES ===== */
+
+      /* marquee overflow culprit */
+      .marquee-tr {
+        width: max-content;
+      }
+
+      /* images कभी बाहर न जाए */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* floating buttons overflow रोक */
+      .right-floats,
+      .chat-float {
+        max-width: calc(100vw - 20px);
+      }
+      /* ── HEADER ── */
+      #hdr {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        height: var(--nav-h);
+        transition: all 0.4s var(--ease);
+      }
+      #hdr.scrolled {
+        background: rgba(10, 26, 15, 0.97);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+        height: 68px;
+      }
+      .hdr-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 clamp(1rem, 3vw, 2.5rem);
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        flex-shrink: 0;
+      }
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--sh-fire);
+        flex-shrink: 0;
+        transition: transform 0.35s var(--ease-spring);
+      }
+      .logo-icon:hover {
+        transform: scale(1.08) rotate(-3deg);
+      }
+      .logo-icon i {
+        color: #fff;
+        font-size: 1.1rem;
+      }
+      .logo-name {
+        font-family: var(--font-display);
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #fff;
+        display: block;
+      }
+      .logo-name span {
+        color: var(--gold);
+      }
+      .logo-tag {
+        font-size: 0.5rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        display: block;
+        margin-top: 2px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .nav-links a {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.68);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition:
+          color 0.25s,
+          background 0.25s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-drop {
+        position: relative;
+      }
+      .nav-drop > a::after {
+        content: "\f107";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-left: 5px;
+        font-size: 0.58rem;
+        opacity: 0.55;
+      }
+      .drop-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        background: rgba(10, 26, 15, 0.98);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--r-md);
+        min-width: 210px;
+        padding: 0.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.44);
+      }
+      .nav-drop:hover .drop-menu {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(-50%) translateY(0);
+      }
+      .drop-menu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 14px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.78rem;
+        border-radius: 8px;
+        transition: all 0.2s;
+      }
+      .drop-menu a i {
+        width: 16px;
+        color: var(--terra-lt);
+        font-size: 0.72rem;
+      }
+      .drop-menu a:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+        padding-left: 18px;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-phone {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 9px 18px;
+        border-radius: var(--r-pill);
+        transition: all 0.3s;
+      }
+      .nav-phone i {
+        color: var(--gold);
+        animation: ring 3s ease-in-out infinite;
+      }
+      .nav-phone:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+      }
+      @keyframes ring {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        10% {
+          transform: rotate(-10deg);
+        }
+        20% {
+          transform: rotate(10deg);
+        }
+        30% {
+          transform: rotate(-8deg);
+        }
+        40% {
+          transform: rotate(8deg);
+        }
+        50% {
+          transform: rotate(0);
+        }
+      }
+
+      /* BUTTONS */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 30px;
+        border-radius: var(--r-pill);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.38s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-fire {
+        background: var(--grad-fire);
+        color: #fff;
+        box-shadow: var(--sh-fire);
+      }
+      .btn-fire:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 44px rgba(180, 58, 10, 0.38);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        background: var(--forest-mid);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid rgba(10, 26, 15, 0.2);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .btn-wa {
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.32);
+      }
+      .btn-wa:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(37, 211, 102, 0.44);
+      }
+
+      /* ── HAMBURGER ── */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: background 0.3s;
+      }
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 1.5px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.36s var(--ease);
+        transform-origin: center;
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      /* ── MOBILE DRAWER ── */
+      .mob-drawer {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(6, 14, 9, 0.99);
+        backdrop-filter: blur(24px);
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.48s cubic-bezier(0.77, 0, 0.175, 1);
+        overflow-y: auto;
+      }
+      .mob-drawer.open {
+        transform: translateX(0);
+      }
+      body.drawer-open {
+        overflow: hidden;
+      }
+      body.drawer-open .chat-float,
+      .chat-win,
+      .right-floats {
+        z-index: 950;
+      }
+      body.drawer-open .chat-float,
+      body.drawer-open .right-floats {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .mob-drawer-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        height: var(--nav-h);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        flex-shrink: 0;
+      }
+      .mob-close {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .mob-close:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .mob-links {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 0.3rem;
+      }
+      .mob-link-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.1rem 1.2rem;
+        border-radius: var(--r-md);
+        border: 1px solid transparent;
+        transition: all 0.28s;
+        cursor: pointer;
+      }
+      .mob-link-item a {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color 0.25s;
+        flex: 1;
+      }
+      .mob-link-item:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+      .mob-link-item:hover a {
+        color: #fff;
+      }
+      .mob-link-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.7rem;
+        transition: all 0.28s;
+        flex-shrink: 0;
+      }
+      .mob-link-item:hover .mob-link-arrow {
+        background: var(--grad-fire);
+        color: #fff;
+      }
+      .mob-sub {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+        padding-left: 1.2rem;
+      }
+      .mob-sub.open {
+        max-height: 300px;
+      }
+      .mob-sub a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 0.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        transition: color 0.2s;
+      }
+      .mob-sub a:hover {
+        color: var(--gold);
+      }
+      .mob-sub a i {
+        color: var(--terra-lt);
+        font-size: 0.72rem;
+        width: 14px;
+      }
+      .mob-drawer-foot {
+        padding: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        flex-shrink: 0;
+      }
+      .mob-contact-info {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .mob-contact-info a {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.2s;
+      }
+      .mob-contact-info a:hover {
+        color: var(--gold);
+      }
+      .mob-contact-info i {
+        color: var(--terra-lt);
+        font-size: 0.7rem;
+      }
+      .mob-cta-row {
+        display: flex;
+        gap: 0.7rem;
+      }
+      .mob-cta-row .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 13px 16px;
+      }
+      .mob-socials {
+        display: flex;
+        gap: 0.6rem;
+        margin-top: 0.3rem;
+      }
+      .mob-soc {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem;
+        transition: all 0.28s;
+      }
+      .mob-soc:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+
+      /* ── PAGE HERO ── */
+      .page-hero {
+        padding-top: var(--nav-h);
+        min-height: clamp(480px, 60vh, 700px);
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1609766418204-94aae0ecfdfc?w=1920&q=85&auto=format&fit=crop")
+          center/cover no-repeat;
+      }
+      .page-hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 26, 15, 0.95) 0%,
+          rgba(10, 26, 15, 0.55) 50%,
+          rgba(10, 26, 15, 0.25) 100%
+        );
+      }
+      .page-hero-body {
+        position: relative;
+        z-index: 2;
+        padding: clamp(2rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem);
+        width: 100%;
+      }
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.2rem;
+        flex-wrap: wrap;
+      }
+      .breadcrumb a,
+      .breadcrumb span {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .breadcrumb a:hover {
+        color: var(--gold);
+      }
+      .breadcrumb i {
+        font-size: 0.5rem;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 0.9rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--grad-fire);
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .page-hero h1 {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        color: #fff;
+        font-weight: 900;
+        line-height: 0.97;
+        margin-bottom: 1rem;
+      }
+      .page-hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .page-hero-desc {
+        font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+        color: rgba(255, 255, 255, 0.65);
+        max-width: 580px;
+        line-height: 1.85;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+      .hero-stats {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .hs {
+        text-align: left;
+      }
+      .hs-n {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 900;
+        background: var(--grad-fire);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .hs-l {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        margin-top: 3px;
+      }
+
+      /* ── MARQUEE ── */
+      .marquee-strip {
+        background: var(--grad-fire);
+        padding: 12px 0;
+        overflow: hidden;
+      }
+      .marquee-tr {
+        display: flex;
+        gap: 3rem;
+        white-space: nowrap;
+        animation: marqueeAnim 28s linear infinite;
+      }
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        font-size: 0.64rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .marquee-item i {
+        font-size: 0.58rem;
+        opacity: 0.6;
+      }
+      .marquee-dot {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      @keyframes marqueeAnim {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ── FILTER BAR ── */
+      .filter-bar {
+        background: var(--white);
+        border-bottom: 1px solid rgba(10, 26, 15, 0.07);
+        position: sticky;
+        top: var(--nav-h);
+        z-index: 50;
+        transition: top 0.4s;
+      }
+      .filter-inner {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .filter-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .filter-label {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .filter-pills {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+      }
+      .pill-btn {
+        padding: 8px 18px;
+        border-radius: var(--r-pill);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        background: transparent;
+        border: 1.5px solid rgba(10, 26, 15, 0.15);
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.3s;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .pill-btn.active,
+      .pill-btn:hover {
+        background: var(--ink);
+        color: var(--gold);
+        border-color: var(--ink);
+      }
+
+      /* ── TOURS SECTION ── */
+      .tours-sec {
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        background: white;
+      }
+      .sec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: clamp(2rem, 4vw, 3.5rem);
+      }
+      .sec-title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
+      .sec-sub {
+        font-size: 0.88rem;
+        color: var(--muted);
+        max-width: 420px;
+        line-height: 1.85;
+      }
+
+      /* ── TOUR CARDS GRID ── */
+      .tours-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+      }
+
+      /* FEATURED card (spans 2) */
+      .tour-card {
+        background: var(--white);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--sh-xs);
+        transition: all 0.45s var(--ease);
+        display: flex;
+        flex-direction: column;
+      }
+      .tour-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--sh-lg);
+      }
+      .tour-card.featured {
+        grid-column: span 2;
+        flex-direction: row;
+      }
+      .tc-img {
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .tour-card.featured .tc-img {
+        height: auto;
+        width: 50%;
+        min-height: 340px;
+      }
+      .tc-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s var(--ease);
+      }
+      .tour-card:hover .tc-img img {
+        transform: scale(1.1);
+      }
+      .tc-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        padding: 5px 13px;
+        border-radius: var(--r-pill);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--grad-fire);
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(180, 58, 10, 0.3);
+      }
+      .tc-wish {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra);
+        font-size: 0.82rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: none;
+      }
+      .tc-wish:hover,
+      .tc-wish.active {
+        background: var(--grad-fire);
+        color: #fff;
+      }
+      .tc-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .tour-card.featured .tc-body {
+        padding: 2rem;
+      }
+      .tc-loc {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 0.6rem;
+      }
+      .tc-loc i {
+        font-size: 0.58rem;
+      }
+      .tc-body h3 {
+        font-size: 1.22rem;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+        line-height: 1.25;
+      }
+      .tour-card.featured .tc-body h3 {
+        font-size: 1.65rem;
+      }
+      .tc-desc {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 1rem;
+        flex: 1;
+      }
+      .tc-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 1.2rem;
+      }
+      .tc-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.67rem;
+        color: var(--muted);
+        font-weight: 500;
+        background: white;
+        padding: 4px 10px;
+        border-radius: var(--r-pill);
+      }
+      .tc-meta i {
+        color: var(--terra);
+        font-size: 0.58rem;
+      }
+      .tc-highlights {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-bottom: 1.2rem;
+      }
+      .tc-hl {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.73rem;
+        color: var(--ink-soft);
+      }
+      .tc-hl i {
+        color: var(--moss);
+        font-size: 0.6rem;
+        flex-shrink: 0;
+      }
+      .tc-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(10, 26, 15, 0.07);
+      }
+      .tc-price {
+        font-family: var(--font-display);
+        font-size: 1.55rem;
+        color: var(--ink);
+      }
+      .tc-price small {
+        font-family: var(--font-body);
+        font-size: 0.62rem;
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .tc-price .old {
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-decoration: line-through;
+        display: block;
+        line-height: 1;
+      }
+      .tc-cta {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--terra);
+        background: rgba(184, 58, 10, 0.07);
+        border: 1.5px solid rgba(184, 58, 10, 0.2);
+        padding: 9px 18px;
+        border-radius: var(--r-pill);
+        transition: all 0.3s;
+      }
+      .tc-cta:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+        gap: 11px;
+      }
+
+      /* ── HIGHLIGHT BANNER ── */
+      .highlight-banner {
+        background: var(--ink);
+        border-radius: var(--r-xl);
+        padding: clamp(2rem, 4vw, 3.5rem);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2rem;
+        align-items: center;
+        margin: clamp(2.5rem, 5vw, 4rem) 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .highlight-banner::before {
+        content: "";
+        position: absolute;
+        right: -60px;
+        top: -60px;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(
+          circle,
+          rgba(180, 58, 10, 0.22),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hb-eyebrow {
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.7rem;
+      }
+      .hb-title {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        color: #fff;
+        margin-bottom: 0.7rem;
+      }
+      .hb-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hb-desc {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.5);
+        line-height: 1.8;
+        max-width: 480px;
+      }
+      .hb-right {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-end;
+        flex-shrink: 0;
+      }
+
+      /* ── WHY UTTARAKHAND ── */
+      .why-uk {
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        background: white;
+      }
+      .why-uk-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: center;
+        margin-top: clamp(2rem, 4vw, 3.5rem);
+      }
+      .why-uk-media {
+        position: relative;
+        height: clamp(340px, 45vw, 540px);
+      }
+      .wm-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 68%;
+        height: 82%;
+        object-fit: cover;
+        border-radius: var(--r-xl);
+        box-shadow: var(--sh-lg);
+      }
+      .wm-accent {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 52%;
+        height: 48%;
+        object-fit: cover;
+        border-radius: var(--r-xl);
+        box-shadow: var(--sh-md);
+        border: 5px solid white;
+      }
+      .wm-badge {
+        position: absolute;
+        top: 44%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        box-shadow: 0 14px 36px rgba(180, 58, 10, 0.42);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+      .wm-badge .bnum {
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        font-weight: 900;
+        color: #fff;
+        line-height: 1;
+      }
+      .wm-badge .blbl {
+        font-size: 0.42rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+      }
+      .uk-feats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 1.8rem;
+      }
+      .uk-feat {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 1.2rem;
+        background: var(--white);
+        border-radius: var(--r-md);
+        border-left: 3px solid transparent;
+        box-shadow: var(--sh-xs);
+        transition: all 0.4s;
+      }
+      .uk-feat:hover {
+        transform: translateX(6px);
+        box-shadow: var(--sh-md);
+        border-left-color: var(--terra);
+      }
+      .uk-feat-ico {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: linear-gradient(
+          135deg,
+          rgba(180, 58, 10, 0.1),
+          rgba(200, 130, 26, 0.07)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra);
+        font-size: 0.9rem;
+        transition: all 0.38s;
+        flex-shrink: 0;
+      }
+      .uk-feat:hover .uk-feat-ico {
+        background: var(--grad-fire);
+        color: #fff;
+      }
+      .uk-feat h4 {
+        font-family: var(--font-body);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 2px;
+      }
+      .uk-feat p {
+        font-size: 0.74rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      /* ── CTA BANNER ── */
+      #cta {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: var(--forest-mid);
+        position: relative;
+        overflow: hidden;
+      }
+      #cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=60")
+          center/cover;
+        opacity: 0.1;
+      }
+      .cta-body {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .cta-body .eyebrow {
+        color: rgba(255, 255, 255, 0.55);
+        justify-content: center;
+      }
+      .cta-body .eyebrow::before {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+      }
+      .cta-body h2 {
+        font-size: clamp(2.2rem, 5vw, 3.8rem);
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .cta-body p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+      }
+      .cta-row {
+        display: flex;
+        gap: 0.9rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: #060f09;
+      }
+      .footer-body {
+        padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 5rem);
+        display: grid;
+        grid-template-columns: 2.4fr 1fr 1fr 1.8fr;
+        gap: clamp(2rem, 4vw, 5rem);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .foot-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.2rem;
+      }
+      .foot-desc {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.88;
+        max-width: 270px;
+        margin-bottom: 1.6rem;
+      }
+      .foot-soc {
+        display: flex;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+      .foot-soc a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        color: rgba(255, 255, 255, 0.38);
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .foot-soc a:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .foot-nl p {
+        font-size: 0.74rem;
+        color: rgba(255, 255, 255, 0.32);
+        margin-bottom: 0.75rem;
+      }
+      .nl-box {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nl-box input {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.04);
+        border: none;
+        outline: none;
+        padding: 11px 14px;
+        font-size: 0.74rem;
+        font-family: var(--font-body);
+        color: #fff;
+      }
+      .nl-box input::placeholder {
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .nl-box button {
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        padding: 0 18px;
+        font-size: 0.85rem;
+        cursor: pointer;
+      }
+      .foot-col h5 {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 1.3rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(180, 58, 10, 0.18);
+      }
+      .foot-col ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .foot-col a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        transition: all 0.28s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .foot-col a:hover {
+        color: rgba(255, 255, 255, 0.78);
+        padding-left: 5px;
+      }
+      .foot-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .fc {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .fc i {
+        color: var(--terra-lt);
+        font-size: 0.82rem;
+        margin-top: 3px;
+        width: 14px;
+        flex-shrink: 0;
+      }
+      .fc p,
+      .fc a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        line-height: 1.7;
+        transition: color 0.25s;
+      }
+      .fc a:hover {
+        color: var(--terra-lt);
+      }
+      .footer-btm {
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-btm p {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .footer-btm p span {
+        color: var(--terra-lt);
+      }
+      .btm-links {
+        display: flex;
+        gap: 1.8rem;
+      }
+      .btm-links a {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.2);
+        transition: color 0.25s;
+      }
+      .btm-links a:hover {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ── FLOATING BUTTONS ── */
+      .chat-float {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 950;
+        animation: popIn 0.5s 2s both;
+      }
+      .chat-trigger {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.32rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 28px rgba(180, 58, 10, 0.45);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .chat-trigger:hover {
+        transform: scale(1.12) rotate(10deg);
+      }
+      .chat-win {
+        position: fixed;
+        bottom: 8rem;
+        left: 2rem;
+        z-index: 950;
+        width: clamp(288px, 90vw, 315px);
+        background: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 24px 72px rgba(10, 26, 15, 0.26);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(26, 51, 32, 0.07);
+      }
+      .chat-win.open {
+        display: flex;
+        animation: slideUp 0.35s var(--ease);
+      }
+      .chat-head {
+        background: linear-gradient(135deg, var(--ink), var(--forest-mid));
+        padding: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .chat-av {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.88rem;
+        flex-shrink: 0;
+      }
+      .chat-head h5 {
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        font-family: var(--font-body);
+      }
+      .chat-head p {
+        color: rgba(255, 255, 255, 0.38);
+        font-size: 0.63rem;
+        font-family: var(--font-body);
+      }
+      .chat-x {
+        margin-left: auto;
+        color: rgba(255, 255, 255, 0.35);
+        cursor: pointer;
+        font-size: 0.85rem;
+        padding: 4px;
+        transition: color 0.2s;
+      }
+      .chat-x:hover {
+        color: #fff;
+      }
+      .chat-msgs {
+        padding: 1rem;
+        min-height: 140px;
+        max-height: 200px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .msg {
+        padding: 9px 13px;
+        border-radius: 13px;
+        font-size: 0.77rem;
+        line-height: 1.56;
+        max-width: 85%;
+        font-family: var(--font-body);
+      }
+      .msg.bot {
+        background: white;
+        color: var(--ink);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
+      .msg.me {
+        background: var(--grad-fire);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
+      .chat-quick {
+        padding: 0 1rem 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .qbtn {
+        padding: 5px 11px;
+        border: 1.5px solid var(--terra);
+        border-radius: var(--r-pill);
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--terra);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: var(--font-body);
+      }
+      .qbtn:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .chat-in {
+        display: flex;
+        border-top: 1px solid rgba(10, 26, 15, 0.08);
+      }
+      .chat-in input {
+        flex: 1;
+        padding: 11px 13px;
+        border: none;
+        outline: none;
+        font-size: 0.76rem;
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--ink);
+      }
+      .chat-in button {
+        padding: 0 15px;
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 0.85rem;
+      }
+      .right-floats {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 950;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        animation: popIn 0.5s 2.3s both;
+      }
+      .rf {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .rf-tip {
+        position: absolute;
+        right: 66px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.64rem;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s;
+      }
+      .rf-tip::after {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right: none;
+        border-left-color: var(--ink);
+      }
+      .rf:hover .rf-tip {
+        opacity: 1;
+      }
+      .wa-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.42rem;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .wa-btn:hover {
+        transform: scale(1.12);
+      }
+      .call-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--forest-mid);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 24px rgba(24, 48, 35, 0.4);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .call-btn:hover {
+        transform: scale(1.12);
+        background: var(--moss);
+      }
+
+      /* REVEAL */
+      .rv {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-l {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-l.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-r {
+        opacity: 0;
+        transform: translateX(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-r.vis {
+        opacity: 1;
+        transform: none;
+      }
+
+      @keyframes popIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(14px);
+          opacity: 0;
+        }
+        to {
+          transform: none;
+          opacity: 1;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .nav-links,
+        .nav-phone,
+        .nav-right .btn {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .tours-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .tour-card.featured {
+          grid-column: span 2;
+          flex-direction: column;
+        }
+        .tour-card.featured .tc-img {
+          width: 100%;
+          height: 260px;
+          min-height: 0;
+        }
+        .why-uk-grid {
+          grid-template-columns: 1fr;
+        }
+        .why-uk-media {
+          height: 320px;
+        }
+        .footer-body {
+          grid-template-columns: 1fr 1fr;
+        }
+        .highlight-banner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hb-right {
+          align-items: center;
+        }
+      }
+      @media (max-width: 640px) {
+        :root {
+          --nav-h: 66px;
+        }
+        .tours-grid {
+          grid-template-columns: 1fr;
+        }
+        .tour-card.featured {
+          grid-column: span 1;
+        }
+        .hero-stats {
+          gap: 1.5rem;
+        }
+        .footer-body {
+          grid-template-columns: 1fr;
+        }
+        .foot-col:nth-child(3),
+        .foot-col:nth-child(4) {
+          display: none;
+        }
+        .footer-btm {
+          flex-direction: column;
+          text-align: center;
+        }
+        .btm-links {
+          justify-content: center;
+        }
+        .cta-row .btn:nth-child(2) {
+          display: none;
+        }
+        .why-uk-media {
+          height: 260px;
+          display: none;
+        }
+        .chat-win {
+          left: 0.8rem;
+          width: calc(100vw - 1.6rem);
+        }
+      }
+      .logo-img img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        transition: all 0.3s ease;
+
+        filter: brightness(1.25) contrast(1.15)
+          drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <script>
+      // Load navbar from nav.html
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+          // Initialize navbar functions after loading
+          initNavbar();
+        })
+        .catch((error) => console.log("Error loading navbar:", error));
+
+      function initNavbar() {
+        const hamBtn = document.getElementById("hdrNavHamBtn");
+        const mobDrawer = document.getElementById("hdrNavMobDrawer");
+        const mobOverlay = document.getElementById("hdrNavMobOverlay");
+        const hdr = document.getElementById("hdrNav");
+
+        if (!hamBtn || !mobDrawer || !mobOverlay) return;
+
+        function openMob() {
+          mobDrawer.classList.add("open");
+          mobOverlay.classList.add("open");
+          hamBtn.classList.add("open");
+          hamBtn.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+          mobDrawer.setAttribute("aria-hidden", "false");
+        }
+        function closeMob() {
+          mobDrawer.classList.remove("open");
+          mobOverlay.classList.remove("open");
+          hamBtn.classList.remove("open");
+          hamBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+          mobDrawer.setAttribute("aria-hidden", "true");
+        }
+        hamBtn.addEventListener("click", () =>
+          mobDrawer.classList.contains("open") ? closeMob() : openMob(),
+        );
+        mobOverlay.addEventListener("click", closeMob);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMob();
+        });
+
+        // Header scroll effect
+        if (hdr) {
+          // Check initial scroll position
+          hdr.classList.toggle("scrolled", scrollY > 50);
+
+          // Listen for scroll changes
+          window.addEventListener(
+            "scroll",
+            () => hdr.classList.toggle("scrolled", scrollY > 50),
+            { passive: true },
+          );
+        }
+
+        // Dropdown click handler
+        const navDrops = document.querySelectorAll(".hdr-nav-drop");
+        navDrops.forEach((drop) => {
+          const dropLink = drop.querySelector("button");
+          if (dropLink) {
+            dropLink.addEventListener("click", (e) => {
+              e.preventDefault();
+              // Close all other dropdowns
+              navDrops.forEach((d) => {
+                if (d !== drop) d.classList.remove("open");
+              });
+              // Toggle current dropdown
+              drop.classList.toggle("open");
+            });
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          const navLinks = document.querySelector(".hdr-nav-links");
+          if (navLinks && !navLinks.contains(e.target)) {
+            navDrops.forEach((drop) => drop.classList.remove("open"));
+          }
+        });
+
+        window.openMob = openMob;
+        window.closeMob = closeMob;
+        window.toggleSub = function (id, e) {
+          e.stopPropagation();
+          document.getElementById(id).classList.toggle("open");
+        };
+      }
+    </script>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="wrap page-hero-body">
+        <div class="breadcrumb" style="animation: fadeUp 0.8s 0.2s both">
+          <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
+          <a href="#">Tours</a><i class="fas fa-chevron-right"></i>
+          <span style="color: var(--gold)">Uttarakhand</span>
+        </div>
+        <p class="eyebrow" style="animation: fadeUp 0.8s 0.35s both">
+          Dev Bhoomi Awaits
+        </p>
+        <h1 style="animation: fadeUp 0.85s 0.48s both">
+          Uttarakhand<br /><em>Tours</em>
+        </h1>
+        <p class="page-hero-desc" style="animation: fadeUp 0.85s 0.6s both">
+          Char Dham pilgrimages, serene hill stations, wildlife safaris, river
+          rafting, and cultural escapes — Uttarakhand has a story for every kind
+          of traveller.
+        </p>
+        <div class="hero-stats" style="animation: fadeUp 0.85s 0.75s both">
+          <div class="hs">
+            <div class="hs-n">8+</div>
+            <div class="hs-l">Tour Packages</div>
+          </div>
+          <div class="hs">
+            <div class="hs-n">₹6.5k</div>
+            <div class="hs-l">Starting From</div>
+          </div>
+          <div class="hs">
+            <div class="hs-n">4.9★</div>
+            <div class="hs-l">Avg Rating</div>
+          </div>
+          <div class="hs">
+            <div class="hs-n">All Inclusive</div>
+            <div class="hs-l">Meals + Stay + Guide</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MARQUEE ── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-tr">
+        <div class="marquee-item">
+          <i class="fas fa-om"></i> Char Dham Yatra
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-mountain"></i> Mussoorie Hills
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-water"></i> Rishikesh Rafting
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-paw"></i> Jim Corbett Safari
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-mountain"></i> Nainital Lake City
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-om"></i> Do Dham Yatra</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-leaf"></i> Auli Snowfields
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-campground"></i> Chopta Meadows
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-om"></i> Char Dham Yatra
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-mountain"></i> Mussoorie Hills
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-water"></i> Rishikesh Rafting
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-paw"></i> Jim Corbett Safari
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-mountain"></i> Nainital Lake City
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-om"></i> Do Dham Yatra</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-leaf"></i> Auli Snowfields
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-campground"></i> Chopta Meadows
+        </div>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ── FILTER BAR ── -->
+    <div class="filter-bar">
+      <div class="wrap">
+        <div class="filter-inner">
+          <span class="filter-label">Filter by:</span>
+          <div class="filter-pills">
+            <button class="pill-btn active" data-filter="all">All Tours</button>
+            <button class="pill-btn" data-filter="pilgrimage">
+              Pilgrimage
+            </button>
+            <button class="pill-btn" data-filter="hillstation">
+              Hill Stations
+            </button>
+            <button class="pill-btn" data-filter="adventure">Adventure</button>
+            <button class="pill-btn" data-filter="wildlife">Wildlife</button>
+            <button class="pill-btn" data-filter="family">Family</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TOURS SECTION ── -->
+    <section class="tours-sec">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <div>
+            <p class="eyebrow">8 Handcrafted Packages</p>
+            <h2 class="sec-title">Explore Uttarakhand</h2>
+            <p class="sec-sub">
+              From divine pilgrimages to snow-kissed hills — every package
+              includes stays, meals, transport & certified guides.
+            </p>
+          </div>
+          <a href="contact.html" class="btn btn-fire"
+            ><i class="fas fa-paper-plane"></i> Custom Package</a
+          >
+        </div>
+
+        <div class="tours-grid">
+          <!-- 1. CHAR DHAM — FEATURED -->
+          <article class="tour-card featured rv" data-cat="pilgrimage">
+            <div class="tc-img">
+              <img
+                src="images/Best-Time-to-Travel-Char-Dham-Yatra.webp"
+                alt="Char Dham Yatra"
+              />
+              <span class="tc-badge">⭐ Most Popular</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Haridwar → Badrinath
+              </div>
+              <h3>
+                Char Dham Yatra<br /><em
+                  style="
+                    font-style: italic;
+                    color: var(--terra);
+                    font-size: 0.85em;
+                  "
+                  >Yamunotri · Gangotri · Kedarnath · Badrinath</em
+                >
+              </h3>
+              <p class="tc-desc">
+                India's most sacred pilgrimage — visit all four divine shrines
+                nestled in the Garhwal Himalayas. A soul-stirring journey of
+                devotion, breathtaking landscapes, and divine blessings.
+              </p>
+              <div class="tc-highlights">
+                <div class="tc-hl">
+                  <i class="fas fa-check-circle"></i> All 4 dham darshan covered
+                </div>
+                <div class="tc-hl">
+                  <i class="fas fa-check-circle"></i> Helicopter option
+                  available for Kedarnath
+                </div>
+                <div class="tc-hl">
+                  <i class="fas fa-check-circle"></i> Comfortable hotel stays
+                  throughout
+                </div>
+                <div class="tc-hl">
+                  <i class="fas fa-check-circle"></i> Expert religious guide
+                  included
+                </div>
+              </div>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 11 Days</span>
+                <span><i class="fas fa-users"></i> 2–40 Pax</span>
+                <span
+                  ><i class="fas fa-calendar-alt"></i> May–Jun, Sep–Oct</span
+                >
+                <span><i class="fas fa-utensils"></i> All Meals</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">
+                  <span class="old">₹28,000</span>₹22,500
+                  <small>/ person</small>
+                </div>
+                <a href="char-dham.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. DO DHAM -->
+          <article class="tour-card rv" data-cat="pilgrimage">
+            <div class="tc-img">
+              <img src="images/do.png" alt="Do Dham Yatra" />
+              <span class="tc-badge">🙏 Pilgrimage</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Haridwar → Kedarnath →
+                Badrinath
+              </div>
+              <h3>Do Dham Yatra</h3>
+              <p class="tc-desc">
+                The perfect blend of devotion and Himalayan beauty — cover
+                Kedarnath & Badrinath on this blessed journey.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 7 Days</span>
+                <span><i class="fas fa-users"></i> 2–30 Pax</span>
+                <span><i class="fas fa-utensils"></i> All Meals</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹12,500 <small>/ person</small></div>
+                <a href="do-dham.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. RISHIKESH -->
+          <article class="tour-card rv" data-cat="adventure">
+            <div class="tc-img">
+              <img src="images/rishi.jpg" alt="Rishikesh" />
+              <span class="tc-badge">🌊 Adventure</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Rishikesh, Uttarakhand
+              </div>
+              <h3>Rishikesh Adventure Escape</h3>
+              <p class="tc-desc">
+                River rafting on the Ganga, bungee jumping, camping under stars,
+                yoga retreat & Ganga Aarti — Rishikesh in its full glory.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 4 Days</span>
+                <span><i class="fas fa-users"></i> 2–25 Pax</span>
+                <span><i class="fas fa-utensils"></i> Breakfast + Dinner</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹6,500 <small>/ person</small></div>
+                <a href="rishikesh.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. MUSSOORIE -->
+          <article class="tour-card rv" data-cat="hillstation">
+            <div class="tc-img">
+              <img src="images/i-love-mussoorie.webp" alt="Mussoorie" />
+              <span class="tc-badge">🌿 Hill Station</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Mussoorie, Uttarakhand
+              </div>
+              <h3>Mussoorie Queen of Hills</h3>
+              <p class="tc-desc">
+                The "Queen of Hills" — Kempty Falls, Lal Tibba, Mall Road, cable
+                car rides & misty mountain mornings. Perfect family escape.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 3 Days</span>
+                <span><i class="fas fa-users"></i> 2–20 Pax</span>
+                <span><i class="fas fa-utensils"></i> Breakfast</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹7,800 <small>/ person</small></div>
+                <a href="mussoorie.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. NAINITAL -->
+          <article class="tour-card rv" data-cat="hillstation family">
+            <div class="tc-img">
+              <img src="images/images.jpg" alt="Nainital" />
+              <span class="tc-badge">🏞️ Family Fav</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Nainital, Uttarakhand
+              </div>
+              <h3>Nainital Lake City Break</h3>
+              <p class="tc-desc">
+                Sail on the emerald Naini Lake, ride the cable car to Snow View,
+                explore Bhimtal, Sattal & Mukteshwar on this perfect family
+                getaway.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 4 Days</span>
+                <span><i class="fas fa-users"></i> 2–30 Pax</span>
+                <span><i class="fas fa-utensils"></i> All Meals</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹8,200 <small>/ person</small></div>
+                <a href="nainital.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. JIM CORBETT -->
+          <article class="tour-card rv" data-cat="wildlife">
+            <div class="tc-img">
+              <img
+                src="images/Jim-Corbett-National-Par1k.png"
+                alt="Jim Corbett"
+              />
+              <span class="tc-badge">🐯 Wildlife</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Jim Corbett National Park
+              </div>
+              <h3>Jim Corbett Tiger Safari</h3>
+              <p class="tc-desc">
+                Thrilling jungle safaris in India's oldest national park — spot
+                Bengal tigers, elephants, leopards & 600+ bird species in their
+                natural habitat.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 3 Days</span>
+                <span><i class="fas fa-users"></i> 2–12 Pax</span>
+                <span><i class="fas fa-utensils"></i> All Meals</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹9,500 <small>/ person</small></div>
+                <a href="jim-corbett.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. AULI -->
+          <article class="tour-card rv" data-cat="adventure">
+            <div class="tc-img">
+              <img
+                src="https://images.unsplash.com/photo-1522163182402-834f871fd851?w=600&q=80&auto=format&fit=crop"
+                alt="Auli"
+              />
+              <span class="tc-badge">❄️ Winter Special</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Auli, Chamoli, Uttarakhand
+              </div>
+              <h3>Auli Snow & Skiing Adventure</h3>
+              <p class="tc-desc">
+                India's premier ski destination — snow-clad Himalayan slopes,
+                Asia's longest cable car, and panoramic views of Nanda Devi.
+                Winter magic at its finest.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-users"></i> 2–20 Pax</span>
+                <span><i class="fas fa-calendar-alt"></i> Jan–Mar</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹11,000 <small>/ person</small></div>
+                <a href="auli.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. CHOPTA + DEORIA TAL -->
+          <article class="tour-card rv" data-cat="adventure family">
+            <div class="tc-img">
+              <img src="images/chop.png" alt="Chopta Deoria Tal" />
+              <span class="tc-badge">🌸 Scenic Gem</span>
+              <button class="tc-wish" aria-label="Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+            </div>
+            <div class="tc-body">
+              <div class="tc-loc">
+                <i class="fas fa-map-marker-alt"></i> Chopta · Deoria Tal ·
+                Tungnath
+              </div>
+              <h3>Chopta — Deoria Tal Retreat</h3>
+              <p class="tc-desc">
+                Uttarakhand's best-kept secret — a crystal-clear lake reflecting
+                the Chaukhamba peaks, lush bugyal meadows & the highest Shiva
+                temple at Tungnath.
+              </p>
+              <div class="tc-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span>
+                <span><i class="fas fa-users"></i> 2–20 Pax</span>
+                <span><i class="fas fa-utensils"></i> All Meals</span>
+              </div>
+              <div class="tc-foot">
+                <div class="tc-price">₹10,500 <small>/ person</small></div>
+                <a href="chopta-tungnath-trek.html" class="tc-cta"
+                  >Book Now <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- /tours-grid -->
+
+        <!-- HIGHLIGHT BANNER -->
+        <div class="highlight-banner rv">
+          <div>
+            <div class="hb-eyebrow">
+              <i class="fas fa-star"></i> &nbsp;Exclusive Offer — Limited Slots
+            </div>
+            <h2 class="hb-title">Group Discounts Up To <em>25% Off</em></h2>
+            <p class="hb-desc">
+              Travelling with family, friends, or colleagues? Book any
+              Uttarakhand package for 10+ people and get exclusive group rates,
+              a dedicated trip manager, and personalised itinerary.
+            </p>
+          </div>
+          <div class="hb-right">
+            <a
+              href="https://wa.me/9310461449?text=Hi! I want to book a group Uttarakhand tour."
+              class="btn btn-wa"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-whatsapp"></i> WhatsApp for Group Rate</a
+            >
+            <a href="contact.html" class="btn btn-fire"
+              ><i class="fas fa-paper-plane"></i> Get Custom Quote</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHY UTTARAKHAND ── -->
+    <section class="why-uk">
+      <div class="wrap">
+        <div
+          style="
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+          class="rv"
+        >
+          <p class="eyebrow">Dev Bhoomi</p>
+          <h2 class="sec-title">Why Uttarakhand?</h2>
+          <p class="sec-sub" style="text-align: center; max-width: 500px">
+            The Land of Gods offers something extraordinary — from spiritual
+            peaks to thrilling valleys.
+          </p>
+        </div>
+        <div class="why-uk-grid">
+          <div class="why-uk-media rv-l">
+            <img
+              class="wm-main"
+              src="images/auli-uttarakhand-1.jpg"
+              alt="Himalayas"
+            />
+            <img
+              class="wm-accent"
+              src="images/GettyRF_956963154.jpg"
+              alt="Temple"
+            />
+            <div class="wm-badge">
+              <div class="bnum">500+</div>
+              <div class="blbl">Happy<br />Travellers</div>
+            </div>
+          </div>
+          <div class="rv-r">
+            <div class="uk-feats">
+              <div class="uk-feat">
+                <div class="uk-feat-ico"><i class="fas fa-om"></i></div>
+                <div>
+                  <h4>Spiritual Capital of India</h4>
+                  <p>
+                    Home to Char Dham, Haridwar & Rishikesh — the most sacred
+                    destinations for Hindu pilgrims worldwide.
+                  </p>
+                </div>
+              </div>
+              <div class="uk-feat">
+                <div class="uk-feat-ico"><i class="fas fa-mountain"></i></div>
+                <div>
+                  <h4>Himalayan Grandeur</h4>
+                  <p>
+                    Snow-capped peaks, pristine glaciers, alpine meadows and
+                    valleys that take your breath away.
+                  </p>
+                </div>
+              </div>
+              <div class="uk-feat">
+                <div class="uk-feat-ico"><i class="fas fa-leaf"></i></div>
+                <div>
+                  <h4>Natural Biodiversity</h4>
+                  <p>
+                    Jim Corbett, Rajaji & Valley of Flowers — national parks
+                    brimming with wildlife and rare flora.
+                  </p>
+                </div>
+              </div>
+              <div class="uk-feat">
+                <div class="uk-feat-ico"><i class="fas fa-water"></i></div>
+                <div>
+                  <h4>Adventure Capital</h4>
+                  <p>
+                    River rafting, skiing, paragliding, camping — Uttarakhand is
+                    India's ultimate adventure destination.
+                  </p>
+                </div>
+              </div>
+              <div class="uk-feat">
+                <div class="uk-feat-ico"><i class="fas fa-star"></i></div>
+                <div>
+                  <h4>Tour & Travel Expertise</h4>
+                  <p>
+                    8+ years of running Uttarakhand tours with local guides who
+                    know every hidden gem in the state.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section id="cta">
+      <div class="wrap">
+        <div class="cta-body rv">
+          <p class="eyebrow">Ready to Go?</p>
+          <h2>Plan Your Uttarakhand<br />Journey Today</h2>
+          <p>
+            Tell us your dates and group size — we'll craft the perfect package
+            within 24 hours.
+          </p>
+          <div class="cta-row">
+            <a href="contact.html" class="btn btn-fire"
+              ><i class="fas fa-paper-plane"></i> Plan My Trip</a
+            >
+            <a
+              href="https://wa.me/9310461449?text=Hi! I want to plan an Uttarakhand tour."
+              class="btn btn-wa"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
+            >
+            <a href="tel:+9310461449" class="btn btn-ghost"
+              ><i class="fas fa-phone-alt"></i> Call Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script>
+      // Load footer from footer.html
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("footer-container").innerHTML = html;
+        })
+        .catch((error) => console.log("Error loading footer:", error));
+    </script>
+
+    <script>
+      /* Header */
+
+      /* Filter pills */
+      document.querySelectorAll(".pill-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".pill-btn")
+            .forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          const f = this.dataset.filter;
+          document.querySelectorAll(".tour-card").forEach((card) => {
+            if (f === "all" || card.dataset.cat?.includes(f)) {
+              card.style.display = "";
+              card.style.opacity = "1";
+            } else {
+              card.style.opacity = ".35";
+              card.style.display = "";
+            }
+          });
+        });
+      });
+
+      /* Wishlist toggle */
+      document.querySelectorAll(".tc-wish").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          this.classList.toggle("active");
+          this.querySelector("i").className = this.classList.contains("active")
+            ? "fas fa-heart"
+            : "far fa-heart";
+        });
+      });
+
+      /* Chatbot */
+      const chatBtn = document.getElementById("chatBtn"),
+        chatWin = document.getElementById("chatWin"),
+        chatIco = document.getElementById("chatIco"),
+        chatX = document.getElementById("chatX");
+      function toggleChat() {
+        const o = chatWin.classList.toggle("open");
+        chatIco.className = o ? "fas fa-times" : "fas fa-comment-dots";
+        chatBtn.setAttribute("aria-expanded", o);
+      }
+      chatBtn.addEventListener("click", toggleChat);
+      chatX.addEventListener("click", () => {
+        chatWin.classList.remove("open");
+        chatIco.className = "fas fa-comment-dots";
+        chatBtn.setAttribute("aria-expanded", "false");
+      });
+      const botR = {
+        cd: "🕉️ Char Dham Yatra covers Yamunotri, Gangotri, Kedarnath & Badrinath — 11 days from ₹22,500/person. All meals, stays, transport & guide included! Helicopter option available for Kedarnath. Want to book?",
+        dd: "🙏 Do Dham Yatra covers Kedarnath & Badrinath — 7 days from ₹12,500/person. A divine experience with all arrangements taken care of!",
+        pr: "💰 Our Uttarakhand packages start from ₹6,500 (Rishikesh, 4D) going up to ₹22,500 (Char Dham, 11D). Group discounts available for 10+ people. Which tour interests you?",
+        bt: "📅 Best time for Uttarakhand: Char Dham — May-Jun & Sep-Oct. Hill stations (Mussoorie/Nainital) — Mar-Jun & Sep-Nov. Adventure (Rishikesh) — Sep-Mar. Auli Skiing — Jan-Mar.",
+        bk: "📋 Booking is easy! WhatsApp us at +91 9310461449, fill our contact form, or just reply here with your preferred dates & group size. We confirm within 2 hours!",
+        d: "😊 For detailed planning, WhatsApp us at +91 9310461449 — our Uttarakhand experts will craft your perfect itinerary within 24 hours!",
+      };
+      function getReply(m) {
+        const s = m.toLowerCase();
+        if (/char|chardham|4 dham|four dham/.test(s)) return botR.cd;
+        if (/do dham|2 dham|kedarnath.*badrinath/.test(s)) return botR.dd;
+        if (/price|cost|fee|₹|cheap|how much/.test(s)) return botR.pr;
+        if (/best time|when.*visit|season|month/.test(s)) return botR.bt;
+        if (/book|reserve|how.*plan|enquir/.test(s)) return botR.bk;
+        return botR.d;
+      }
+      function addMsg(t, me) {
+        const d = document.createElement("div");
+        d.className = `msg ${me ? "me" : "bot"}`;
+        d.textContent = t;
+        const m = document.getElementById("chatMsgs");
+        m.appendChild(d);
+        m.scrollTop = m.scrollHeight;
+      }
+      function sendMsg() {
+        const inp = document.getElementById("chatInput"),
+          v = inp.value.trim();
+        if (!v) return;
+        addMsg(v, true);
+        inp.value = "";
+        setTimeout(() => addMsg(getReply(v), false), 650);
+      }
+      function qReply(t) {
+        addMsg(t, true);
+        setTimeout(() => addMsg(getReply(t), false), 650);
+      }
+      document.getElementById("chatInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") sendMsg();
+      });
+    </script>
+    <script>
+      const hdr = document.getElementById("hdr");
+      const stickyBar = document.getElementById("stickyBar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const s = scrollY > 60;
+          if (hdr) hdr.classList.toggle("scrolled", s);
+          stickyBar.style.top = s ? "68px" : "80px";
+          stickyBar.classList.toggle(
+            "show",
+            scrollY > window.innerHeight * 0.6,
+          );
+        },
+        { passive: true },
+      );
+
+      function toggleAcc(id) {
+        document.getElementById(id).classList.toggle("open");
+      }
+
+      // Initialize reveal animations when header loads
+      function initRevealAnimations() {
+        const revObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e, i) => {
+              if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add("vis"), i * 55);
+                revObs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.07, rootMargin: "0px 0px -30px 0px" },
+        );
+        document
+          .querySelectorAll(".rv,.rv-l,.rv-r")
+          .forEach((el) => revObs.observe(el));
+      }
+
+      // Run immediately and when DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRevealAnimations);
+      } else {
+        initRevealAnimations();
+      }
+    </script>
+  </body>
+</html>

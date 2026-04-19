@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Rudraansh Tour – Travel That Feels Like Home. Premium tours & treks across Uttarakhand, Himachal Pradesh & Rajasthan." />
+  <title>Rudraansh Tour | Travel That Feels Like Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <!-- Navbar placeholder -->
+  <div id="navbar-container"></div>
+
+  <script>
+    // Load navbar from nav.html
+    fetch("nav.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("navbar-container").innerHTML = html;
+        // Initialize navbar functions after loading
+        initNavbar();
+      })
+      .catch((error) => console.log("Error loading navbar:", error));
+
+    function initNavbar() {
+      const hamBtn = document.getElementById("hdrNavHamBtn");
+      const mobDrawer = document.getElementById("hdrNavMobDrawer");
+      const mobOverlay = document.getElementById("hdrNavMobOverlay");
+      const hdr = document.getElementById("hdrNav");
+
+      if (!hamBtn || !mobDrawer || !mobOverlay) return;
+
+      function openMob() {
+        mobDrawer.classList.add("open");
+        mobOverlay.classList.add("open");
+        hamBtn.classList.add("open");
+        hamBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+        mobDrawer.setAttribute("aria-hidden", "false");
+      }
+      function closeMob() {
+        mobDrawer.classList.remove("open");
+        mobOverlay.classList.remove("open");
+        hamBtn.classList.remove("open");
+        hamBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        mobDrawer.setAttribute("aria-hidden", "true");
+      }
+      hamBtn.addEventListener("click", () =>
+        mobDrawer.classList.contains("open") ? closeMob() : openMob(),
+      );
+      mobOverlay.addEventListener("click", closeMob);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMob();
+      });
+
+      // Header scroll effect
+      if (hdr) {
+        // Check initial scroll position
+        hdr.classList.toggle("scrolled", scrollY > 50);
+
+        // Listen for scroll changes
+        window.addEventListener(
+          "scroll",
+          () => hdr.classList.toggle("scrolled", scrollY > 50),
+          { passive: true },
+        );
+      }
+
+      // Dropdown click handler
+      const navDrops = document.querySelectorAll(".hdr-nav-drop");
+      navDrops.forEach((drop) => {
+        const dropLink = drop.querySelector("button");
+        if (dropLink) {
+          dropLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Close all other dropdowns
+            navDrops.forEach((d) => {
+              if (d !== drop) d.classList.remove("open");
+            });
+            // Toggle current dropdown
+            drop.classList.toggle("open");
+          });
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        const navLinks = document.querySelector(".hdr-nav-links");
+        if (navLinks && !navLinks.contains(e.target)) {
+          navDrops.forEach((drop) => drop.classList.remove("open"));
+        }
+      });
+
+      window.openMob = openMob;
+      window.closeMob = closeMob;
+      window.toggleSub = function (id, e) {
+        e.stopPropagation();
+        document.getElementById(id).classList.toggle("open");
+      };
+    }
+  </script>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <!-- Cinematic multi-layer background -->
+    <div class="hero-bg">
+      <video class="hero-bg-img" autoplay muted loop playsinline>
+        <source src="images/1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-bg-layer1"></div>
+      <div class="hero-bg-layer2"></div>
+      <div class="hero-bg-layer3"></div>
+      <div class="hero-grain"></div>
+      <div class="hero-flare"></div>
+      <div class="hero-scanline"></div>
+      <div class="hero-particles" id="particles"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-center">
+        <!-- Word-by-word cinematic reveal - CENTERED -->
+        <h1 class="hero-h1">
+          <span class="word">Explore</span><br />
+          <span class="word">Your Next</span>
+          <em><span class="word italic">Adventure</span></em>
+        </h1>
+
+        <p class="hero-p">
+          From Himalayan treks to desert safaris, ancient temples to vibrant
+          cities. Discover India's hidden gems and create unforgettable
+          memories with expertly curated journeys.
+        </p>
+      </div>
+    </div>
+
+    <!-- Trip Type Toggle & Search -->
+    <div class="hero-controls">
+      <!-- Trip Type Toggle -->
+      <div class="hero-btns">
+        <button class="btn btn-fire trip-toggle active" data-type="domestic" id="domesticBtn"
+          onclick="switchTrip('domestic')">
+          <i class="fas fa-map-marked-alt"></i> Domestic
+        </button>
+        <button class="btn btn-ghost trip-toggle" data-type="international" id="internationalBtn"
+          onclick="switchTrip('international')">
+          <i class="fas fa-globe"></i> International
+        </button>
+      </div>
+
+      <!-- Search bar -->
+      <div class="hero-search-wrap">
+        <div class="search-box">
+          <div class="search-field">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <label>Destination</label>
+              <select id="destinationSelect">
+                <option data-type="domestic">Uttarakhand</option>
+                <option data-type="domestic">Himachal Pradesh</option>
+                <option data-type="domestic">Rajasthan</option>
+                <option data-type="domestic">Ladakh</option>
+                <option data-type="international">Nepal</option>
+                <option data-type="international">Bhutan</option>
+                <option data-type="international">Thailand</option>
+                <option data-type="international">Sri Lanka</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-field">
+            <i class="fas fa-hiking"></i>
+            <div>
+              <label>Trip Type</label>
+              <select>
+                <option>All Types</option>
+                <option>Trekking</option>
+                <option>Cultural Tour</option>
+                <option>Wildlife Safari</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-field">
+            <i class="far fa-calendar-alt"></i>
+            <div>
+              <label>Duration</label>
+              <select>
+                <option>Any Duration</option>
+                <option>1–3 Days</option>
+                <option>4–7 Days</option>
+                <option>8+ Days</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-fire" id="searchBtn" onclick="handleSearch()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-tr">
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Kedarnath Trek
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Valley of Flowers
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Roopkund Expedition
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Spiti Valley
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Chopta Tungnath
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Golden Rajasthan
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Hampta Pass
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Ladakh Adventure
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Kedarnath Trek
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Valley of Flowers
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Roopkund Expedition
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Spiti Valley
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Chopta Tungnath
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Golden Rajasthan
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-mountain"></i> Hampta Pass
+      </div>
+      <span class="marquee-dot">✦</span>
+      <div class="marquee-item">
+        <i class="fas fa-map-marker-alt"></i> Ladakh Adventure
+      </div>
+      <span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-hero">
+        <div class="hero-text rv">
+          <h2>Every Journey<br />Tells A Story</h2>
+          <p>
+            We believe travel is more than just moving from one place to
+            another. It's about connecting with mountains, cultures, and
+            people. For 8+ years, Rudraansh Tour & Travels has been crafting
+            unforgettable adventures across India's most breathtaking
+            landscapes.
+          </p>
+          <a href="about.html" class="btn btn-fire">Our Full Story <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="hero-stats rv">
+          <div class="stat-box">
+            <div class="stat-big">500+</div>
+            <div class="stat-small">Happy Travelers</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-big">98%</div>
+            <div class="stat-small">Satisfaction Rate</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-big">50+</div>
+            <div class="stat-small">Destinations</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-values">
+        <div class="values-header">
+          <h3>Why Travelers Choose Us</h3>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card rv">
+            <div class="value-circle">
+              <i class="fas fa-mountain"></i>
+            </div>
+            <h4>Expert Guides</h4>
+            <p>
+              Certified professionals who know every trail, every story, and
+              every hidden gem.
+            </p>
+          </div>
+
+          <div class="value-card rv">
+            <div class="value-circle">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>Small Groups</h4>
+            <p>
+              Intimate experiences with 8-15 people max. No crowded chaos,
+              just real connections.
+            </p>
+          </div>
+
+          <div class="value-card rv">
+            <div class="value-circle">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4>Eco-Conscious</h4>
+            <p>
+              Leave No Trace principles on every journey. We protect the
+              places we love.
+            </p>
+          </div>
+
+          <div class="value-card rv">
+            <div class="value-circle">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h4>Local First</h4>
+            <p>
+              Supporting local communities, homestays, and artisans on every
+              tour.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TREKS ══ -->
+  <section id="treks">
+    <div class="wrap">
+      <div class="sec-hd rv">
+        <div>
+          <p class="eyebrow">Adventure Awaits</p>
+          <h2 class="sec-title">Popular Treks & Tours</h2>
+          <p class="sec-sub" style="max-width: 340px">
+            From beginner walks to serious Himalayan expeditions.
+          </p>
+        </div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap">
+          <a href="places.html?category=domestic" class="btn btn-outline">All Domestic <i
+              class="fas fa-arrow-right"></i></a>
+          <a href="places.html?category=international" class="btn btn-outline">All International <i
+              class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="trek-tabs rv">
+        <button class="tab-btn active" data-t="all">All Treks</button>
+        <button class="tab-btn" data-t="domestic">Domestic</button>
+        <button class="tab-btn" data-t="international">International</button>
+      </div>
+      <div class="treks-grid rv" id="treksGrid">
+        <p class="sec-sub" id="treksLoading" style="margin: 10px 0 0">
+          Loading treks...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TOURS ══
+    <section id="tours">
+      <div class="wrap">
+        <div class="sec-hd rv">
+          <div>
+            <p class="eyebrow">Curated Journeys</p>
+            <h2 class="sec-title">Popular Tours</h2>
+            <p class="sec-sub" style="max-width: 340px">
+              Perfectly planned tours across India's most iconic regions.
+            </p>
+          </div>
+          <a href="places.html" class="btn btn-outline" style="flex-shrink: 0"
+            >All Tours <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="trek-tabs rv">
+          <button class="tab-btn active" data-t="all">All Regions</button>
+          <button class="tab-btn" data-t="domestic">Domestic</button>
+          <button class="tab-btn" data-t="international">International</button>
+        </div>
+        <div class="tours-mosaic rv">
+          <a href="trek-details.html" class="tour" data-type="domestic"
+            ><img src="images/chop.png" alt="Chopta" loading="lazy" />
+            <div class="tour-ov">
+              <span class="tour-cat">Uttarakhand</span>
+              <h3>Chopta–Tungnath Retreat</h3>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 5 Days</span
+                ><span><i class="fas fa-users"></i> Max 15</span
+                ><span class="tour-pr">From ₹12,000</span>
+              </div>
+            </div></a
+          >
+          <a href="trek-details.html" class="tour" data-type="domestic"
+            ><img
+              src="images/key-monastery-in-spiti-valley-during-winter.CLBQd5yK_Z2dSSsR.jpg"
+              alt="Spiti"
+              loading="lazy"
+            />
+            <div class="tour-ov">
+              <span class="tour-cat">Himachal Pradesh</span>
+              <h3>Spiti Valley Circuit</h3>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 9 Days</span
+                ><span class="tour-pr">From ₹22,000</span>
+              </div>
+            </div></a
+          >
+          <a href="trek-details.html" class="tour" data-type="domestic"
+            ><img
+              src="images/hawa-mahal-jaipur-rajasthan-city-1-hero.jpg"
+              alt="Rajasthan"
+              loading="lazy"
+            />
+            <div class="tour-ov">
+              <span class="tour-cat">Rajasthan</span>
+              <h3>Golden Rajasthan Royal</h3>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 8 Days</span
+                ><span class="tour-pr">From ₹18,500</span>
+              </div>
+            </div></a
+          >
+          <a href="trek-details.html" class="tour" data-type="domestic"
+            ><img
+              src="images/Jim-Corbett-National-Par1k.png"
+              alt="Corbett"
+              loading="lazy"
+            />
+            <div class="tour-ov">
+              <span class="tour-cat">Uttarakhand</span>
+              <h3>Jim Corbett Safari</h3>
+              <div class="tour-meta">
+                <span><i class="fas fa-clock"></i> 3 Days</span
+                ><span class="tour-pr">From ₹9,500</span>
+              </div>
+            </div></a
+          >
+        </div>
+      </div>
+    </section> -->
+
+  <!-- ══ COUNTER ══ -->
+
+  <!-- ══ WHY ══ -->
+  <section id="why">
+    <div class="wrap">
+      <div class="why-header rv">
+        <h2>Why Rudraansh Tour & Travels</h2>
+        <p>Six reasons thousands of travelers trust us</p>
+      </div>
+
+      <div class="why-grid rv">
+        <div class="why-item why-item-1">
+          <div class="why-number">01</div>
+          <div class="why-icon"><i class="fas fa-map-marked-alt"></i></div>
+          <h3>Custom Itineraries</h3>
+          <p>
+            Every journey tailored to your pace, budget, and travel style. No
+            cookie-cutter packages — ever.
+          </p>
+        </div>
+
+        <div class="why-item why-item-2">
+          <div class="why-number">02</div>
+          <div class="why-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Local Expert Guides</h3>
+          <p>
+            Born-and-raised locals who know every trail, waterfall, and family
+            dhaba that makes trips unforgettable.
+          </p>
+        </div>
+
+        <div class="why-item why-item-3">
+          <div class="why-number">03</div>
+          <div class="why-icon"><i class="fas fa-phone-alt"></i></div>
+          <h3>24/7 Support</h3>
+          <p>
+            Our team stands by you from booking to safe return — available
+            around the clock, every single day.
+          </p>
+        </div>
+
+        <div class="why-item why-item-4">
+          <div class="why-number">04</div>
+          <div class="why-icon"><i class="fas fa-tag"></i></div>
+          <h3>Best Price Guarantee</h3>
+          <p>
+            We promise unbeatable value. Find a better price and we'll match
+            it — no questions asked.
+          </p>
+        </div>
+
+        <div class="why-item why-item-5">
+          <div class="why-number">05</div>
+          <div class="why-icon"><i class="fas fa-camera"></i></div>
+          <h3>Photography Support</h3>
+          <p>
+            Capture every magical moment with optional photography assistance
+            included in our premium packages.
+          </p>
+        </div>
+
+        <div class="why-item why-item-6">
+          <div class="why-number">06</div>
+          <div class="why-icon"><i class="fas fa-trophy"></i></div>
+          <h3>5-Star Reputation</h3>
+          <p>
+            Consistently rated 5 stars on Google & TripAdvisor by hundreds of
+            happy travelers nationwide.
+          </p>
+        </div>
+      </div>
+
+      <div class="why-stats rv">
+        <div class="ws">
+          <div class="ws-num">500+</div>
+          <div class="ws-txt">Happy Travelers</div>
+        </div>
+        <div class="ws">
+          <div class="ws-num">4.9/5</div>
+          <div class="ws-txt">Average Rating</div>
+        </div>
+        <div class="ws">
+          <div class="ws-num">8+</div>
+          <div class="ws-txt">Years Experience</div>
+        </div>
+        <div class="ws">
+          <div class="ws-num">98%</div>
+          <div class="ws-txt">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ══ -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-hd rv">
+        <div>
+          <p class="eyebrow">Visual Journey</p>
+          <h2 class="sec-title">From Our Travels</h2>
+          <p class="sec-sub" style="max-width: 340px">
+            A glimpse into the extraordinary moments we create together.
+          </p>
+        </div>
+        <a href="#" class="btn btn-outline">Full Gallery <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="gal-grid rv">
+        <a href="#" class="gal-item"><img
+            src="https://thumbs.dreamstime.com/b/group-friend-team-asian-young-women-hikers-walking-adventure-backpack-mountain-sunset-traveler-life-going-trip-139746558.jpg"
+            alt="Mountain trek" loading="lazy" /></a>
+        <a href="#" class="gal-item"><img
+            src="data:image/jpeg;base64,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"
+            alt="Rajasthan lake" loading="lazy" /></a>
+        <a href="#" class="gal-item"><img
+            src="https://static.wixstatic.com/media/357fcc_4af251a61268450da0af7b9c78d39c91~mv2.jpg/v1/fill/w_720,h_540,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/357fcc_4af251a61268450da0af7b9c78d39c91~mv2.jpg"
+            alt="Himachal valley" loading="lazy" /></a>
+        <a href="#" class="gal-item"><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEQhpogZ3EpVI6e3wv2a-XrDTKebnWlEKgQ&s"
+            alt="Spiti monastery" loading="lazy" /></a>
+        <a href="#" class="gal-item"><img
+            src="https://natureconnecttravels.com/wp-content/uploads/2025/12/Premium-12-seater-tempo-traveller-in-Srinagar-for-large-family-tours-spacious-group-travel-on-Dal-Lake-Kashmir.png"
+            alt="Camping sunrise" loading="lazy" /></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section id="testi">
+    <div class="wrap">
+      <div class="testi-header rv">
+        <h2>Real Stories From<br />Our Travelers</h2>
+        <p>Discover what makes every journey unforgettable</p>
+      </div>
+
+      <div class="testi-grid rv">
+        <div class="testi-item">
+          <div class="testi-top">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="testi-badge">Verified Traveler</span>
+          </div>
+          <p class="testi-text">
+            The Kedarnath trek was the most spiritual and physically rewarding
+            experience of my life. Every detail was perfectly arranged.
+            Absolutely 10/10!
+          </p>
+          <div class="testi-profile">
+            <img src="https://i.pravatar.cc/100?img=32" alt="Priya" loading="lazy" />
+            <div>
+              <div class="testi-name">Neha</div>
+              <div class="testi-trip">Kedarnath Trek</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-item">
+          <div class="testi-top">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="testi-badge">Verified Traveler</span>
+          </div>
+          <p class="testi-text">
+            Spiti Valley was surreal. Our guide knew places no travel blog
+            even mentions. The local knowledge was incredible — booking again
+            for sure!
+          </p>
+          <div class="testi-profile">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Rahul" loading="lazy" />
+            <div>
+              <div class="testi-name">Aman Verma</div>
+              <div class="testi-trip">Spiti Valley Circuit</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-item">
+          <div class="testi-top">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="testi-badge">Verified Traveler</span>
+          </div>
+          <p class="testi-text">
+            Rajasthan was a dream — havelis, camels, starlit deserts. Rudraansh
+            Tour handled everything flawlessly. As a solo traveler I felt
+            completely safe!
+          </p>
+          <div class="testi-profile">
+            <img src="https://i.pravatar.cc/100?img=25" alt="Shweta Gupta" loading="lazy" />
+            <div>
+              <div class="testi-name">Shweta Gupta</div>
+              <div class="testi-trip">Golden Rajasthan Royal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-item">
+          <div class="testi-top">
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <span class="testi-badge">Verified Traveler</span>
+          </div>
+          <p class="testi-text">
+            Roopkund pushed me beyond my limits but the team's support made
+            every step worthwhile. The skeleton lake is unlike anything in
+            this world!
+          </p>
+          <div class="testi-profile">
+            <img src="https://i.pravatar.cc/100?img=8" alt="Naman Gaur" loading="lazy" />
+            <div>
+              <div class="testi-name">Naman Gaur</div>
+              <div class="testi-trip">Roopkund Expedition</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ══ FAQ ══ -->
+  <!-- <section id="faq">
+      <div class="wrap">
+        <div
+          class="rv"
+          style="
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          "
+        >
+          <p class="eyebrow" style="justify-content: center">Got Questions?</p>
+          <h2 class="sec-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-layout">
+          <div class="faq-media rv-l">
+            <img
+              src="images/travel-16-whatsapp-image-2025-04-02-at-11.42.33-am.webp"
+              alt="Travel planning"
+              loading="lazy"
+            />
+            <div class="faq-badge">
+              <div class="fb-num">98%</div>
+              <div class="fb-lbl">Satisfaction Rate</div>
+            </div>
+            <div class="faq-leaf"><i class="fas fa-leaf"></i></div>
+          </div>
+          <div class="rv-r">
+            <div class="faq-list">
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span>What is included in your tour packages?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Our packages include accommodation, meals, transportation,
+                    certified guides, entry fees, and 24/7 emergency support.
+                    Specific inclusions are listed on each tour page.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span>How fit do I need to be for the treks?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Requirements vary by trek. Easy treks need basic fitness;
+                    Hard treks need 2–3 months of preparation. Each trek page
+                    clearly lists fitness requirements and training tips.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span>What is your cancellation &amp; refund policy?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    30+ days: 90% refund. 15–29 days: 70%. 7–14 days: 50%. Under
+                    7 days: no refund. We strongly recommend travel insurance
+                    for all bookings.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span>Do you offer solo and group tours?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Yes! We offer private custom tours for individuals/families
+                    and scheduled group tours. Group tours are budget-friendly
+                    and perfect for solo adventurers.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span
+                    >Is altitude sickness a concern on Himalayan treks?</span
+                  >
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    It's real but manageable. Our guides are altitude-sickness
+                    trained, we carry first-aid and oxygen, and itineraries
+                    include proper acclimatisation days.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-q-btn">
+                  <span>Can you arrange corporate or group packages?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Absolutely! We specialize in corporate outings, college
+                    group treks, family tours, and honeymoon packages with fully
+                    customized experiences and group discounts.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+  <section id="blog">
+    <div class="wrap">
+      <div class="sec-hd rv">
+        <div>
+          <p class="eyebrow">Travel Stories</p>
+          <h2 class="sec-title">Our Tours</h2>
+          <p class="sec-sub" style="max-width: 340px">
+            Inspiration, tips &amp; tales from the trails and roads.
+          </p>
+        </div>
+        <a href="#" class="btn btn-outline" style="flex-shrink: 0">All Articles <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="blog-layout rv">
+        <a href="#" class="blog-big"><img src="images/Kedarkantha-trek-Day5.jpeg" alt="Camping" loading="lazy" />
+          <div class="blog-ov">
+            <span class="blog-tag">Trekking Tips</span>
+            <h3>The Ultimate Packing List for Himalayan Treks in 2025</h3>
+            <p class="blog-date">
+              <i class="far fa-calendar"></i> Dec 12, 2025 &bull; 8 min read
+            </p>
+          </div>
+        </a>
+        <a href="#" class="blog-sm"><img src="images/Mehrangarh-Fort-of-Rajasthan.jpg" alt="Jaipur" loading="lazy" />
+          <div class="blog-ov">
+            <span class="blog-tag">Rajasthan</span>
+            <h3>5 Hidden Gems of Rajasthan Most Tourists Miss</h3>
+            <p class="blog-date">
+              <i class="far fa-calendar"></i> Nov 28, 2025
+            </p>
+          </div>
+        </a>
+        <a href="#" class="blog-sm"><img src="images/FotoJet41.jpg" alt="Himachal" loading="lazy" />
+          <div class="blog-ov">
+            <span class="blog-tag">Himachal</span>
+            <h3>Spiti vs Lahaul: Which Valley Should You Choose?</h3>
+            <p class="blog-date">
+              <i class="far fa-calendar"></i> Nov 15, 2025
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA ══ -->
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-body rv">
+        <p class="eyebrow">Ready to Explore?</p>
+        <h2>Your Next Adventure<br />Starts Here</h2>
+        <p>
+          Let's turn your travel dream into an extraordinary reality. Get in
+          touch today.
+        </p>
+        <div class="cta-row">
+          <a href="contact.html" class="btn btn-fire"><i class="fas fa-paper-plane"></i> Plan My Trip</a>
+          <a href="places.html" class="btn btn-ghost"><i class="fas fa-search"></i> Browse Tours</a>
+          <a href="https://wa.me/9310461449" class="btn btn-wa" target="_blank" rel="noopener"><i
+              class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RIGHT FLOATS ══ -->
+
+  <!-- Footer placeholder -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Load footer from footer.html
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("footer-container").innerHTML = html;
+      })
+      .catch((error) => console.log("Error loading footer:", error));
+  </script>
+
+  <script>
+    /* ── GLOBAL FUNCTIONS (MUST BE AT TOP) ── */
+    let currentTripType = "domestic";
+
+    function updateDestinations(type) {
+      const select = document.getElementById("destinationSelect");
+      if (!select) return;
+
+      const options = select.querySelectorAll("option");
+      options.forEach((opt) => {
+        const optType = opt.getAttribute("data-type");
+        opt.style.display = optType === type ? "block" : "none";
+      });
+
+      // Reset to first visible option
+      for (let opt of options) {
+        if (opt.style.display !== "none") {
+          select.value = opt.value;
+          break;
+        }
+      }
+    }
+
+    function switchTrip(type) {
+      console.log("switchTrip called with type:", type);
+      currentTripType = type;
+
+      // Remove active class and style all buttons as inactive
+      const allToggles = document.querySelectorAll(".trip-toggle");
+      allToggles.forEach((btn) => {
+        btn.classList.remove("active");
+        btn.style.background = "rgba(255, 255, 255, 0.12)";
+        btn.style.color = "rgba(255, 255, 255, 0.8)";
+      });
+
+      // Style the clicked button as active
+      if (type === "domestic") {
+        const domesticBtn = document.getElementById("domesticBtn");
+        if (domesticBtn) {
+          domesticBtn.classList.add("active");
+          domesticBtn.style.background =
+            "linear-gradient(135deg, var(--terra), #ff8c42)";
+          domesticBtn.style.color = "#fff";
+          console.log("Domestic button activated");
+        }
+      } else if (type === "international") {
+        const internationalBtn = document.getElementById("internationalBtn");
+        if (internationalBtn) {
+          internationalBtn.classList.add("active");
+          internationalBtn.style.background =
+            "linear-gradient(135deg, var(--terra), #ff8c42)";
+          internationalBtn.style.color = "#fff";
+          console.log("International button activated");
+        }
+      }
+
+      updateDestinations(type);
+    }
+
+    function handleSearch() {
+      const destination = document.getElementById("destinationSelect").value;
+      const tripType = document.querySelector(
+        ".search-field:nth-child(2) select",
+      ).value;
+      const duration = document.querySelector(
+        ".search-field:nth-child(3) select",
+      ).value;
+
+      const params = new URLSearchParams({
+        type: currentTripType,
+        destination: destination,
+        tripType: tripType,
+        duration: duration,
+      });
+
+      if (currentTripType === "domestic") {
+        window.location.href = "uttarakhand-places.html?" + params.toString();
+      } else {
+        window.location.href = "places.html?" + params.toString();
+      }
+    }
+
+    /* ── Header scroll ── */
+    // Header scroll effect moved to navbar loading script above
+
+    /* ── Floating Particles ── */
+    (function spawnParticles() {
+      const container = document.getElementById("particles");
+      if (!container) return;
+      const count = window.innerWidth < 768 ? 10 : 22;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement("div");
+        p.className = "particle";
+        const size = Math.random() * 3 + 1;
+        const x = Math.random() * 100;
+        const dx = (Math.random() - 0.5) * 120 + "px";
+        const duration = Math.random() * 14 + 10;
+        const delay = Math.random() * 12;
+        const opacity = Math.random() * 0.5 + 0.2;
+        p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${x}%;bottom:0;
+      --dx:${dx};
+      opacity:${opacity};
+      animation-duration:${duration}s;
+      animation-delay:${delay}s;
+    `;
+        container.appendChild(p);
+      }
+    })();
+
+    /* ── Mobile drawer ── */
+    // Mobile drawer initialization moved to navbar loading script above
+
+    /* ── Scroll reveal ── */
+    const revObs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add("vis"), i * 60);
+            revObs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -36px 0px" },
+    );
+    document
+      .querySelectorAll(".rv,.rv-l,.rv-r")
+      .forEach((el) => revObs.observe(el));
+
+    /* ── Counter ── */
+    const cTargets = { c1: 500, c2: 60, c3: 25, c4: 8 };
+    const cSuffix = { c1: "+", c2: "+", c3: "+", c4: "" };
+    let counted = false;
+    const counterSection = document.getElementById("counter");
+    if (counterSection) {
+      new IntersectionObserver(
+        (es) => {
+          if (es[0].isIntersecting && !counted) {
+            counted = true;
+            Object.keys(cTargets).forEach((id) => {
+              const el = document.getElementById(id),
+                t = cTargets[id];
+              if (!el) return;
+              const step = Math.ceil(t / 55);
+              let n = 0;
+              const iv = setInterval(() => {
+                n = Math.min(n + step, t);
+                el.textContent = n + (cSuffix[id] || "");
+                if (n >= t) clearInterval(iv);
+              }, 18);
+            });
+          }
+        },
+        { threshold: 0.3 },
+      ).observe(counterSection);
+    }
+
+    /* ── Testimonials slider ── */
+    const testiTrack = document.getElementById("testiTrack");
+    const tNext = document.getElementById("tNext");
+    const tPrev = document.getElementById("tPrev");
+    const tcDots = document.querySelectorAll(".tc-dot");
+    if (testiTrack && tNext && tPrev) {
+      let tCur = 0;
+      function getPerPage() {
+        return window.innerWidth <= 640 ? 1 : window.innerWidth <= 1024 ? 2 : 3;
+      }
+      function getTotalSlides() {
+        return Math.max(1, testiTrack.children.length - getPerPage() + 1);
+      }
+      function goTo(i) {
+        const tot = getTotalSlides();
+        tCur = Math.max(0, Math.min(i, tot - 1));
+        if (!testiTrack.children.length) return;
+        const cardW = testiTrack.children[0].offsetWidth;
+        const gap = parseFloat(getComputedStyle(testiTrack).gap) || 22;
+        testiTrack.style.transform = `translateX(-${tCur * (cardW + gap)}px)`;
+        tcDots.forEach((d, j) =>
+          d.classList.toggle("active", j === Math.min(tCur, tcDots.length - 1)),
+        );
+      }
+
+      tNext.addEventListener("click", () => goTo(tCur + 1));
+      tPrev.addEventListener("click", () => goTo(tCur - 1));
+      tcDots.forEach((d, i) => d.addEventListener("click", () => goTo(i)));
+
+      let autoTimer = setInterval(
+        () => goTo((tCur + 1) % Math.max(getTotalSlides(), 1)),
+        5500,
+      );
+      const testiWrap = testiTrack.closest(".testi-wrap");
+      if (testiWrap) {
+        testiWrap.addEventListener("mouseenter", () => clearInterval(autoTimer));
+        testiWrap.addEventListener("mouseleave", () => {
+          autoTimer = setInterval(
+            () => goTo((tCur + 1) % Math.max(getTotalSlides(), 1)),
+            5500,
+          );
+        });
+      }
+      window.addEventListener("resize", () => goTo(0));
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function normalizeImagePath(path) {
+      const imagePath = String(path || "").trim();
+      if (!imagePath) {
+        return "images/kedarnath-temple.webp";
+      }
+
+      const isAbsolute = /^(https?:)?\/\//i.test(imagePath);
+      const isDataUrl = /^data:/i.test(imagePath);
+      if (isAbsolute || isDataUrl) {
+        return imagePath;
+      }
+
+      if (imagePath.startsWith("uploads/")) {
+        return `admin/${imagePath}`;
+      }
+
+      return imagePath;
+    }
+
+    function getDifficultyClass(difficulty) {
+      const value = String(difficulty || "").toLowerCase();
+      if (value === "easy" || value === "moderate" || value === "hard") {
+        return value;
+      }
+      return "moderate";
+    }
+
+    function createTrekCard(trek) {
+      const category = String(trek.category || "domestic").toLowerCase();
+      const title = escapeHtml(trek.title || "Untitled Trek");
+      const difficulty = String(trek.difficulty || "Moderate");
+      const difficultyClass = getDifficultyClass(difficulty);
+      const duration = escapeHtml(trek.duration || "N/A");
+      const altitude = Number(trek.altitude || 0);
+      const altitudeText = altitude > 0 ? `${altitude}m` : "N/A";
+      const region = escapeHtml(trek.region || "India");
+      const description = escapeHtml(trek.description || "");
+      const imageUrl = normalizeImagePath(trek.image);
+      const slug = encodeURIComponent(String(trek.slug || ""));
+      const price = Number(trek.price || 0).toLocaleString("en-IN");
+
+      return `
+          <a href="trek-details.html?slug=${slug}" class="trek" data-type="${category}">
+            <div class="trek-img">
+              <img src="${escapeHtml(imageUrl)}" alt="${title}" loading="lazy" />
+              <span class="trek-level ${difficultyClass}">${escapeHtml(difficulty)}</span>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-clock"></i> ${duration}</span>
+                <span><i class="fas fa-mountain"></i> ${altitudeText}</span>
+                <span><i class="fas fa-map-marker-alt"></i> ${region}</span>
+              </div>
+              <h3>${title}</h3>
+              <p>${description}</p>
+            </div>
+            <div class="trek-foot">
+              <div class="trek-price">₹${price} <small>/ person</small></div>
+              <span class="trek-cta">Details <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        `;
+    }
+
+    function applyTrekFilter(filter) {
+      const trekItems = document.querySelectorAll("#treks .trek");
+      trekItems.forEach((item) => {
+        const type = item.getAttribute("data-type");
+        if (filter === "all" || type === filter) {
+          item.style.opacity = "1";
+          item.style.visibility = "visible";
+          item.style.height = "auto";
+          item.style.position = "relative";
+        } else {
+          item.style.opacity = "0.2";
+          item.style.visibility = "hidden";
+          item.style.height = "0";
+          item.style.position = "absolute";
+        }
+      });
+    }
+
+    async function loadTreksFromBackend() {
+      const treksGrid = document.getElementById("treksGrid");
+      if (!treksGrid) return;
+
+      try {
+        const response = await fetch("backend/get-treks.php?limit=6");
+        if (!response.ok) {
+          throw new Error("Unable to fetch trek data.");
+        }
+
+        const payload = await response.json();
+        const treks = Array.isArray(payload.data) ? payload.data : [];
+
+        if (treks.length === 0) {
+          treksGrid.innerHTML =
+            '<p class="sec-sub" style="margin: 10px 0 0">No treks available right now.</p>';
+          return;
+        }
+
+        treksGrid.innerHTML = treks.map((trek) => createTrekCard(trek)).join("");
+
+        const activeFilterBtn = document.querySelector("#treks .tab-btn.active");
+        if (activeFilterBtn) {
+          applyTrekFilter(activeFilterBtn.getAttribute("data-t") || "all");
+        }
+      } catch (error) {
+        console.error("Error loading treks:", error);
+        treksGrid.innerHTML =
+          '<p class="sec-sub" style="margin: 10px 0 0">Failed to load treks. Please try again.</p>';
+      }
+    }
+
+    /* ── Filter Tabs Function ── */
+    function setupFilters() {
+      console.log("setupFilters() called");
+
+      // Setup tour filters
+      const tourBtns = document.querySelectorAll("#tours .tab-btn");
+      const tourItems = document.querySelectorAll("#tours .tour");
+      console.log(
+        "Found " +
+        tourBtns.length +
+        " tour buttons and " +
+        tourItems.length +
+        " tour items",
+      );
+
+      tourBtns.forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const filter = this.getAttribute("data-t");
+          console.log("Tour filter clicked: " + filter);
+
+          // Update active button
+          tourBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+
+          // Filter tour items
+          tourItems.forEach((item) => {
+            const type = item.getAttribute("data-type");
+            if (filter === "all" || type === filter) {
+              item.style.opacity = "1";
+              item.style.visibility = "visible";
+              item.style.height = "auto";
+              item.style.position = "relative";
+            } else {
+              item.style.opacity = "0.2";
+              item.style.visibility = "hidden";
+              item.style.height = "0";
+              item.style.position = "absolute";
+            }
+          });
+        });
+      });
+
+      const trekBtns = document.querySelectorAll("#treks .tab-btn");
+      console.log("Found " + trekBtns.length + " trek buttons");
+
+      trekBtns.forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const filter = this.getAttribute("data-t");
+          console.log("Trek filter clicked: " + filter);
+
+          // Update active button
+          trekBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+
+          applyTrekFilter(filter);
+        });
+      });
+    }
+
+    // Run on page load with delay to ensure DOM is ready
+    setTimeout(setupFilters, 100);
+
+    /* ── Parallax hero on scroll ── */
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        const bgImg = document.querySelector(".hero-bg-img");
+        if (bgImg && y < window.innerHeight) {
+          bgImg.style.transform = `scale(1.06) translateY(${y * 0.18}px)`;
+        }
+      },
+      { passive: true },
+    );
+
+    // Set video playback speed to 0.5x on page load
+    document.addEventListener("DOMContentLoaded", function () {
+      updateDestinations("domestic");
+      loadTreksFromBackend();
+      const heroVideo = document.querySelector(".hero-bg-img");
+      if (heroVideo) {
+        heroVideo.playbackRate = 0.5;
+      }
+
+      /* ── FAQ ── */
+      document.querySelectorAll(".faq-q-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const row = btn.closest(".faq-row");
+          const isOpen = row.classList.contains("open");
+          document
+            .querySelectorAll(".faq-row")
+            .forEach((r) => r.classList.remove("open"));
+          if (!isOpen) row.classList.add("open");
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

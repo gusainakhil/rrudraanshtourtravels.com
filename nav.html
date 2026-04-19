@@ -1,0 +1,135 @@
+<!-- ══ MOBILE OVERLAY ══ -->
+<div class="hdr-nav-mob-overlay" id="hdrNavMobOverlay" aria-hidden="true"></div>
+
+<!-- ══ MOBILE DRAWER ══ -->
+<div class="hdr-nav-mob-drawer" id="hdrNavMobDrawer" aria-hidden="true">
+  <div class="hdr-nav-mob-drawer-head">
+    <button class="hdr-nav-mob-close" onclick="closeMob()" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="hdr-nav-mob-links">
+    <div class="hdr-nav-mob-link-item">
+      <a href="index.html" onclick="closeMob()">Home</a>
+      <div class="hdr-nav-mob-link-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </div>
+    <div class="hdr-nav-mob-link-item">
+      <a href="#" onclick="toggleSub('hdrNavHolidaysSub', event)">Holidays</a>
+      <div class="hdr-nav-mob-link-arrow" onclick="toggleSub('hdrNavHolidaysSub', event)" style="pointer-events: all">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+    <div class="hdr-nav-mob-sub" id="hdrNavHolidaysSub">
+      <a href="places.html?category=domestic" onclick="closeMob()"><i class="fas fa-mountain"></i> Domestic</a>
+      <a href="places.html?category=international" onclick="closeMob()"><i class="fas fa-mountain"></i>
+        International</a>
+    </div>
+    <div class="hdr-nav-mob-link-item">
+      <a href="hotels.html" onclick="toggleSub('hdrNavHotelsSub', event)">Hotels</a>
+      <!-- <div class="hdr-nav-mob-link-arrow" onclick="toggleSub('hdrNavHotelsSub', event)" style="pointer-events: all">
+        <i class="fas fa-chevron-down"></i>
+      </div> -->
+    </div>
+    <!-- <div class="hdr-nav-mob-sub" id="hdrNavHotelsSub">
+      <a href="hotels.html" onclick="closeMob()"><i class="fas fa-mountain"></i> 5 star</a>
+    </div> -->
+    <div class="hdr-nav-mob-link-item">
+      <a href="rentals.html" onclick="closeMob()">Rental</a>
+      <div class="hdr-nav-mob-link-arrow">
+       
+      </div>
+    </div>
+    <div class="hdr-nav-mob-link-item">
+      <a href="about.html" onclick="closeMob()">About</a>
+      <div class="hdr-nav-mob-link-arrow">
+       
+      </div>
+    </div>
+    <!-- <div class="hdr-nav-mob-link-item">
+      <a href="#">Tours</a>
+      <div class="hdr-nav-mob-link-arrow" onclick="toggleSub('hdrNavToursSub', event)" style="pointer-events: all">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div> -->
+
+    <!-- <div class="hdr-nav-mob-link-item">
+      <a href="#">Treks</a>
+      <div class="hdr-nav-mob-link-arrow" onclick="toggleSub('hdrNavTreksSub', event)" style="pointer-events: all">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+    <div class="hdr-nav-mob-sub" id="hdrNavTreksSub">
+      <a href="places.html" onclick="closeMob()"><i class="fas fa-mountain"></i> Himalayan Treks</a>
+      <a href="winter-expedition.html" onclick="closeMob()"><i class="fas fa-snowflake"></i> Winter Expeditions</a>
+    </div> -->
+    <!-- <div class="hdr-nav-mob-link-item">
+      <a href="gallery.html" onclick="closeMob()">Gallery</a>
+      <div class="hdr-nav-mob-link-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+    </div> -->
+    <!-- <div class="hdr-nav-mob-link-item">
+      <a href="blog.html" onclick="closeMob()">Blog</a>
+      <div class="hdr-nav-mob-link-arrow">
+        <i class="fas fa-arrow-right"></i>
+      </div> -->
+    <!-- </div> -->
+    <div class="hdr-nav-mob-link-item">
+      <a href="contact.html" onclick="closeMob()">Contact</a>
+      <div class="hdr-nav-mob-link-arrow">
+       
+      </div>
+    </div>
+  </div>
+  <div class="hdr-nav-mob-drawer-foot">
+    <div class="hdr-nav-mob-contact-info">
+      <a href="tel:+9310461449"><i class="fas fa-phone-alt"></i> +91 9310461449</a>
+      <a href="mailto:rudraanshtourandtravels@gmail.com"><i class="fas fa-envelope"></i> rudraanshtourandtravels@gmail.com</a>
+    </div>
+    <div class="hdr-nav-mob-cta-row">
+      <a href="tel:+9310461449" class="btn btn-ghost"><i class="fas fa-phone-alt"></i> Call Us</a>
+      <a href="contact.html" class="btn btn-fire" onclick="closeMob()"><i class="fas fa-paper-plane"></i> Plan Trip</a>
+    </div>
+  </div>
+</div>
+
+<header id="hdrNav">
+  <div class="hdr-nav-inner">
+    <a href="index.html" class="hdr-nav-logo" aria-label="Tour & Travel Home">
+      <div class="hdr-nav-logo-img">
+        <img src="images/logo.png" />
+      </div>
+    </a>
+    <nav class="hdr-nav-links">
+      <a href="index.html">Home</a>
+      <div class="hdr-nav-drop">
+        <button class="hdr-nav-drop-btn">Holidays</button>
+        <div class="hdr-nav-drop-menu">
+          <a href="places.html?category=domestic"><i class="fas fa-mountain"></i>Domestic</a>
+          <a href="places.html?category=international"><i class="fas fa-mountain"></i>International</a>
+        </div>
+      </div>
+      <!-- <div class="hdr-nav-drop"> -->
+        <!-- <button class="hdr-nav-drop-btn">Hotels</button> -->
+        <!-- <div class="hdr-nav-drop-menu"> -->
+          <a href="hotels.html"> Hotels</a>
+        <!-- </div> -->
+      <!-- </div> -->
+
+      <a href="rentals.html">Rental</a>
+
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hdr-nav-right">
+      <a href="tel:+911234567890" class="hdr-nav-phone"><i class="fas fa-phone-alt"></i> 9310461449</a>
+      <a href="contact.html" class="btn btn-fire" style="padding: 10px 22px"><i class="fas fa-paper-plane"></i> Book
+        Trek</a>
+      <button class="hdr-nav-hamburger" id="hdrNavHamBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

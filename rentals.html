@@ -1,0 +1,3570 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rudraansh Tour Car Rental – Premium car rental services for your adventures across India. Book Suzuki Swift, Dzire, Ertiga, Innova & more with professional drivers."
+    />
+    <title>Car Rental | Rudraansh Tour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      /* ═══════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════ */
+      :root {
+        --ink: #0a1a0f;
+        --ink-soft: #1c3322;
+        --forest: #183023;
+        --forest-mid: #214532;
+        --moss: #2d5c3a;
+        --sage: #4a8a58;
+        --sage-lt: #6daf7d;
+        --terra: #b83a0a;
+        --terra-lt: #d4501e;
+        --amber: #c9861a;
+        --gold: #e8aa2e;
+        --gold-lt: #f5c95a;
+        --cream: #f5f0e8;
+        --paper: #fdfaf4;
+        --white: #ffffff;
+        --muted: #7a6e62;
+        --muted-dk: #4a4238;
+        --grad-fire: linear-gradient(
+          135deg,
+          #e8aa2e 0%,
+          #d4501e 50%,
+          #b83a0a 100%
+        );
+        --grad-fire-h: linear-gradient(
+          135deg,
+          #f5c95a 0%,
+          #e05a22 50%,
+          #c0420e 100%
+        );
+        --grad-forest: linear-gradient(135deg, #183023, #2d5c3a);
+        --grad-gold: linear-gradient(135deg, #e8aa2e, #f5c95a);
+        --sh-xs: 0 2px 10px rgba(10, 26, 15, 0.08);
+        --sh-sm: 0 6px 24px rgba(10, 26, 15, 0.12);
+        --sh-md: 0 16px 48px rgba(10, 26, 15, 0.16);
+        --sh-lg: 0 32px 80px rgba(10, 26, 15, 0.22);
+        --sh-fire: 0 10px 32px rgba(180, 58, 10, 0.3);
+        --sh-gold: 0 8px 28px rgba(232, 170, 46, 0.28);
+        --r-sm: 6px;
+        --r-md: 12px;
+        --r-lg: 18px;
+        --r-xl: 28px;
+        --r-pill: 100px;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        --nav-h: 80px;
+        --font-display: "Playfair Display", serif;
+        --font-serif: "DM Serif Display", serif;
+        --font-body: "DM Sans", sans-serif;
+      }
+
+      /* ─── Z-INDEX FIX ─── */
+      #hdr {
+        z-index: 900 !important;
+      }
+      .mob-drawer {
+        z-index: 9999 !important;
+      }
+      body.drawer-open .chat-float,
+      body.drawer-open .chat-win,
+      body.drawer-open .right-floats {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      body.drawer-open {
+        overflow: hidden !important;
+      }
+      .mob-drawer {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body.drawer-open #hdr {
+        pointer-events: none;
+      }
+      .chat-float,
+      .chat-win,
+      .right-floats {
+        z-index: 950;
+      }
+
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-body);
+        background: white;
+        color: var(--ink);
+        overflow-x: hidden;
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font-family: var(--font-body);
+        cursor: pointer;
+      }
+      .wrap {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem);
+      }
+
+      /* ─── LABELS ─── */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 0.9rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--grad-fire);
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .sec-title {
+        font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+        color: var(--ink);
+        margin-bottom: 0.65rem;
+      }
+      .sec-sub {
+        font-size: 0.9rem;
+        color: var(--muted);
+        max-width: 460px;
+        line-height: 1.85;
+        font-weight: 400;
+      }
+
+      /* ─── BUTTONS ─── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 30px;
+        border-radius: var(--r-pill);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.38s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-fire {
+        background: var(--grad-fire);
+        color: #fff;
+        box-shadow: var(--sh-fire);
+      }
+      .btn-fire:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 44px rgba(180, 58, 10, 0.38);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        background: var(--forest-mid);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid rgba(10, 26, 15, 0.2);
+        backdrop-filter: blur(4px);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+      .btn-wa {
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.32);
+      }
+      .btn-wa:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(37, 211, 102, 0.44);
+      }
+      .btn-gold {
+        background: var(--grad-gold);
+        color: var(--ink);
+        box-shadow: var(--sh-gold);
+      }
+      .btn-gold:hover {
+        transform: translateY(-3px);
+      }
+
+      /* ─── REVEAL ─── */
+      .rv {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-l {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-l.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-r {
+        opacity: 0;
+        transform: translateX(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-r.vis {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ═══════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════ */
+      #hdr {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        height: var(--nav-h);
+        transition: all 0.4s var(--ease);
+      }
+      #hdr.scrolled {
+        background: rgba(10, 26, 15, 0.97);
+        backdrop-filter: blur(20px) saturate(180%);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.04),
+          0 4px 32px rgba(0, 0, 0, 0.3);
+        height: 68px;
+      }
+      .hdr-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 clamp(1rem, 3vw, 2.5rem);
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        flex-shrink: 0;
+      }
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--sh-fire);
+        flex-shrink: 0;
+        transition: transform 0.35s var(--ease-spring);
+      }
+      .logo-icon:hover {
+        transform: scale(1.08) rotate(-3deg);
+      }
+      .logo-icon i {
+        color: #fff;
+        font-size: 1.1rem;
+      }
+      .logo-text {
+        line-height: 1;
+      }
+      .logo-name {
+        font-family: var(--font-display);
+        font-size: 1.45rem;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0.01em;
+        display: block;
+      }
+      .logo-name span {
+        color: var(--gold);
+      }
+      .logo-tag {
+        font-size: 0.5rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        display: block;
+        margin-top: 2px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .nav-links a {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.68);
+        padding: 8px 16px;
+        border-radius: 8px;
+        transition:
+          color 0.25s,
+          background 0.25s;
+      }
+      .nav-links a:hover {
+        color: #fff;
+        background: rgba(255, 255, 255, 0.07);
+      }
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-drop {
+        position: relative;
+      }
+      .nav-drop > a::after {
+        content: "\f107";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        margin-left: 5px;
+        font-size: 0.58rem;
+        opacity: 0.55;
+      }
+      .drop-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        background: rgba(10, 26, 15, 0.98);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: var(--r-md);
+        min-width: 210px;
+        padding: 0.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition:
+          opacity 0.25s var(--ease),
+          transform 0.25s var(--ease);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.44);
+      }
+      .nav-drop:hover .drop-menu {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateX(-50%) translateY(0);
+      }
+      .drop-menu a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 14px;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.78rem;
+        border-radius: 8px;
+        transition: all 0.2s;
+      }
+      .drop-menu a i {
+        width: 16px;
+        color: var(--terra-lt);
+        font-size: 0.72rem;
+      }
+      .drop-menu a:hover {
+        background: rgba(255, 255, 255, 0.07);
+        color: #fff;
+        padding-left: 18px;
+      }
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .nav-phone {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 9px 18px;
+        border-radius: var(--r-pill);
+        transition: all 0.3s;
+      }
+      .nav-phone i {
+        color: var(--gold);
+        font-size: 0.68rem;
+        animation: ring 3s ease-in-out infinite;
+      }
+      @keyframes ring {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        10% {
+          transform: rotate(-10deg);
+        }
+        20% {
+          transform: rotate(10deg);
+        }
+        30% {
+          transform: rotate(-8deg);
+        }
+        40% {
+          transform: rotate(8deg);
+        }
+        50% {
+          transform: rotate(0);
+        }
+      }
+      .nav-phone:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.28);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: background 0.3s;
+      }
+      .hamburger:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 1.5px;
+        background: #fff;
+        border-radius: 2px;
+        transition: all 0.36s var(--ease);
+        transform-origin: center;
+      }
+      .hamburger.open {
+        background: rgba(192, 66, 14, 0.2);
+        border-color: rgba(192, 66, 14, 0.3);
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(6.5px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-6.5px) rotate(-45deg);
+      }
+
+      /* ─── MOBILE DRAWER ─── */
+      .mob-drawer {
+        position: fixed;
+        inset: 0;
+        z-index: 980;
+        background: rgba(6, 14, 9, 0.99);
+        backdrop-filter: blur(24px);
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.48s cubic-bezier(0.77, 0, 0.175, 1);
+        overflow-y: auto;
+      }
+      .mob-drawer.open {
+        transform: translateX(0);
+      }
+      .mob-drawer-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        height: var(--nav-h);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        flex-shrink: 0;
+      }
+      .mob-close {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .mob-close:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .mob-links {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 0.3rem;
+      }
+      .mob-link-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.1rem 1.2rem;
+        border-radius: var(--r-md);
+        border: 1px solid transparent;
+        transition: all 0.28s;
+        cursor: pointer;
+      }
+      .mob-link-item a {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.75);
+        transition: color 0.25s;
+        flex: 1;
+      }
+      .mob-link-item:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.06);
+      }
+      .mob-link-item:hover a {
+        color: #fff;
+      }
+      .mob-link-arrow {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.7rem;
+        transition: all 0.28s;
+        flex-shrink: 0;
+      }
+      .mob-link-item:hover .mob-link-arrow {
+        background: var(--grad-fire);
+        color: #fff;
+      }
+      .mob-sub {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+        padding-left: 1.2rem;
+      }
+      .mob-sub.open {
+        max-height: 300px;
+      }
+      .mob-sub a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.7rem 0.5rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        transition: color 0.2s;
+      }
+      .mob-sub a:hover {
+        color: var(--gold);
+      }
+      .mob-sub a i {
+        color: var(--terra-lt);
+        font-size: 0.72rem;
+        width: 14px;
+      }
+      .mob-drawer-foot {
+        padding: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        flex-shrink: 0;
+      }
+      .mob-contact-info {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.3rem;
+        flex-wrap: wrap;
+      }
+      .mob-contact-info a {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.2s;
+      }
+      .mob-contact-info a:hover {
+        color: var(--gold);
+      }
+      .mob-contact-info i {
+        color: var(--terra-lt);
+        font-size: 0.7rem;
+      }
+      .mob-cta-row {
+        display: flex;
+        gap: 0.7rem;
+      }
+      .mob-cta-row .btn {
+        flex: 1;
+        justify-content: center;
+        padding: 13px 16px;
+      }
+      .mob-socials {
+        display: flex;
+        gap: 0.6rem;
+        margin-top: 0.3rem;
+      }
+      .mob-soc {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.82rem;
+        transition: all 0.28s;
+      }
+      .mob-soc:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+
+      /* ═══════════════════════════════════════════════
+   PAGE HERO — TREKS
+═══════════════════════════════════════════════ */
+      .page-hero {
+        min-height: 92vh;
+        min-height: 92svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+        overflow: hidden;
+        padding-top: var(--nav-h);
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: url("https://images.unsplash.com/photo-1568288564902-dead3b6fe60c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHJlbnRhbCUyMGNhcnN8ZW58MHx8MHx8fDA%3D")
+          center/cover no-repeat;
+      }
+      .page-hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            175deg,
+            rgba(10, 26, 15, 0.05) 0%,
+            rgba(10, 26, 15, 0) 35%,
+            rgba(10, 26, 15, 0.9) 100%
+          ),
+          linear-gradient(
+            to right,
+            rgba(10, 26, 15, 0.75) 0%,
+            rgba(10, 26, 15, 0) 60%
+          );
+      }
+      .page-hero-content {
+        position: relative;
+        z-index: 3;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem) clamp(3.5rem, 8vh, 6rem);
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .phero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+        animation: fadeUp 0.9s 0.2s both;
+      }
+      .phero-eyebrow i {
+        font-size: 0.7rem;
+        color: var(--terra-lt);
+      }
+      .page-hero h1 {
+        font-size: clamp(3rem, 7.5vw, 6.5rem);
+        color: #fff;
+        font-weight: 900;
+        line-height: 0.95;
+        margin-bottom: 1.1rem;
+        animation: fadeUp 0.95s 0.35s both;
+      }
+      .page-hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+        display: block;
+        font-weight: 400;
+      }
+      .page-hero-p {
+        font-size: clamp(0.88rem, 1.3vw, 0.98rem);
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.85;
+        font-weight: 300;
+        max-width: 520px;
+        margin-bottom: 2.2rem;
+        animation: fadeUp 0.95s 0.5s both;
+      }
+      .phero-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-bottom: 2.5rem;
+        animation: fadeUp 0.95s 0.62s both;
+      }
+      .phero-pill {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 8px 16px;
+        border-radius: var(--r-pill);
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .phero-pill i {
+        color: var(--gold);
+        font-size: 0.62rem;
+      }
+      .phero-btns {
+        display: flex;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+        animation: fadeUp 0.95s 0.76s both;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        position: absolute;
+        top: calc(var(--nav-h) + 1.2rem);
+        left: 0;
+        right: 0;
+        z-index: 4;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem);
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+      .breadcrumb ul {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .breadcrumb li {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: rgba(255, 255, 255, 0.38);
+      }
+      .breadcrumb li a {
+        color: rgba(255, 255, 255, 0.5);
+        transition: color 0.25s;
+      }
+      .breadcrumb li a:hover {
+        color: var(--gold);
+      }
+      .breadcrumb li i {
+        font-size: 0.45rem;
+        color: rgba(255, 255, 255, 0.22);
+      }
+      .breadcrumb li.active {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Stats row */
+      .phero-stats {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+        animation: fadeUp 0.95s 0.9s both;
+        padding: 1.6rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .phstat {
+        text-align: left;
+      }
+      .phstat-num {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1;
+        background: var(--grad-fire);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .phstat-lbl {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+        margin-top: 3px;
+      }
+
+      /* ── Marquee ── */
+      .marquee-strip {
+        background: var(--grad-fire);
+        padding: 12px 0;
+        overflow: hidden;
+      }
+      .marquee-tr {
+        display: flex;
+        gap: 3rem;
+        white-space: nowrap;
+        animation: marqueeAnim 28s linear infinite;
+      }
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        font-size: 0.64rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .marquee-item i {
+        font-size: 0.58rem;
+        opacity: 0.6;
+      }
+      .marquee-dot {
+        color: rgba(255, 255, 255, 0.3);
+      }
+      @keyframes marqueeAnim {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+   TREK FILTERS & GRID
+═══════════════════════════════════════════════ */
+      #treks-main {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: white;
+      }
+      .filter-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+      .filter-tabs {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn {
+        padding: 10px 22px;
+        border-radius: var(--r-pill);
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: transparent;
+        border: 1.5px solid rgba(10, 26, 15, 0.14);
+        color: var(--muted);
+        cursor: pointer;
+        transition: all 0.3s var(--ease);
+      }
+      .tab-btn.active,
+      .tab-btn:hover {
+        background: var(--ink);
+        color: var(--gold);
+        border-color: var(--ink);
+      }
+
+      /* Difficulty filter */
+      .diff-filter {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+      .diff-filter label {
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .diff-select {
+        padding: 9px 14px;
+        border-radius: var(--r-pill);
+        font-size: 0.72rem;
+        font-family: var(--font-body);
+        font-weight: 600;
+        border: 1.5px solid rgba(10, 26, 15, 0.14);
+        background: var(--white);
+        color: var(--ink);
+        cursor: pointer;
+        outline: none;
+        transition: border-color 0.25s;
+      }
+      .diff-select:hover {
+        border-color: var(--terra);
+      }
+
+      /* Trek Grid */
+      .treks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+      }
+      .trek-card {
+        background: var(--white);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--sh-xs);
+        transition: all 0.45s var(--ease);
+        display: flex;
+        flex-direction: column;
+      }
+      .trek-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--sh-lg);
+      }
+      .trek-img {
+        height: 240px;
+        overflow: hidden;
+        position: relative;
+        flex-shrink: 0;
+      }
+      .trek-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s var(--ease);
+      }
+      .trek-card:hover .trek-img img {
+        transform: scale(1.1);
+      }
+
+      /* Badges */
+      .trek-level {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        padding: 5px 13px;
+        border-radius: var(--r-pill);
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .easy {
+        background: rgba(46, 125, 50, 0.15);
+        backdrop-filter: blur(8px);
+        color: #2e7d32;
+        border: 1px solid rgba(46, 125, 50, 0.2);
+      }
+      .moderate {
+        background: rgba(230, 81, 0, 0.12);
+        backdrop-filter: blur(8px);
+        color: #e65100;
+        border: 1px solid rgba(230, 81, 0, 0.18);
+      }
+      .hard {
+        background: rgba(183, 28, 28, 0.12);
+        backdrop-filter: blur(8px);
+        color: #b71c1c;
+        border: 1px solid rgba(183, 28, 28, 0.18);
+      }
+      .region-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        padding: 4px 11px;
+        border-radius: 4px;
+        font-size: 0.56rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: var(--grad-fire);
+        color: #fff;
+      }
+      .trek-fav {
+        position: absolute;
+        bottom: 14px;
+        right: 14px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .trek-fav:hover,
+      .trek-fav.active {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+
+      .trek-body {
+        padding: 1.4rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .trek-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-bottom: 0.75rem;
+      }
+      .trek-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.67rem;
+        color: var(--muted);
+        font-weight: 500;
+      }
+      .trek-meta i {
+        color: var(--terra);
+        font-size: 0.6rem;
+      }
+      .trek-body h3 {
+        font-size: 1.28rem;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
+      .trek-body p {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.72;
+        flex: 1;
+      }
+
+      /* Highlights */
+      .trek-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin: 0.85rem 0 0;
+      }
+      .trek-hl {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.58rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        background: rgba(45, 92, 58, 0.07);
+        color: var(--moss);
+        border: 1px solid rgba(45, 92, 58, 0.12);
+      }
+
+      .trek-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.4rem;
+        border-top: 1px solid rgba(10, 26, 15, 0.07);
+      }
+      .trek-price {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: var(--ink);
+      }
+      .trek-price small {
+        font-family: var(--font-body);
+        font-size: 0.64rem;
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .trek-cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 14px 18px;
+        border-radius: var(--r-pill);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.32s;
+        box-shadow: var(--sh-fire);
+        width: 100%;
+      }
+      .trek-cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px rgba(180, 58, 10, 0.38);
+      }
+
+      /* Load more */
+      .load-more-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+      }
+
+      /* ═══════════════════════════════════════════════
+   FEATURED TREK (BIG HIGHLIGHT)
+═══════════════════════════════════════════════ */
+      #featured {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: #09150d;
+        position: relative;
+        overflow: hidden;
+      }
+      #featured::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.028) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .feat-glow {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 50%;
+      }
+      .feat-glow-1 {
+        left: -150px;
+        top: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(180, 58, 10, 0.09),
+          transparent 70%
+        );
+      }
+      .feat-glow-2 {
+        right: -100px;
+        bottom: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(45, 92, 58, 0.1),
+          transparent 70%
+        );
+      }
+      .feat-inner {
+        position: relative;
+        z-index: 2;
+      }
+      .feat-inner .eyebrow {
+        color: var(--terra-lt);
+      }
+      .feat-inner .eyebrow::before {
+        background: linear-gradient(90deg, var(--terra-lt), var(--gold));
+      }
+      .feat-inner .sec-title {
+        color: #fff;
+      }
+      .feat-inner .sec-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .feat-inner .sec-sub {
+        color: rgba(255, 255, 255, 0.42);
+        margin-bottom: 3rem;
+      }
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 1.5rem;
+      }
+      .feat-main {
+        position: relative;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        min-height: clamp(380px, 52vw, 580px);
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        transition: transform 0.4s var(--ease);
+      }
+      .feat-main:hover {
+        transform: scale(1.01);
+      }
+      .feat-main img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s var(--ease);
+      }
+      .feat-main:hover img {
+        transform: scale(1.04);
+      }
+      .feat-main-ov {
+        position: relative;
+        z-index: 2;
+        padding: 2.2rem;
+        width: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(10, 26, 15, 0.96) 0%,
+          rgba(10, 26, 15, 0.15) 55%,
+          transparent 100%
+        );
+      }
+      .feat-tag {
+        display: inline-block;
+        padding: 5px 14px;
+        border-radius: 4px;
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: var(--grad-fire);
+        color: #fff;
+        margin-bottom: 0.7rem;
+      }
+      .feat-main-ov h3 {
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: 0.6rem;
+      }
+      .feat-main-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+        margin-bottom: 1.1rem;
+      }
+      .feat-main-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.65);
+      }
+      .feat-main-meta i {
+        color: var(--gold);
+        font-size: 0.62rem;
+      }
+      .feat-main-price {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--gold-lt);
+        margin-bottom: 0.9rem;
+      }
+      .feat-main-price small {
+        font-family: var(--font-body);
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 400;
+      }
+      .feat-side {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .feat-sm {
+        flex: 1;
+        position: relative;
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        min-height: clamp(165px, 18vw, 270px);
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+        transition: transform 0.4s var(--ease);
+      }
+      .feat-sm:hover {
+        transform: scale(1.02);
+      }
+      .feat-sm img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s var(--ease);
+      }
+      .feat-sm:hover img {
+        transform: scale(1.06);
+      }
+      .feat-sm-ov {
+        position: relative;
+        z-index: 2;
+        padding: 1.3rem;
+        width: 100%;
+        background: linear-gradient(
+          to top,
+          rgba(10, 26, 15, 0.95) 0%,
+          transparent 100%
+        );
+      }
+      .feat-sm-ov h4 {
+        font-size: 1rem;
+        color: #fff;
+        margin-bottom: 0.35rem;
+      }
+      .feat-sm-ov .feat-sm-meta {
+        display: flex;
+        gap: 0.7rem;
+      }
+      .feat-sm-ov .feat-sm-meta span {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 0.64rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .feat-sm-ov .feat-sm-meta i {
+        color: var(--gold);
+        font-size: 0.56rem;
+      }
+
+      /* ═══════════════════════════════════════════════
+   DIFFICULTY GUIDE
+═══════════════════════════════════════════════ */
+      #difficulty {
+        padding: clamp(4rem, 8vw, 8rem) 0;
+        background: white;
+      }
+      .diff-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .diff-card {
+        border-radius: var(--r-xl);
+        padding: 2rem 2rem 1.8rem;
+        border: 1px solid transparent;
+        transition: all 0.4s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .diff-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+      }
+      .diff-card.easy-card {
+        background: rgba(46, 125, 50, 0.06);
+        border-color: rgba(46, 125, 50, 0.12);
+      }
+      .diff-card.easy-card::before {
+        background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      }
+      .diff-card.mod-card {
+        background: rgba(230, 81, 0, 0.06);
+        border-color: rgba(230, 81, 0, 0.12);
+      }
+      .diff-card.mod-card::before {
+        background: linear-gradient(90deg, #e65100, #ffa726);
+      }
+      .diff-card.hard-card {
+        background: rgba(183, 28, 28, 0.06);
+        border-color: rgba(183, 28, 28, 0.12);
+      }
+      .diff-card.hard-card::before {
+        background: linear-gradient(90deg, #b71c1c, #ef5350);
+      }
+      .diff-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--sh-md);
+      }
+      .diff-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1.1rem;
+      }
+      .easy-card .diff-icon {
+        background: rgba(46, 125, 50, 0.12);
+        color: #2e7d32;
+      }
+      .mod-card .diff-icon {
+        background: rgba(230, 81, 0, 0.1);
+        color: #e65100;
+      }
+      .hard-card .diff-icon {
+        background: rgba(183, 28, 28, 0.1);
+        color: #b71c1c;
+      }
+      .diff-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+      }
+      .diff-card p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.75;
+        margin-bottom: 1.1rem;
+      }
+      .diff-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .diff-li {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.74rem;
+        color: var(--muted-dk);
+      }
+      .diff-li i {
+        font-size: 0.58rem;
+        flex-shrink: 0;
+      }
+      .easy-card .diff-li i {
+        color: #2e7d32;
+      }
+      .mod-card .diff-li i {
+        color: #e65100;
+      }
+      .hard-card .diff-li i {
+        color: #b71c1c;
+      }
+
+      /* ═══════════════════════════════════════════════
+   WHAT'S INCLUDED
+═══════════════════════════════════════════════ */
+      #included {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: var(--white);
+      }
+      .inc-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 7rem);
+        align-items: center;
+        margin-top: 3rem;
+      }
+      .inc-visual {
+        position: relative;
+        height: clamp(380px, 50vw, 560px);
+      }
+      .inc-visual img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--r-xl);
+        box-shadow: var(--sh-lg);
+      }
+      .inc-float {
+        position: absolute;
+        bottom: -1.5rem;
+        right: -1.5rem;
+        background: var(--ink);
+        border-radius: var(--r-lg);
+        padding: 1.4rem 1.8rem;
+        box-shadow: var(--sh-md);
+      }
+      .inc-float .if-n {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--terra-lt);
+        line-height: 1;
+      }
+      .inc-float .if-l {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        margin-top: 3px;
+      }
+      .inc-float2 {
+        position: absolute;
+        top: -1.2rem;
+        left: -1.2rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--moss);
+        color: #fff;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(45, 92, 58, 0.4);
+      }
+
+      .inc-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .inc-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.9rem;
+        padding: 1.1rem;
+        background: white;
+        border-radius: var(--r-md);
+        border-left: 3px solid var(--terra);
+        transition: all 0.35s;
+      }
+      .inc-item:hover {
+        transform: translateX(5px);
+        box-shadow: var(--sh-sm);
+      }
+      .inc-ico {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        flex-shrink: 0;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.82rem;
+      }
+      .inc-item h4 {
+        font-family: var(--font-body);
+        font-size: 0.84rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 2px;
+      }
+      .inc-item p {
+        font-size: 0.72rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .inc-not {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+        margin-top: 1.4rem;
+        padding-top: 1.4rem;
+        border-top: 1px solid rgba(10, 26, 15, 0.08);
+      }
+      .inc-not-item {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.74rem;
+        color: var(--muted);
+      }
+      .inc-not-item i {
+        color: #b71c1c;
+        font-size: 0.6rem;
+        flex-shrink: 0;
+      }
+
+      /* ═══════════════════════════════════════════════
+   BOOKING PROCESS
+═══════════════════════════════════════════════ */
+      #booking-process {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: #09150d;
+        position: relative;
+        overflow: hidden;
+      }
+      #booking-process::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+        pointer-events: none;
+      }
+      .bp-inner {
+        position: relative;
+        z-index: 2;
+      }
+      .bp-inner .eyebrow {
+        color: var(--terra-lt);
+      }
+      .bp-inner .eyebrow::before {
+        background: linear-gradient(90deg, var(--terra-lt), var(--gold));
+      }
+      .bp-inner .sec-title {
+        color: #fff;
+      }
+      .bp-inner .sec-sub {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .steps-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 3rem;
+      }
+      .step {
+        padding: 2.4rem 1.8rem;
+        background: rgba(255, 255, 255, 0.015);
+        position: relative;
+        overflow: hidden;
+        transition: background 0.4s;
+      }
+      .step:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+      .step-num {
+        font-family: var(--font-display);
+        font-size: 5.5rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.025);
+        line-height: 1;
+        margin-bottom: 0.6rem;
+        transition: color 0.4s;
+      }
+      .step:hover .step-num {
+        color: rgba(180, 58, 10, 0.07);
+      }
+      .step-ico {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        border: 1px solid rgba(180, 58, 10, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra-lt);
+        font-size: 1rem;
+        margin-bottom: 1.1rem;
+        transition: all 0.4s var(--ease-spring);
+      }
+      .step:hover .step-ico {
+        background: var(--grad-fire);
+        border-color: transparent;
+        color: #fff;
+        box-shadow: var(--sh-fire);
+        transform: scale(1.08);
+      }
+      .step h3 {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 0.45rem;
+      }
+      .step p {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.38);
+        line-height: 1.8;
+        transition: color 0.3s;
+      }
+      .step:hover p {
+        color: rgba(255, 255, 255, 0.58);
+      }
+      .step-arrow {
+        position: absolute;
+        top: 50%;
+        right: -1px;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.08);
+        font-size: 0.85rem;
+        z-index: 1;
+      }
+      .step:last-child .step-arrow {
+        display: none;
+      }
+
+      /* ═══════════════════════════════════════════════
+   TESTIMONIAL STRIP
+═══════════════════════════════════════════════ */
+      #testi-strip {
+        padding: clamp(4rem, 8vw, 7rem) 0;
+        background: var(--forest);
+      }
+      .testi-strip-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      .testi-strip-head .eyebrow {
+        color: var(--terra-lt);
+      }
+      .testi-strip-head .eyebrow::before {
+        background: linear-gradient(90deg, var(--terra-lt), var(--gold));
+      }
+      .testi-strip-head h2 {
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        color: #fff;
+      }
+      .ts-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4rem;
+      }
+      .ts-card {
+        background: rgba(255, 255, 255, 0.035);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--r-xl);
+        padding: 2rem;
+        transition: all 0.38s;
+      }
+      .ts-card:hover {
+        background: rgba(255, 255, 255, 0.065);
+        border-color: rgba(180, 58, 10, 0.18);
+      }
+      .ts-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 0.9rem;
+      }
+      .ts-stars i {
+        color: var(--gold);
+        font-size: 0.78rem;
+      }
+      .ts-q {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-style: italic;
+        color: rgba(255, 255, 255, 0.78);
+        line-height: 1.78;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-left: 1.4rem;
+      }
+      .ts-q::before {
+        content: "\201C";
+        position: absolute;
+        left: 0;
+        top: -0.2rem;
+        font-size: 2rem;
+        color: var(--terra-lt);
+        line-height: 1;
+        font-style: normal;
+      }
+      .ts-auth {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .ts-av {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid var(--terra);
+        flex-shrink: 0;
+      }
+      .ts-name {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .ts-trip {
+        font-size: 0.62rem;
+        color: rgba(255, 255, 255, 0.35);
+        margin-top: 2px;
+      }
+
+      /* ═══════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════ */
+      #trek-faq {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: white;
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+        margin-top: 3rem;
+      }
+      .faq-row {
+        background: var(--white);
+        border-radius: var(--r-md);
+        border: 1px solid rgba(10, 26, 15, 0.07);
+      }
+      .faq-q-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.3rem 1.5rem;
+        cursor: pointer;
+        gap: 1.2rem;
+        background: none;
+        border: none;
+        width: 100%;
+        text-align: left;
+      }
+      .faq-q-btn span {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      .faq-ico {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        border: 1.5px solid rgba(10, 26, 15, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra);
+        font-size: 0.65rem;
+        transition: all 0.35s var(--ease-spring);
+      }
+      .faq-row.open .faq-ico {
+        background: var(--grad-fire);
+        border-color: transparent;
+        color: #fff;
+        transform: rotate(45deg);
+      }
+      .faq-ans {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.45s var(--ease);
+      }
+      .faq-row.open .faq-ans {
+        max-height: 220px;
+      }
+      .faq-ans p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.85;
+        padding: 0 1.5rem 1.2rem;
+      }
+
+      /* ═══════════════════════════════════════════════
+   CTA BANNER
+═══════════════════════════════════════════════ */
+      #treks-cta {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: var(--forest-mid);
+        position: relative;
+        overflow: hidden;
+      }
+      #treks-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=60")
+          center/cover;
+        opacity: 0.1;
+      }
+      .cta-body {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .cta-body .eyebrow {
+        color: rgba(255, 255, 255, 0.55);
+        justify-content: center;
+      }
+      .cta-body .eyebrow::before {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+      }
+      .cta-body h2 {
+        font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .cta-body p {
+        font-size: 0.98rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 2.8rem;
+        font-weight: 300;
+      }
+      .cta-row {
+        display: flex;
+        gap: 0.9rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+      footer {
+        background: #060f09;
+      }
+      .footer-body {
+        padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 5rem);
+        display: grid;
+        grid-template-columns: 2.4fr 1fr 1fr 1.8fr;
+        gap: clamp(2rem, 4vw, 5rem);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .foot-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.2rem;
+      }
+      .foot-desc {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.88;
+        max-width: 270px;
+        margin-bottom: 1.6rem;
+      }
+      .foot-soc {
+        display: flex;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+      .foot-soc a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        color: rgba(255, 255, 255, 0.38);
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .foot-soc a:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .foot-nl p {
+        font-size: 0.74rem;
+        color: rgba(255, 255, 255, 0.32);
+        margin-bottom: 0.75rem;
+      }
+      .nl-box {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nl-box input {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.04);
+        border: none;
+        outline: none;
+        padding: 11px 14px;
+        font-size: 0.74rem;
+        font-family: var(--font-body);
+        color: #fff;
+      }
+      .nl-box input::placeholder {
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .nl-box button {
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        padding: 0 18px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: opacity 0.25s;
+      }
+      .nl-box button:hover {
+        opacity: 0.85;
+      }
+      .foot-col h5 {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 1.3rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(180, 58, 10, 0.18);
+      }
+      .foot-col ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .foot-col a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        transition: all 0.28s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .foot-col a::before {
+        content: "→";
+        color: var(--terra-lt);
+        font-size: 0.58rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: all 0.25s;
+      }
+      .foot-col a:hover {
+        color: rgba(255, 255, 255, 0.78);
+        padding-left: 5px;
+      }
+      .foot-col a:hover::before {
+        opacity: 1;
+        transform: none;
+      }
+      .foot-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .fc {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .fc i {
+        color: var(--terra-lt);
+        font-size: 0.82rem;
+        margin-top: 3px;
+        width: 14px;
+        flex-shrink: 0;
+      }
+      .fc p,
+      .fc a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        line-height: 1.7;
+        transition: color 0.25s;
+      }
+      .fc a:hover {
+        color: var(--terra-lt);
+      }
+      .footer-btm {
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-btm p {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .footer-btm p span {
+        color: var(--terra-lt);
+      }
+      .btm-links {
+        display: flex;
+        gap: 1.8rem;
+      }
+      .btm-links a {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.2);
+        transition: color 0.25s;
+      }
+      .btm-links a:hover {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ── FLOATING BUTTONS ── */
+      .chat-float {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        z-index: 999;
+        animation: popIn 0.5s 2s both;
+      }
+      .chat-trigger {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.32rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 28px rgba(180, 58, 10, 0.45);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .chat-trigger:hover {
+        transform: scale(1.12) rotate(10deg);
+      }
+      .chat-win {
+        position: fixed;
+        bottom: 8rem;
+        left: 2rem;
+        z-index: 999;
+        width: clamp(288px, 90vw, 315px);
+        background: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 24px 72px rgba(10, 26, 15, 0.26);
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid rgba(26, 51, 32, 0.07);
+      }
+      .chat-win.open {
+        display: flex;
+        animation: slideUp 0.35s var(--ease);
+      }
+      .chat-head {
+        background: linear-gradient(135deg, var(--ink), var(--forest-mid));
+        padding: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .chat-av {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 0.88rem;
+        flex-shrink: 0;
+      }
+      .chat-head h5 {
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        font-family: var(--font-body);
+      }
+      .chat-head p {
+        color: rgba(255, 255, 255, 0.38);
+        font-size: 0.63rem;
+        font-family: var(--font-body);
+      }
+      .chat-x {
+        margin-left: auto;
+        color: rgba(255, 255, 255, 0.35);
+        cursor: pointer;
+        font-size: 0.85rem;
+        padding: 4px;
+        transition: color 0.2s;
+      }
+      .chat-x:hover {
+        color: #fff;
+      }
+      .chat-msgs {
+        padding: 1rem;
+        min-height: 140px;
+        max-height: 200px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .msg {
+        padding: 9px 13px;
+        border-radius: 13px;
+        font-size: 0.77rem;
+        line-height: 1.56;
+        max-width: 85%;
+        font-family: var(--font-body);
+      }
+      .msg.bot {
+        background: white;
+        color: var(--ink);
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
+      .msg.me {
+        background: var(--grad-fire);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
+      .chat-quick {
+        padding: 0 1rem 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .qbtn {
+        padding: 5px 11px;
+        border: 1.5px solid var(--terra);
+        border-radius: var(--r-pill);
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--terra);
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.25s;
+        font-family: var(--font-body);
+      }
+      .qbtn:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .chat-in {
+        display: flex;
+        border-top: 1px solid rgba(10, 26, 15, 0.08);
+      }
+      .chat-in input {
+        flex: 1;
+        padding: 11px 13px;
+        border: none;
+        outline: none;
+        font-size: 0.76rem;
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--ink);
+      }
+      .chat-in button {
+        padding: 0 15px;
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: opacity 0.2s;
+      }
+      .chat-in button:hover {
+        opacity: 0.82;
+      }
+      .right-floats {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        animation: popIn 0.5s 2.3s both;
+      }
+      .rf {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .rf-tip {
+        position: absolute;
+        right: 66px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.64rem;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s;
+        font-family: var(--font-body);
+      }
+      .rf-tip::after {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right: none;
+        border-left-color: var(--ink);
+      }
+      .rf:hover .rf-tip {
+        opacity: 1;
+      }
+      .wa-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.42rem;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .wa-btn:hover {
+        transform: scale(1.12);
+        box-shadow: 0 16px 36px rgba(37, 211, 102, 0.48);
+      }
+      .call-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--forest-mid);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 24px rgba(24, 48, 35, 0.4);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .call-btn:hover {
+        transform: scale(1.12);
+        background: var(--moss);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes popIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(14px);
+          opacity: 0;
+        }
+        to {
+          transform: none;
+          opacity: 1;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .nav-links,
+        .nav-phone,
+        .nav-right .btn {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .treks-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+        .feat-main {
+          min-height: 340px;
+        }
+        .feat-side {
+          flex-direction: row;
+        }
+        .feat-sm {
+          min-height: 200px;
+          flex: 1;
+        }
+        .diff-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .inc-grid {
+          grid-template-columns: 1fr;
+        }
+        .inc-visual {
+          height: 320px;
+        }
+        .steps-wrap {
+          grid-template-columns: 1fr 1fr;
+        }
+        .step-arrow {
+          display: none;
+        }
+        .ts-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-body {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        :root {
+          --nav-h: 66px;
+        }
+        .logo-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 11px;
+        }
+        .logo-icon i {
+          font-size: 0.95rem;
+        }
+        .logo-name {
+          font-size: 1.22rem;
+        }
+        .logo-tag {
+          font-size: 0.44rem;
+        }
+        .phero-pills {
+          display: none;
+        }
+        .phero-stats {
+          gap: 1.5rem;
+        }
+        .phstat-num {
+          font-size: 1.5rem;
+        }
+        .treks-grid {
+          grid-template-columns: 1fr;
+        }
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+        .feat-side {
+          flex-direction: column;
+        }
+        .diff-cards {
+          grid-template-columns: 1fr;
+        }
+        .inc-items {
+          grid-template-columns: 1fr;
+        }
+        .inc-not {
+          grid-template-columns: 1fr;
+        }
+        .steps-wrap {
+          grid-template-columns: 1fr;
+        }
+        .ts-cards {
+          grid-template-columns: 1fr;
+        }
+        .footer-body {
+          grid-template-columns: 1fr;
+        }
+        .foot-col:nth-child(3),
+        .foot-col:nth-child(4) {
+          display: none;
+        }
+        .footer-btm {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .btm-links {
+          justify-content: center;
+        }
+        .chat-win {
+          left: 0.8rem;
+          width: calc(100vw - 1.6rem);
+        }
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="style/trek-details.css" /> -->
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-container"></div>
+
+    <script>
+      // Load navbar from nav.html
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+          // Initialize navbar functions after loading
+          initNavbar();
+        })
+        .catch((error) => console.log("Error loading navbar:", error));
+
+      function initNavbar() {
+        const hamBtn = document.getElementById("hdrNavHamBtn");
+        const mobDrawer = document.getElementById("hdrNavMobDrawer");
+        const mobOverlay = document.getElementById("hdrNavMobOverlay");
+        const hdr = document.getElementById("hdrNav");
+
+        if (!hamBtn || !mobDrawer || !mobOverlay) return;
+
+        function openMob() {
+          mobDrawer.classList.add("open");
+          mobOverlay.classList.add("open");
+          hamBtn.classList.add("open");
+          hamBtn.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+          mobDrawer.setAttribute("aria-hidden", "false");
+        }
+        function closeMob() {
+          mobDrawer.classList.remove("open");
+          mobOverlay.classList.remove("open");
+          hamBtn.classList.remove("open");
+          hamBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+          mobDrawer.setAttribute("aria-hidden", "true");
+        }
+        hamBtn.addEventListener("click", () =>
+          mobDrawer.classList.contains("open") ? closeMob() : openMob(),
+        );
+        mobOverlay.addEventListener("click", closeMob);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMob();
+        });
+
+        // Header scroll effect
+        if (hdr) {
+          // Check initial scroll position
+          hdr.classList.toggle("scrolled", scrollY > 50);
+
+          // Listen for scroll changes
+          window.addEventListener(
+            "scroll",
+            () => hdr.classList.toggle("scrolled", scrollY > 50),
+            { passive: true },
+          );
+        }
+
+        // Dropdown click handler
+        const navDrops = document.querySelectorAll(".hdr-nav-drop");
+        navDrops.forEach((drop) => {
+          const dropLink = drop.querySelector("button");
+          if (dropLink) {
+            dropLink.addEventListener("click", (e) => {
+              e.preventDefault();
+              // Close all other dropdowns
+              navDrops.forEach((d) => {
+                if (d !== drop) d.classList.remove("open");
+              });
+              // Toggle current dropdown
+              drop.classList.toggle("open");
+            });
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          const navLinks = document.querySelector(".hdr-nav-links");
+          if (navLinks && !navLinks.contains(e.target)) {
+            navDrops.forEach((drop) => drop.classList.remove("open"));
+          }
+        });
+
+        window.openMob = openMob;
+        window.closeMob = closeMob;
+        window.toggleSub = function (id, e) {
+          e.stopPropagation();
+          document.getElementById(id).classList.toggle("open");
+        };
+      }
+    </script>
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="breadcrumb">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="active">Car Rentals</li>
+        </ul>
+      </div>
+      <div class="page-hero-content">
+        <h1>Premium<br /><em>Car Rentals</em></h1>
+        <p class="page-hero-p">
+          Explore India's breath­taking landscapes at your own pace. From
+          compact city cars to spacious SUVs, we offer a range of
+          well-maintained vehicles with professional drivers or self-drive
+          options.
+        </p>
+        <div class="phero-pills">
+          <div class="phero-pill">
+            <i class="fas fa-car"></i> 50+ Fleet Vehicles
+          </div>
+          <div class="phero-pill">
+            <i class="fas fa-user-tie"></i> Professional Drivers
+          </div>
+          <div class="phero-pill">
+            <i class="fas fa-shield-alt"></i> Fully Insured
+          </div>
+          <div class="phero-pill">
+            <i class="fas fa-clock"></i> 24/7 Support
+          </div>
+        </div>
+
+        <div class="phero-stats">
+          <div class="phstat">
+            <div class="phstat-num">5+</div>
+            <div class="phstat-lbl">Car Models</div>
+          </div>
+          <div class="phstat">
+            <div class="phstat-num">1000+</div>
+            <div class="phstat-lbl">Happy Travelers</div>
+          </div>
+          <div class="phstat">
+            <div class="phstat-num">50+</div>
+            <div class="phstat-lbl">Vehicles</div>
+          </div>
+          <div class="phstat">
+            <div class="phstat-num">4.8★</div>
+            <div class="phstat-lbl">Avg Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-tr">
+        <div class="marquee-item"><i class="fas fa-car"></i> Suzuki Swift</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-taxi"></i> Maruti Dzire</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-van"></i> Toyota Ertiga</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-road"></i> Toyota Innova
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-car"></i> Hyundai Creta</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-taxi"></i> All-Terrain Vehicles
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-car"></i> Suzuki Swift</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-taxi"></i> Maruti Dzire</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-van"></i> Toyota Ertiga</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-road"></i> Toyota Innova
+        </div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item"><i class="fas fa-car"></i> Hyundai Creta</div>
+        <span class="marquee-dot">✦</span>
+        <div class="marquee-item">
+          <i class="fas fa-taxi"></i> All-Terrain Vehicles
+        </div>
+        <span class="marquee-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════
+     TREK GRID
+══════════════════════════════════ -->
+    <section id="treks-main">
+      <div class="wrap">
+        <div
+          style="
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+          "
+          class="rv"
+        >
+          <div>
+            <p class="eyebrow">Choose Your Ride</p>
+            <h2 class="sec-title">Premium Fleet</h2>
+            <p class="sec-sub" style="max-width: 380px">
+              Select from our diverse range of vehicles, each maintained to the
+              highest standards for your comfort and safety.
+            </p>
+          </div>
+        </div>
+        <div class="filter-bar rv">
+          <div class="filter-tabs">
+            <button class="tab-btn active" data-region="all">
+              All Vehicles
+            </button>
+            <button class="tab-btn" data-region="uk">Economy</button>
+            <button class="tab-btn" data-region="hp">Comfort</button>
+          </div>
+          <div class="diff-filter">
+            <label>Passengers:</label>
+            <select class="diff-select" id="diffSelect">
+              <option value="all">All Types</option>
+              <option value="easy">1–5 Seats</option>
+              <option value="moderate">5–7 Seats</option>
+              <option value="hard">7+ Seats</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="treks-grid" id="trekGrid">
+          <!-- SUZUKI SWIFT -->
+          <article class="trek-card rv" data-region="uk" data-diff="easy">
+            <div class="trek-img">
+              <img
+                src="https://images.unsplash.com/photo-1699339395764-1c4f2717d271?q=80&w=1828&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                loading="lazy"
+              />
+              <span class="trek-level easy">Economy</span>
+              <span class="region-badge">4-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 1–5 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Petrol/Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 15+ km/l</span>
+              </div>
+              <h3>Suzuki Swift</h3>
+              <p>
+                Perfect for solo travelers and small families. Compact,
+                fuel-efficient, and ideal for city commutes and weekend
+                getaways.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">AC & Music System</span>
+                <span class="trek-hl">Power Steering</span>
+                <span class="trek-hl">ABS Brakes</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html">Book Now</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- MARUTI DZIRE -->
+          <article class="trek-card rv" data-region="uk" data-diff="moderate">
+            <div class="trek-img">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2C_1noFucArajeDlhmXclJ_2qUgL05QlLWA&s"
+                loading="lazy"
+              />
+              <span class="trek-level moderate">Comfort</span>
+              <span class="region-badge">5-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 1–5 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Petrol/Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 18+ km/l</span>
+              </div>
+              <h3>Maruti Dzire</h3>
+              <p>
+                Best-selling sedan for families. Extra roominess, excellent
+                mileage, and reliable performance for all your journeys across
+                India.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">Spacious Trunk</span>
+                <span class="trek-hl">Dual AC Vents</span>
+                <span class="trek-hl">Power Windows</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html">Book Now</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- TOYOTA ERTIGA -->
+          <article class="trek-card rv" data-region="uk" data-diff="moderate">
+            <div class="trek-img">
+              <img
+                src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Ertiga/10288/1755776579514/front-left-side-47.jpg?tr=w-664"
+                loading="lazy"
+              />
+              <span class="trek-level moderate">Comfort</span>
+              <span class="region-badge">7-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 5–7 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Petrol/Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 16+ km/l</span>
+              </div>
+              <h3>Toyota Ertiga</h3>
+              <p>
+                Ideal for group trips and family adventures. Three rows of
+                comfortable seating, great ground clearance, and Toyota
+                reliability at its best.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">3 Rows Seating</span>
+                <span class="trek-hl">Rear AC Vents</span>
+                <span class="trek-hl">Cruise Control</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> Book Now
+              </button>
+            </div>
+          </article>
+
+          <!-- TOYOTA INNOVA -->
+          <article class="trek-card rv" data-region="hp" data-diff="hard">
+            <div class="trek-img">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/2022_Toyota_Kijang_Innova_2.4_G_GUN142R_%2820220302%29.jpg/3840px-2022_Toyota_Kijang_Innova_2.4_G_GUN142R_%2820220302%29.jpg"
+                loading="lazy"
+              />
+              <span class="trek-level hard">Premium</span>
+              <span class="region-badge">8-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 8 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 12+ km/l</span>
+              </div>
+              <h3>Toyota Innova Crysta</h3>
+              <p>
+                Premium MPV for ultimate comfort and space. Perfect for
+                long-distance travels, corporate tours, and large family
+                expeditions across all terrain.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">Premium Upholstery</span>
+                <span class="trek-hl">DVD Entertainment</span>
+                <span class="trek-hl">All-Terrain Capability</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html">Book Now</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- TEMPO TRAILER -->
+          <article class="trek-card rv" data-region="hp" data-diff="hard">
+            <div class="trek-img">
+              <img
+                src="https://shtcindia.com/wp-content/uploads/2022/11/18-Seater-Tempo-Traveller.png"
+                loading="lazy"
+              />
+              <span class="trek-level hard">Luxury</span>
+              <span class="region-badge">25-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 25 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual</span>
+                <span><i class="fas fa-road"></i> 8+ km/l</span>
+              </div>
+              <h3>Tempo Trailer 25-Seater</h3>
+              <p>
+                Ideal for large group tours and corporate outings. High capacity
+                with comfortable seating arrangement, perfect for long-distance
+                group travels and special event transportation.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">Large Capacity</span>
+                <span class="trek-hl">Comfortable Seating</span>
+                <span class="trek-hl">Climate Controlled</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html"></a>Book Now</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- TEMPO TRAVELER -->
+          <article class="trek-card rv" data-region="hp" data-diff="hard">
+            <div class="trek-img">
+              <img
+                src="https://shtcindia.com/wp-content/uploads/2022/11/14-Seater-Tempo-Traveller.png"
+                loading="lazy"
+              />
+              <span class="trek-level hard">Premium</span>
+              <span class="region-badge">16-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 16 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 10+ km/l</span>
+              </div>
+              <h3>Tempo Traveler 16-Seater</h3>
+              <p>
+                Perfect for medium-sized groups and family adventures.
+                Well-equipped with modern amenities, spacious interiors, and
+                excellent performance for both urban and highway journeys.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">Spacious Interior</span>
+                <span class="trek-hl">Modern Amenities</span>
+                <span class="trek-hl">Smooth Ride</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html">Book Now</a>
+              </button>
+            </div>
+          </article>
+
+          <!-- TEMPO TRAVELER 10 SEATER -->
+          <article class="trek-card rv" data-region="hp" data-diff="medium">
+            <div class="trek-img">
+              <img
+                src="https://shtcindia.com/wp-content/uploads/2022/11/10-Seater-Tempo-Traveller.png"
+                loading="lazy"
+              />
+              <span class="trek-level medium">Standard</span>
+              <span class="region-badge">10-Seater</span>
+              <button class="trek-fav" aria-label="Save to wishlist">
+                <i class="fas fa-heart"></i>
+              </button>
+            </div>
+            <div class="trek-body">
+              <div class="trek-meta">
+                <span><i class="fas fa-users"></i> 10 Passengers</span>
+                <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                <span><i class="fas fa-cog"></i> Manual/AT</span>
+                <span><i class="fas fa-road"></i> 12+ km/l</span>
+              </div>
+              <h3>Tempo Traveler 10-Seater</h3>
+              <p>
+                Great for small to medium groups and family trips. Compact yet comfortable,
+                with excellent fuel efficiency and maneuverability for both city and highway
+                travel. Perfect for exploring scenic destinations with ease.
+              </p>
+              <div class="trek-highlights">
+                <span class="trek-hl">Compact Design</span>
+                <span class="trek-hl">Fuel Efficient</span>
+                <span class="trek-hl">Easy Maneuverability</span>
+              </div>
+            </div>
+            <div class="trek-foot">
+              <button class="trek-cta-btn">
+                <i class="fas fa-calendar"></i> <a href="contact.html">Book Now</a>
+              </button>
+            </div>
+          </article>
+        </div>
+        <!-- end trekGrid -->
+      </div>
+    </section>
+
+    <section id="included">
+      <div class="wrap">
+        <div class="inc-grid">
+          <div class="inc-visual rv-l">
+            <img
+              src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=700&q=85&auto=format&fit=crop"
+              alt="Trek Campsite"
+              loading="lazy"
+            />
+            <div class="inc-float">
+              <div class="if-n">100%</div>
+              <div class="if-l">All Inclusive</div>
+            </div>
+            <div class="inc-float2"><i class="fas fa-check"></i></div>
+          </div>
+          <div class="rv-r">
+            <p class="eyebrow">No Hidden Costs</p>
+            <h2 class="sec-title">What's Included<br />in Your Rental</h2>
+            <p class="sec-sub" style="margin-bottom: 1.8rem">
+              Complete transparency — here's everything covered in your daily
+              rental rate.
+            </p>
+            <div class="inc-items">
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-car"></i></div>
+                <div>
+                  <h4>Well-Maintained Vehicle</h4>
+                  <p>
+                    Latest model cars, regularly serviced and in perfect
+                    condition.
+                  </p>
+                </div>
+              </div>
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-shield-alt"></i></div>
+                <div>
+                  <h4>Comprehensive Insurance</h4>
+                  <p>Full insurance coverage with ₹5 lakh protection.</p>
+                </div>
+              </div>
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-user-tie"></i></div>
+                <div>
+                  <h4>Expert Driver</h4>
+                  <p>
+                    Professional, courteous driver with 5+ years experience.
+                    (Optional)
+                  </p>
+                </div>
+              </div>
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-gas-pump"></i></div>
+                <div>
+                  <h4>Fuel</h4>
+                  <p>
+                    Full tank provided. Return with full tank or pay actual
+                    consumption.
+                  </p>
+                </div>
+              </div>
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-tools"></i></div>
+                <div>
+                  <h4>Roadside Assistance</h4>
+                  <p>
+                    24/7 support, battery, spare tyre, and emergency repairs.
+                  </p>
+                </div>
+              </div>
+              <div class="inc-item">
+                <div class="inc-ico"><i class="fas fa-id-card"></i></div>
+                <div>
+                  <h4>Documentation</h4>
+                  <p>
+                    All RC, Insurance, Pollution certificates included in
+                    vehicle.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="inc-not">
+              <div class="inc-not-item">
+                <i class="fas fa-times-circle"></i> Personal Travel Insurance
+              </div>
+              <div class="inc-not-item">
+                <i class="fas fa-times-circle"></i> Toll & Parking Charges
+              </div>
+              <div class="inc-not-item">
+                <i class="fas fa-times-circle"></i> Driver Meals & Accommodation
+              </div>
+              <div class="inc-not-item">
+                <i class="fas fa-times-circle"></i> Traffic Violations/Damages
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+     BOOKING PROCESS
+══════════════════════════════════ -->
+    <section id="booking-process">
+      <div class="wrap bp-inner">
+        <div class="rv">
+          <p class="eyebrow">Simple & Easy</p>
+          <h2 class="sec-title" style="color: #fff">
+            Book Your Car<br />in 4 Easy Steps
+          </h2>
+          <p class="sec-sub">
+            From selection to delivery — seamless car rental experience.
+          </p>
+        </div>
+        <div class="steps-wrap rv">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-ico"><i class="fas fa-car"></i></div>
+            <h3>Select Your Vehicle</h3>
+            <p>
+              Browse our fleet, check specifications, pricing, and availability.
+              Choose the perfect car for your journey.
+            </p>
+            <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-ico"><i class="fas fa-calendar-alt"></i></div>
+            <h3>Pick Dates & Driver</h3>
+            <p>
+              Select rental dates, choose driver option, and specify pickup/drop
+              location for convenience.
+            </p>
+            <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-ico"><i class="fas fa-credit-card"></i></div>
+            <h3>Confirm & Pay</h3>
+            <p>
+              Review booking details, confirm pricing, and pay securely. Get
+              instant confirmation via email & SMS.
+            </p>
+            <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-ico"><i class="fas fa-road"></i></div>
+            <h3>Pick & Drive!</h3>
+            <p>
+              Pickup your car on schedule, meet your driver (if opted), and
+              start your adventure hassle-free.
+            </p>
+            <div class="step-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════ -->
+    <section id="testi-strip">
+      <div class="wrap">
+        <div class="testi-strip-head rv">
+          <div>
+            <p class="eyebrow">Customer Stories</p>
+            <h2>What Our Customers Say</h2>
+          </div>
+          <a href="contact.html" class="btn btn-fire"
+            ><i class="fas fa-paper-plane"></i> Share Your Story</a
+          >
+        </div>
+        <div class="ts-cards rv">
+          <div class="ts-card">
+            <div class="ts-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="ts-q">
+              Rented a Dzire for our family trip to Manali. Smooth driver,
+              well-maintained car, and great customer service. We're definitely
+              booking again for our next Himalayan adventure!
+            </p>
+            <div class="ts-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=8"
+                alt=""
+                class="ts-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="ts-name">Arjun Nair</div>
+                <div class="ts-trip">Manali Car Rental</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-card">
+            <div class="ts-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="ts-q">
+              Booked the Innova for a 5-day Himachal road trip. Perfect vehicle
+              for mountain terrain, professional driver, and amazing support
+              throughout. Made our trip so much more enjoyable!
+            </p>
+            <div class="ts-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=25"
+                alt=""
+                class="ts-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="ts-name">Ananya Gupta</div>
+                <div class="ts-trip">Himachal Road Trip</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-card">
+            <div class="ts-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <p class="ts-q">
+              Swift rental for Delhi to Jaisalmer trip. Fuel efficient,
+              comfortable for long drives, and zero hassle with pickup/drop. The
+              insurance and roadside support made me feel completely secure!
+            </p>
+            <div class="ts-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=32"
+                alt=""
+                class="ts-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="ts-name">Priya Sharma</div>
+                <div class="ts-trip">Desert Road Safari</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+     CTA
+══════════════════════════════════ -->
+    <section id="treks-cta">
+      <div class="wrap">
+        <div class="cta-body rv">
+          <p class="eyebrow">Ready to Drive?</p>
+          <h2>Book Your Perfect<br />Car Today</h2>
+          <p>
+            Choose your vehicle, set your dates, and let's make your journey
+            unforgettable — safely and comfortably.
+          </p>
+          <div class="cta-row">
+            <a href="contact.html" class="btn btn-fire"
+              ><i class="fas fa-car"></i> Book a Car</a
+            >
+            <a
+              href="https://wa.me/9310461449?text=Hi!%20I%20want%20to%20book%20a%20car%20rental."
+              class="btn btn-wa"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+
+    <script>
+      // Load footer from footer.html
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("footer-container").innerHTML = html;
+        })
+        .catch((error) => console.log("Error loading footer:", error));
+    </script>
+
+    <script>
+      /* ── Header ── */
+
+      /* ── Trek Filter ── */
+      const tabBtns = document.querySelectorAll(".tab-btn[data-region]");
+      const diffSelect = document.getElementById("diffSelect");
+      function filterCars() {
+        const type =
+          document.querySelector(".tab-btn[data-region].active")?.dataset
+            .region || "all";
+        const capacity = diffSelect.value;
+        document.querySelectorAll("#trekGrid .trek-card").forEach((card) => {
+          const tOk = type === "all" || card.dataset.region === type;
+          const cOk = capacity === "all" || card.dataset.diff === capacity;
+          card.style.display = tOk && cOk ? "flex" : "none";
+        });
+      }
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+          filterCars();
+        });
+      });
+      diffSelect.addEventListener("change", filterCars);
+
+      /* ── Fav Toggle ── */
+      document.querySelectorAll(".trek-fav").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          btn.classList.toggle("active");
+        });
+      });
+
+      /* ── FAQ ── */
+      document.querySelectorAll(".faq-q-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const row = btn.closest(".faq-row"),
+            isOpen = row.classList.contains("open");
+          document
+            .querySelectorAll(".faq-row")
+            .forEach((r) => r.classList.remove("open"));
+          if (!isOpen) row.classList.add("open");
+        });
+      });
+
+      /* ── Chat ── */
+      const chatBtn = document.getElementById("chatBtn");
+      const chatWin = document.getElementById("chatWin");
+      const chatIco = document.getElementById("chatIco");
+      const chatX = document.getElementById("chatX");
+      function toggleChat() {
+        const open = chatWin.classList.toggle("open");
+        chatIco.className = open ? "fas fa-times" : "fas fa-comment-dots";
+      }
+      chatBtn.addEventListener("click", toggleChat);
+      chatX.addEventListener("click", () => {
+        chatWin.classList.remove("open");
+        chatIco.className = "fas fa-comment-dots";
+      });
+      const botR = {
+        easy: "🚗 Economy Cars: Suzuki Swift (1–5 passengers, ₹2,500/day), Maruti Dzire (1–5 passengers, ₹3,200/day). Perfect for couples and small families!",
+        mod: "🚙 Mid-Range Cars: Toyota Ertiga (5–7 passengers, ₹4,500/day). Great for family trips with comfortable 7-seater spacing and smooth ride!",
+        hard: "🚕 Premium SUV: Toyota Innova Crysta (8 passengers, ₹6,500/day). All-terrain capable, luxury interiors, perfect for adventurous group getaways!",
+        price:
+          "💰 Car rental prices: ₹2,500–₹6,500/day. All include fuel (full tank), insurance (₹5L coverage), 24/7 roadside assistance, and documentation. No hidden costs!",
+        book: "📋 Booking: Call +91 9310461449, WhatsApp us, or fill contact form. Select car, dates, driver option. Instant confirmation!",
+        default:
+          "😊 For detailed help, WhatsApp +91 9310461449 — we reply in minutes! Or call us for an instant quote on your perfect rental car.",
+      };
+      function getReply(m) {
+        const s = m.toLowerCase();
+        if (/economy|small|couple|swift|dzire|cheap|budget/.test(s))
+          return botR.easy;
+        if (/mid|range|family|ertiga|comfortable|5|6|7/.test(s))
+          return botR.mod;
+        if (/premium|suv|innova|luxury|large|group|8|adventure/.test(s))
+          return botR.hard;
+        if (/price|cost|fee|₹|cheap|expensive|budget|rate/.test(s))
+          return botR.price;
+        if (/book|reserve|how|enquir|rental|driver/.test(s)) return botR.book;
+        return botR.default;
+      }
+      function addMsg(t, me) {
+        const d = document.createElement("div");
+        d.className = `msg ${me ? "me" : "bot"}`;
+        d.textContent = t;
+        const m = document.getElementById("chatMsgs");
+        m.appendChild(d);
+        m.scrollTop = m.scrollHeight;
+      }
+      function sendMsg() {
+        const inp = document.getElementById("chatInput"),
+          v = inp.value.trim();
+        if (!v) return;
+        addMsg(v, true);
+        inp.value = "";
+        setTimeout(() => addMsg(getReply(v), false), 680);
+      }
+      function qReply(t) {
+        addMsg(t, true);
+        setTimeout(() => addMsg(getReply(t), false), 680);
+      }
+      document.getElementById("chatInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") sendMsg();
+      });
+
+      /* ── Smooth scroll for anchor ── */
+      document
+        .querySelector('a[href="#treks-main"]')
+        ?.addEventListener("click", (e) => {
+          e.preventDefault();
+          document
+            .getElementById("treks-main")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+    <script>
+      const hdr = document.getElementById("hdr");
+      const stickyBar = document.getElementById("stickyBar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const s = scrollY > 60;
+          if (hdr) hdr.classList.toggle("scrolled", s);
+          stickyBar.style.top = s ? "68px" : "80px";
+          stickyBar.classList.toggle(
+            "show",
+            scrollY > window.innerHeight * 0.6,
+          );
+        },
+        { passive: true },
+      );
+
+      function toggleAcc(id) {
+        document.getElementById(id).classList.toggle("open");
+      }
+
+      // Initialize reveal animations when header loads
+      function initRevealAnimations() {
+        const revObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e, i) => {
+              if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add("vis"), i * 55);
+                revObs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.07, rootMargin: "0px 0px -30px 0px" },
+        );
+        document
+          .querySelectorAll(".rv,.rv-l,.rv-r")
+          .forEach((el) => revObs.observe(el));
+      }
+
+      // Run immediately and when DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRevealAnimations);
+      } else {
+        initRevealAnimations();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Kedarnath Trek — 7 Days from ₹8,500/person. Sacred pilgrimage through Garhwal meadows to one of India's most revered Shiva temples. Tour & Travel." />
+  <title>Kedarnath Trek | Tour & Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style/trek-details.css" />
+  <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body>
+  <!-- Header Container - Loaded Dynamically -->
+  <div id="navbar-container"></div>
+
+  <script>
+    // Load navbar from nav.html
+    fetch("nav.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("navbar-container").innerHTML = html;
+        // Initialize navbar functions after loading
+        initNavbar();
+      })
+      .catch((error) => console.log("Error loading navbar:", error));
+
+    function initNavbar() {
+      const hamBtn = document.getElementById("hdrNavHamBtn");
+      const mobDrawer = document.getElementById("hdrNavMobDrawer");
+      const mobOverlay = document.getElementById("hdrNavMobOverlay");
+      const hdr = document.getElementById("hdrNav");
+
+      if (!hamBtn || !mobDrawer || !mobOverlay) return;
+
+      function openMob() {
+        mobDrawer.classList.add("open");
+        mobOverlay.classList.add("open");
+        hamBtn.classList.add("open");
+        hamBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+        mobDrawer.setAttribute("aria-hidden", "false");
+      }
+      function closeMob() {
+        mobDrawer.classList.remove("open");
+        mobOverlay.classList.remove("open");
+        hamBtn.classList.remove("open");
+        hamBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        mobDrawer.setAttribute("aria-hidden", "true");
+      }
+      hamBtn.addEventListener("click", () =>
+        mobDrawer.classList.contains("open") ? closeMob() : openMob(),
+      );
+      mobOverlay.addEventListener("click", closeMob);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMob();
+      });
+
+      // Header scroll effect
+      if (hdr) {
+        // Check initial scroll position
+        hdr.classList.toggle("scrolled", scrollY > 50);
+
+        // Listen for scroll changes
+        window.addEventListener(
+          "scroll",
+          () => hdr.classList.toggle("scrolled", scrollY > 50),
+          { passive: true },
+        );
+      }
+
+      // Dropdown click handler
+      const navDrops = document.querySelectorAll(".hdr-nav-drop");
+      navDrops.forEach((drop) => {
+        const dropLink = drop.querySelector("button");
+        if (dropLink) {
+          dropLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            // Close all other dropdowns
+            navDrops.forEach((d) => {
+              if (d !== drop) d.classList.remove("open");
+            });
+            // Toggle current dropdown
+            drop.classList.toggle("open");
+          });
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        const navLinks = document.querySelector(".hdr-nav-links");
+        if (navLinks && !navLinks.contains(e.target)) {
+          navDrops.forEach((drop) => drop.classList.remove("open"));
+        }
+      });
+
+      window.openMob = openMob;
+      window.closeMob = closeMob;
+      window.toggleSub = function (id, e) {
+        e.stopPropagation();
+        document.getElementById(id).classList.toggle("open");
+      };
+    }
+  </script>
+
+  <!-- STICKY BAR -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-inner">
+      <div class="sb-title" id="stickyTitle">
+        Kedarnath Trek — <em>Sacred Garhwal Pilgrimage</em>
+      </div>
+      <div class="sb-meta" id="stickyMeta">
+        <div class="sb-item"><i class="fas fa-clock"></i> 7 Days</div>
+        <div class="sb-item"><i class="fas fa-mountain"></i> 3,584m</div>
+        <div class="sb-item"><i class="fas fa-users"></i> Max 18 Pax</div>
+        <div class="sb-item"><i class="fas fa-calendar-alt"></i> Apr–Nov</div>
+      </div>
+      <div class="sb-right">
+        <div class="sb-price" id="stickyPrice">₹8,500 <small>/ person</small></div>
+        <a href="contact.html" class="btn btn-teal" style="padding: 9px 22px"><i class="fas fa-calendar-check"></i> Book
+          Now</a>
+        <a href="https://wa.me/9310461449?text=Kedarnath%20Trek%20enquiry" class="btn btn-wa" style="padding: 9px 18px"
+          target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-dot"><i class="fas fa-om"></i></div>
+        <span id="heroEyebrowText">Uttarakhand · Garhwal Himalayas · Apr–Nov</span>
+      </div>
+      <div class="hero-cats" id="heroCats">
+        <span class="hcat pilgrimage"> Pilgrimage</span>
+        <span class="hcat trek"><i class="fas fa-mountain"></i> Trek</span>
+        <span class="hcat moderate"><i class="fas fa-chart-line"></i> Moderate</span>
+      </div>
+      <h1 class="hero-h1" id="heroTitle">
+        Kedarnath<br />
+        <em><span class="word italic">Trek</span></em>
+      </h1>
+
+      <div class="hero-acts" id="heroActs">
+        <div class="hact"><i class="fas fa-clock"></i> 7 Days / 6 Nights</div>
+        <div class="hact"><i class="fas fa-mountain"></i> 3,584m Peak</div>
+        <div class="hact"><i class="fas fa-users"></i> Max 18 Pax</div>
+        <div class="hact"><i class="fas fa-calendar-alt"></i> Apr–Nov</div>
+        <div class="hact"><i class="fas fa-om"></i> Kedarnath Temple</div>
+        <div class="hact">
+          <i class="fas fa-campground"></i> Himalayan Camping
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn btn-fire"><i class="fas fa-calendar-check"></i> Book This Trek</a>
+        <a href="#itinerary" class="btn btn-ghost"><i class="fas fa-route"></i> View Itinerary</a>
+      </div>
+      <div class="hero-price">
+        <span class="hp-new" id="heroPrice">₹8,500 <span>/ person</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <section id="main">
+    <div class="wrap1">
+      <div class="content-grid">
+        <div class="main-col">
+          <!-- Photos -->
+          <div class="photo-mosaic rv" id="galleryGrid">
+            <div class="pm">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=82&auto=format&fit=crop"
+                alt="Kedarnath" loading="lazy" />
+            </div>
+            <div class="pm">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=500&q=82&auto=format&fit=crop"
+                alt="Himalayan Trail" loading="lazy" />
+            </div>
+            <div class="pm">
+              <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&q=80&auto=format&fit=crop"
+                alt="Mountain View" loading="lazy" />
+            </div>
+            <div class="pm">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=500&q=80&auto=format&fit=crop"
+                alt="Camping" loading="lazy" />
+            </div>
+            <div class="pm" style="position: relative">
+              <img src="https://images.unsplash.com/photo-1609766418204-94aae0ecfdfc?w=500&q=80&auto=format&fit=crop"
+                alt="More" loading="lazy" />
+              <div class="pm-more">
+                <i class="fas fa-images"></i><span>+12 Photos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview -->
+          <div class="rv">
+            <div class="slabel"><span>Overview</span></div>
+            <div class="overview-pills" id="overviewPills">
+              <div class="op">
+                <i class="fas fa-clock"></i> 7 Days / 6 Nights
+              </div>
+              <div class="op">
+                <i class="fas fa-mountain"></i> 3,584m Max Altitude
+              </div>
+              <div class="op"><i class="fas fa-users"></i> Max 18 Pax</div>
+              <div class="op">
+                <i class="fas fa-calendar-alt"></i> Apr–Nov
+              </div>
+              <div class="op">
+                <i class="fas fa-map-marker-alt"></i> Gaurikund → Kedarnath
+              </div>
+              <div class="op">
+                <i class="fas fa-utensils"></i> All Meals Included
+              </div>
+              <div class="op">
+                <i class="fas fa-chart-line"></i> Moderate Difficulty
+              </div>
+              <div class="op">
+                <i class="fas fa-campground"></i> Himalayan Tent Camping
+              </div>
+              <div class="op">
+                <i class="fas fa-user-tie"></i> Expert Trek Leader
+              </div>
+            </div>
+            <p id="overviewText" style="
+                  font-size: 0.87rem;
+                  color: var(--muted);
+                  line-height: 1.88;
+                  margin-bottom: 0.9rem;
+                ">
+              The Kedarnath Trek is one of India's most sacred and spectacular
+              high-altitude journeys. As one of the twelve Jyotirlingas and
+              part of the Char Dham Yatra, the Kedarnath Temple sits
+              majestically at 3,584m, surrounded by snow-capped peaks,
+              glaciers, and the roaring Mandakini River.
+            </p>
+            <p style="
+                  font-size: 0.87rem;
+                  color: var(--muted);
+                  line-height: 1.88;
+                  margin-bottom: 0.9rem;
+                ">
+              Our 7-day itinerary takes you through the lush Lincholi meadows,
+              dense oak and rhododendron forests, and dramatic alpine
+              landscapes before culminating at the ancient stone temple — a
+              moment that leaves every trekker speechless. This is not just a
+              trek; it's a transformative pilgrimage.
+            </p>
+            <p style="
+                  font-size: 0.87rem;
+                  color: var(--muted);
+                  line-height: 1.88;
+                  margin-bottom: 0.9rem;
+                ">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Maiores sit eaque dicta vitae dolor expedita nobis repellat
+              facilis tempora cumque sint placeat enim odit, aperiam corporis
+              autem sunt quibusdam eveniet est debitis eius quasi illo. Sint
+              praesentium nostrum, recusandae quas culpa nisi sit tenetur
+              necessitatibus quaerat placeat dicta cumque. Enim aperiam
+              officia consectetur quisquam itaque repellat odit, cupiditate a
+              voluptatum? Quibusdam explicabo atque, sequi consectetur
+              accusantium sint quia rerum eos cum, recusandae architecto,
+              temporibus corporis. Facere sunt inventore excepturi, earum
+              molestiae consectetur ipsa dolorem qui eos odio quibusdam autem
+              explicabo veritatis reprehenderit iure cumque voluptatem beatae
+              fugit repudiandae harum sapiente!
+            </p>
+            <p style="
+                  font-size: 0.87rem;
+                  color: var(--muted);
+                  line-height: 1.88;
+                ">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
+              iste? Nemo, odio sapiente deleniti, cupiditate debitis quas est
+              nam quaerat repudiandae molestiae impedit consequuntur nobis
+              similique possimus recusandae dicta alias enim temporibus culpa.
+              Maiores, obcaecati debitis minima exercitationem nobis voluptas
+              recusandae, esse aperiam dignissimos nesciunt harum ad corporis
+              doloremque sint, cupiditate rem deleniti. Ea unde eum harum
+              voluptatum perspiciatis. Praesentium.
+            </p>
+          </div>
+
+          <!-- Trek Waypoints -->
+          <div style="margin-top: 2rem" class="rv">
+            <div class="slabel"><span>Key Waypoints</span></div>
+            <div class="waypoints">
+              <div class="wp">
+                <i class="fas fa-bus"></i><span>Haridwar / Rishikesh</span><small>Base</small>
+              </div>
+              <div class="wp">
+                <i class="fas fa-road"></i><span>Gaurikund</span><small>1,982m</small>
+              </div>
+              <div class="wp">
+                <i class="fas fa-tree"></i><span>Jungle Chatti</span><small>2,200m</small>
+              </div>
+              <div class="wp">
+                <i class="fas fa-leaf"></i><span>Lincholi</span><small>2,600m</small>
+              </div>
+              <div class="wp">
+                <i class="fas fa-mountain"></i><span>Bheembali</span><small>3,100m</small>
+              </div>
+              <div class="wp">
+                <i class="fas fa-om"></i><span>Kedarnath</span><small>3,584m</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITINERARY -->
+          <div id="itinerary" style="margin-top: 2.2rem" class="rv">
+            <div class="slabel"><span>Day-by-Day Itinerary</span></div>
+            <div id="itineraryList">
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>01</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">
+                    Arrive Haridwar / Rishikesh — Drive to Guptkashi
+                  </h3>
+                  <p class="itin-desc">
+                    Arrive at Haridwar or Rishikesh railway station. Transfer
+                    (approx. 8 hrs) to Guptkashi via Devprayag and Rudraprayag
+                    — a scenic mountain drive through Garhwal. Evening
+                    arrival, dinner and overnight rest.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>02</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">
+                    Guptkashi → Gaurikund → Jungle Chatti
+                  </h3>
+                  <p class="itin-desc">
+                    Drive from Guptkashi to Gaurikund (the trek base, 1,982m).
+                    Begin the trek through dense forest to Jungle Chatti
+                    (2,200m). Visit the Gaurikund hot springs before
+                    departing.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>03</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">Jungle Chatti → Lincholi Meadow</h3>
+                  <p class="itin-desc">
+                    Trek through beautiful rhododendron and oak forests to
+                    Lincholi Meadow (2,600m). Stunning views of Kedar Dome
+                    begin to appear. This is the most photogenic section of
+                    the trail.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>04</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">
+                    Lincholi → Bheembali → Kedarnath Temple
+                  </h3>
+                  <p class="itin-desc">
+                    The iconic day! Trek from Lincholi via Bheembali (3,100m)
+                    to Kedarnath (3,584m). Arrive for evening aarti at the
+                    ancient Kedarnath Temple. A profoundly spiritual and
+                    emotional moment.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>05</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">
+                    Morning Darshan + Descent to Lincholi
+                  </h3>
+                  <p class="itin-desc">
+                    Wake for the mesmerizing early morning abhishek and
+                    darshan at the temple. Visit the Chorabari Glacier nearby.
+                    Begin descent back to Lincholi for the night.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>06</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">Lincholi → Gaurikund → Guptkashi</h3>
+                  <p class="itin-desc">
+                    Final descent from Lincholi to Gaurikund. Brief rest, then
+                    drive back to Guptkashi. Celebrate your trek completion
+                    with a group dinner and certificate ceremony.
+                  </p>
+                </div>
+              </div>
+              <div class="itin-item">
+                <div class="itin-left">
+                  <div class="itin-circle">
+                    <strong>07</strong><span>Day</span>
+                  </div>
+                </div>
+                <div class="itin-right">
+                  <h3 class="itin-title">
+                    Guptkashi → Haridwar / Rishikesh Departure
+                  </h3>
+                  <p class="itin-desc">
+                    After breakfast, transfer back to Haridwar or Rishikesh
+                    (approx. 8 hrs). Drop at railway station or hotel. Leave
+                    with a heart full of blessings and memories of the
+                    Himalayas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inclusions -->
+          <div style="margin-top: 2.2rem" class="rv">
+            <div class="slabel"><span>What's Included</span></div>
+            <div class="inc-grid">
+              <div class="inc-box yes">
+                <h4>
+                  <i class="fas fa-check-circle" style="margin-right: 5px"></i>Included
+                </h4>
+                <div class="inc-list" id="includedList">
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> 6 nights accommodation
+                    (guesthouse + tents)
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> All meals (breakfast,
+                    lunch & dinner)
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> Experienced trek
+                    leader & support staff
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> All transport
+                    (Haridwar ↔ Gaurikund)
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> Tents, sleeping bags &
+                    trekking equipment
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> Forest permits & entry
+                    fees
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> First aid kit & oxygen
+                    cylinder
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-check-circle"></i> Trek completion
+                    certificate
+                  </div>
+                </div>
+              </div>
+              <div class="inc-box no">
+                <h4>
+                  <i class="fas fa-times-circle" style="margin-right: 5px"></i>Not Included
+                </h4>
+                <div class="inc-list" id="excludedList">
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Train / flight to
+                    Haridwar / Rishikesh
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Personal trekking gear
+                    & clothing
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Horse / doli charges
+                    (if needed)
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Temple VIP darshan
+                    charges
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Travel & medical
+                    insurance
+                  </div>
+                  <div class="ii">
+                    <i class="fas fa-times-circle"></i> Personal expenses &
+                    tips
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FAQ -->
+          <div style="margin-top: 2.2rem" class="rv">
+            <div class="slabel"><span>Frequently Asked Questions</span></div>
+            <div class="faq-list" id="faqList">
+              <div class="faq-row">
+                <button class="faq-btn">
+                  <span>Is the Kedarnath Trek suitable for beginners?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    The trek is rated Moderate. While no prior technical
+                    experience is needed, reasonable fitness is required — you
+                    should be able to walk 8–12km per day at altitude. We
+                    recommend 4 weeks of cardio training before the trek. Our
+                    experienced guides ensure the pace suits all members.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-btn">
+                  <span>What is the best season for Kedarnath Trek?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    The temple opens in late April/May and closes in
+                    October/November after Diwali. May–June offers snow on
+                    trail (beautiful, but requires more caution).
+                    September–October is ideal — clear skies, mild weather,
+                    and smaller crowds. The monsoon season (July–Aug) is best
+                    avoided due to landslide risk.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-btn">
+                  <span>How do I handle altitude sickness?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Our itinerary is carefully designed for gradual
+                    acclimatization. We carry an oxygen cylinder and first
+                    aid. Warning signs include severe headache, nausea, and
+                    confusion — if you experience these, inform your guide
+                    immediately. We'll always prioritize your health over the
+                    summit.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-btn">
+                  <span>Can I use a horse (ghoda) or doli if needed?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Yes, horses and dolis (palanquins) are available locally
+                    at Gaurikund at additional cost (approx. ₹2,500–₹4,000 one
+                    way). However, we recommend trekking for the complete
+                    experience. Your guide can help arrange this if needed due
+                    to health reasons.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-row">
+                <button class="faq-btn">
+                  <span>What should I pack for the Kedarnath Trek?</span>
+                  <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                </button>
+                <div class="faq-ans">
+                  <p>
+                    Essentials: Layered warm clothing (temperature drops to
+                    0°C at night), waterproof trekking shoes, poncho/rain
+                    cover, trekking poles, sunscreen SPF 50+, sunglasses,
+                    personal medications, a water bottle, and a 40–45L
+                    backpack. We'll share a detailed packing list upon
+                    booking.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end main-col -->
+        <div class="side-col" id="book">
+          <div class="book-card rv-r">
+            <div class="bk-top">
+              <div class="bk-price" id="sidebarPrice">₹8,500 <small>/ person</small></div>
+            </div>
+            <div class="bk-body">
+              <div class="bk-meta" id="sidebarMeta">
+                <div class="bm">
+                  <i class="fas fa-clock"></i><span>7 Days</span><small>Duration</small>
+                </div>
+                <div class="bm">
+                  <i class="fas fa-mountain"></i><span>3,584m</span><small>Peak Alt.</small>
+                </div>
+                <div class="bm">
+                  <i class="fas fa-users"></i><span>Max 18</span><small>Pax</small>
+                </div>
+                <div class="bm">
+                  <i class="fas fa-chart-line"></i><span>Moderate</span><small>Difficulty</small>
+                </div>
+              </div>
+              <div class="bk-div"></div>
+              <div style="display: flex; justify-content: center">
+                <a href="contact.html" class="btn btn-fire"><i class="fas fa-calendar-check"></i> Book This Trek</a>
+              </div>
+              <div class="bk-trust">
+                <div class="bk-trust-item">
+                  <i class="fas fa-shield-alt"></i><span><strong>No hidden charges</strong></span>
+                </div>
+                <div class="bk-trust-item">
+                  <i class="fas fa-undo"></i><span><strong>Free cancellation</strong> upto 30 days</span>
+                </div>
+                <div class="bk-trust-item">
+                  <i class="fas fa-headset"></i><span><strong>24/7 support</strong> on trail</span>
+                </div>
+                <div class="bk-trust-item">
+                  <i class="fas fa-star"></i><span><strong>4.9/5</strong> · 184 reviews</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA (mobile) -->
+  <div class="bottom-cta" id="bottomCta">
+    <div class="bc-price">
+      <span class="new" id="mobilePrice">₹8,500</span><span class="per">/ person</span>
+    </div>
+    <div class="bc-btns">
+      <a href="https://wa.me/9310461449?text=Kedarnath%20Trek%20enquiry" class="btn btn-wa" target="_blank"><i
+          class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="contact.html" class="btn btn-fire"><i class="fas fa-calendar-check"></i> Book</a>
+    </div>
+  </div>
+
+  <!-- Footer placeholder -->
+  <div id="footer-container"></div>
+
+  <script>
+    // Load footer from footer.html
+    fetch("footer.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("footer-container").innerHTML = html;
+      })
+      .catch((error) => console.log("Error loading footer:", error));
+  </script>
+
+  <script>
+    const hdr = document.getElementById("hdr");
+    const stickyBar = document.getElementById("stickyBar");
+    window.addEventListener(
+      "scroll",
+      () => {
+        const s = scrollY > 60;
+        if (hdr) hdr.classList.toggle("scrolled", s);
+        if (stickyBar) {
+          stickyBar.style.top = s ? "68px" : "80px";
+          stickyBar.classList.toggle(
+            "show",
+            scrollY > window.innerHeight * 0.6,
+          );
+        }
+      },
+      { passive: true },
+    );
+
+    function toggleAcc(id) {
+      document.getElementById(id).classList.toggle("open");
+    }
+
+    // Initialize reveal animations when header loads
+    function initRevealAnimations() {
+      const revObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("vis"), i * 55);
+              revObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.07, rootMargin: "0px 0px -30px 0px" },
+      );
+      document
+        .querySelectorAll(".rv,.rv-l,.rv-r")
+        .forEach((el) => revObs.observe(el));
+    }
+
+    // Run immediately and when DOM is ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initRevealAnimations);
+    } else {
+      initRevealAnimations();
+    }
+
+    function bindFaqAccordion() {
+      document.querySelectorAll(".faq-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const row = btn.closest(".faq-row"),
+            isOpen = row.classList.contains("open");
+          document
+            .querySelectorAll(".faq-row")
+            .forEach((r) => r.classList.remove("open"));
+          if (!isOpen) row.classList.add("open");
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function toAbsoluteImage(path) {
+      const imagePath = String(path || "").trim();
+      if (!imagePath) return "images/kedarnath-temple.webp";
+      const isAbsolute = /^(https?:)?\/\//i.test(imagePath);
+      const isDataUrl = /^data:/i.test(imagePath);
+      if (isAbsolute || isDataUrl) return imagePath;
+      if (imagePath.startsWith("uploads/")) return `admin/${imagePath}`;
+      return imagePath;
+    }
+
+    function formatPrice(price) {
+      return `₹${Number(price || 0).toLocaleString("en-IN")}`;
+    }
+
+    function difficultyClass(difficulty) {
+      const value = String(difficulty || "moderate").toLowerCase();
+      if (value === "easy" || value === "hard" || value === "moderate") {
+        return value;
+      }
+      return "moderate";
+    }
+
+    function splitTextList(input) {
+      const text = htmlToPlainText(input).trim();
+      if (!text) return [];
+      return text
+        .split(/\n|\r|\u2022|•|,/)
+        .map((item) => item.trim())
+        .filter((item) => item.length > 0);
+    }
+
+    function htmlToPlainText(input) {
+      const tmp = document.createElement("div");
+      tmp.innerHTML = String(input || "");
+      return (tmp.textContent || tmp.innerText || "").replace(/\u00a0/g, " ");
+    }
+
+    function renderTrekDetails(payload) {
+      const trek = payload?.trek || {};
+      const gallery = Array.isArray(payload?.gallery) ? payload.gallery : [];
+      const itinerary = Array.isArray(payload?.itinerary) ? payload.itinerary : [];
+      const faq = Array.isArray(payload?.faq) ? payload.faq : [];
+
+      const title = String(trek.title || "Trek Details");
+      const description = String(trek.description || "").trim();
+      const overview = htmlToPlainText(trek.overview || "").trim() || description;
+      const category = String(trek.category || "Domestic");
+      const trekType = String(trek.trek_type || "Trek");
+      const region = String(trek.region || "India");
+      const state = String(trek.state || "").trim();
+      const duration = String(trek.duration || "N/A");
+      const altitude = Number(trek.altitude || 0);
+      const altitudeText = altitude > 0 ? `${altitude}m` : "N/A";
+      const groupSize = Number(trek.group_size || 0);
+      const groupText = groupSize > 0 ? `Max ${groupSize}` : "Custom";
+      const bestSeason = String(trek.best_season || "All season");
+      const difficulty = String(trek.difficulty || "Moderate");
+      const priceText = formatPrice(trek.price || 0);
+
+      document.title = `${title} | Tour & Travel`;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute("content", description || overview || `${title} - Tour & Travel`);
+      }
+
+      const heroBg = document.getElementById("heroBg");
+      if (heroBg) {
+        heroBg.style.backgroundImage = `url("${toAbsoluteImage(trek.image)}")`;
+      }
+
+      const stickyTitle = document.getElementById("stickyTitle");
+      if (stickyTitle) {
+        stickyTitle.innerHTML = `${escapeHtml(title)} — <em>${escapeHtml(trekType)}</em>`;
+      }
+
+      const stickyMeta = document.getElementById("stickyMeta");
+      if (stickyMeta) {
+        stickyMeta.innerHTML = `
+            <div class="sb-item"><i class="fas fa-clock"></i> ${escapeHtml(duration)}</div>
+            <div class="sb-item"><i class="fas fa-mountain"></i> ${escapeHtml(altitudeText)}</div>
+            <div class="sb-item"><i class="fas fa-users"></i> ${escapeHtml(groupText)}</div>
+            <div class="sb-item"><i class="fas fa-calendar-alt"></i> ${escapeHtml(bestSeason)}</div>
+          `;
+      }
+
+      const stickyPrice = document.getElementById("stickyPrice");
+      if (stickyPrice) {
+        stickyPrice.innerHTML = `${priceText} <small>/ person</small>`;
+      }
+
+      const heroTitle = document.getElementById("heroTitle");
+      if (heroTitle) {
+        heroTitle.textContent = title;
+      }
+
+      const heroEyebrowText = document.getElementById("heroEyebrowText");
+      if (heroEyebrowText) {
+        heroEyebrowText.textContent = `${region}${state ? `, ${state}` : ""} · ${bestSeason}`;
+      }
+
+      const heroCats = document.getElementById("heroCats");
+      if (heroCats) {
+        heroCats.innerHTML = `
+            <span class="hcat pilgrimage">${escapeHtml(category)}</span>
+            <span class="hcat trek"><i class="fas fa-mountain"></i> ${escapeHtml(trekType)}</span>
+            <span class="hcat ${difficultyClass(difficulty)}"><i class="fas fa-chart-line"></i> ${escapeHtml(difficulty)}</span>
+          `;
+      }
+
+      const heroActs = document.getElementById("heroActs");
+      if (heroActs) {
+        heroActs.innerHTML = `
+            <div class="hact"><i class="fas fa-clock"></i> ${escapeHtml(duration)}</div>
+            <div class="hact"><i class="fas fa-mountain"></i> ${escapeHtml(altitudeText)} Peak</div>
+            <div class="hact"><i class="fas fa-users"></i> ${escapeHtml(groupText)} Pax</div>
+            <div class="hact"><i class="fas fa-calendar-alt"></i> ${escapeHtml(bestSeason)}</div>
+            <div class="hact"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(region)}</div>
+            <div class="hact"><i class="fas fa-chart-line"></i> ${escapeHtml(difficulty)}</div>
+          `;
+      }
+
+      const heroPrice = document.getElementById("heroPrice");
+      if (heroPrice) {
+        heroPrice.innerHTML = `${priceText} <span>/ person</span>`;
+      }
+
+      const sidebarPrice = document.getElementById("sidebarPrice");
+      if (sidebarPrice) {
+        sidebarPrice.innerHTML = `${priceText} <small>/ person</small>`;
+      }
+
+      const mobilePrice = document.getElementById("mobilePrice");
+      if (mobilePrice) {
+        mobilePrice.textContent = priceText;
+      }
+
+      const sidebarMeta = document.getElementById("sidebarMeta");
+      if (sidebarMeta) {
+        sidebarMeta.innerHTML = `
+            <div class="bm"><i class="fas fa-clock"></i><span>${escapeHtml(duration)}</span><small>Duration</small></div>
+            <div class="bm"><i class="fas fa-mountain"></i><span>${escapeHtml(altitudeText)}</span><small>Peak Alt.</small></div>
+            <div class="bm"><i class="fas fa-users"></i><span>${escapeHtml(groupText)}</span><small>Pax</small></div>
+            <div class="bm"><i class="fas fa-chart-line"></i><span>${escapeHtml(difficulty)}</span><small>Difficulty</small></div>
+          `;
+      }
+
+      const galleryGrid = document.getElementById("galleryGrid");
+      if (galleryGrid) {
+        const imageList = [trek.image, ...gallery]
+          .map((path) => toAbsoluteImage(path))
+          .filter((value, index, arr) => value && arr.indexOf(value) === index)
+          .slice(0, 5);
+
+        if (imageList.length) {
+          galleryGrid.innerHTML = imageList
+            .map((img, idx) => {
+              const isLast = idx === imageList.length - 1 && gallery.length > 4;
+              return `
+                  <div class="pm"${isLast ? ' style="position: relative"' : ""}>
+                    <img src="${escapeHtml(img)}" alt="${escapeHtml(title)}" loading="lazy" />
+                    ${isLast ? `<div class="pm-more"><i class="fas fa-images"></i><span>+${gallery.length - 4} Photos</span></div>` : ""}
+                  </div>
+                `;
+            })
+            .join("");
+        }
+      }
+
+      const overviewPills = document.getElementById("overviewPills");
+      if (overviewPills) {
+        overviewPills.innerHTML = `
+            <div class="op"><i class="fas fa-clock"></i> ${escapeHtml(duration)}</div>
+            <div class="op"><i class="fas fa-mountain"></i> ${escapeHtml(altitudeText)} Max Altitude</div>
+            <div class="op"><i class="fas fa-users"></i> ${escapeHtml(groupText)} Pax</div>
+            <div class="op"><i class="fas fa-calendar-alt"></i> ${escapeHtml(bestSeason)}</div>
+            <div class="op"><i class="fas fa-map-marker-alt"></i> ${escapeHtml(region)}</div>
+            <div class="op"><i class="fas fa-chart-line"></i> ${escapeHtml(difficulty)} Difficulty</div>
+            <div class="op"><i class="fas fa-tags"></i> ${escapeHtml(category)}</div>
+            <div class="op"><i class="fas fa-hiking"></i> ${escapeHtml(trekType)}</div>
+          `;
+      }
+
+      const overviewText = document.getElementById("overviewText");
+      if (overviewText) {
+        overviewText.textContent = overview || "Overview coming soon.";
+        const extraParagraphs = overviewText.parentElement.querySelectorAll("p");
+        extraParagraphs.forEach((paragraph, index) => {
+          if (index > 0) paragraph.remove();
+        });
+      }
+
+      const itineraryList = document.getElementById("itineraryList");
+      if (itineraryList && itinerary.length) {
+        itineraryList.innerHTML = itinerary
+          .map((item, index) => {
+            const label = String(item.day_label || `Day ${index + 1}`);
+            const dayNumber = String(index + 1).padStart(2, "0");
+            return `
+                <div class="itin-item">
+                  <div class="itin-left">
+                    <div class="itin-circle">
+                      <strong>${escapeHtml(dayNumber)}</strong><span>${escapeHtml(label)}</span>
+                    </div>
+                  </div>
+                  <div class="itin-right">
+                    <h3 class="itin-title">${escapeHtml(item.title || "Day Plan")}</h3>
+                    <p class="itin-desc">${escapeHtml(item.details || "Details will be updated soon.")}</p>
+                  </div>
+                </div>
+              `;
+          })
+          .join("");
+      }
+
+      const includedList = document.getElementById("includedList");
+      if (includedList) {
+        const includedItems = splitTextList(trek.inclusions);
+        if (includedItems.length) {
+          includedList.innerHTML = includedItems
+            .map((item) => `<div class="ii"><i class="fas fa-check-circle"></i> ${escapeHtml(item)}</div>`)
+            .join("");
+        }
+      }
+
+      const excludedList = document.getElementById("excludedList");
+      if (excludedList) {
+        const excludedItems = splitTextList(trek.exclusions);
+        if (excludedItems.length) {
+          excludedList.innerHTML = excludedItems
+            .map((item) => `<div class="ii"><i class="fas fa-times-circle"></i> ${escapeHtml(item)}</div>`)
+            .join("");
+        }
+      }
+
+      const faqList = document.getElementById("faqList");
+      if (faqList && faq.length) {
+        faqList.innerHTML = faq
+          .map(
+            (item) => `
+                <div class="faq-row">
+                  <button class="faq-btn">
+                    <span>${escapeHtml(item.question || "Question")}</span>
+                    <div class="faq-ico"><i class="fas fa-plus"></i></div>
+                  </button>
+                  <div class="faq-ans">
+                    <p>${escapeHtml(item.answer || "Answer will be updated soon.")}</p>
+                  </div>
+                </div>
+              `,
+          )
+          .join("");
+      }
+
+      const waLinks = document.querySelectorAll('a[href*="wa.me/9310461449"]');
+      waLinks.forEach((anchor) => {
+        anchor.href = `https://wa.me/9310461449?text=${encodeURIComponent(`${title} enquiry`)}`;
+      });
+
+      bindFaqAccordion();
+    }
+
+    async function loadTrekDetails() {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("slug");
+      const endpoint = slug
+        ? `backend/get-trek-details.php?slug=${encodeURIComponent(slug)}`
+        : "backend/get-trek-details.php";
+
+      try {
+        const response = await fetch(endpoint);
+        const payload = await response.json();
+        if (!response.ok || !payload.success || !payload.data) {
+          throw new Error(payload.message || "Trek data could not be loaded.");
+        }
+        renderTrekDetails(payload.data);
+      } catch (error) {
+        console.error("Trek details error:", error);
+      }
+    }
+
+    bindFaqAccordion();
+    loadTrekDetails();
+
+    const chatBtn = document.getElementById("chatBtn"),
+      chatWin = document.getElementById("chatWin"),
+      chatIco = document.getElementById("chatIco"),
+      chatX = document.getElementById("chatX");
+    function toggleChat() {
+      if (!chatWin || !chatIco) return;
+      const open = chatWin.classList.toggle("open");
+      chatIco.className = open ? "fas fa-times" : "fas fa-comment-dots";
+    }
+    if (chatBtn && chatWin && chatIco && chatX) {
+      chatBtn.addEventListener("click", toggleChat);
+      chatX.addEventListener("click", () => {
+        chatWin.classList.remove("open");
+        chatIco.className = "fas fa-comment-dots";
+      });
+    }
+    const botR = {
+      itin: `📅 7-Day Kedarnath Trek:\n• Day 1: Haridwar → Guptkashi (drive)\n• Day 2: Gaurikund → Jungle Chatti\n• Day 3: Jungle Chatti → Lincholi\n• Day 4: Lincholi → Kedarnath Temple\n• Day 5: Darshan + Descent to Lincholi\n• Day 6: Lincholi → Gaurikund → Guptkashi\n• Day 7: Guptkashi → Haridwar departure`,
+      price: `💰 Price: ₹8,500/person (was ₹11,500)\nSave ₹3,000!\n\nIncludes: 6 nights stay, all meals, guide, transport, tents & equipment.\nGroup discounts for 10+ pax!`,
+      diff: `⛰️ Difficulty: MODERATE\n\n• 7-8 km per day average\n• Max altitude: 3,584m\n• No technical climbing needed\n• Fitness recommended (4wk cardio prep)\n• Min age: 12 years`,
+      book: `📋 How to Book:\n• Call: +91 9310461449\n• WhatsApp: wa.me/9310461449\n• Email: hello@Tour & Travel.com\n\nDeposit of ₹2,500/person confirms your spot!`,
+      def: `🙏 Jai Kedar! For more details, WhatsApp us at +91 9310461449 — our team replies within minutes!`,
+    };
+    function getReply(m) {
+      const s = m.toLowerCase();
+      if (/itin|day|schedule/.test(s)) return botR.itin;
+      if (/price|cost|₹|cheap/.test(s)) return botR.price;
+      if (/diff|hard|easy|fit/.test(s)) return botR.diff;
+      if (/book|reserve/.test(s)) return botR.book;
+      return botR.def;
+    }
+    function addMsg(t, me) {
+      const d = document.createElement("div");
+      d.className = `msg ${me ? "me" : "bot"}`;
+      d.style.whiteSpace = "pre-line";
+      d.textContent = t;
+      const m = document.getElementById("chatMsgs");
+      m.appendChild(d);
+      m.scrollTop = m.scrollHeight;
+    }
+    function sendMsg() {
+      const inp = document.getElementById("chatInput"),
+        v = inp.value.trim();
+      if (!v) return;
+      addMsg(v, true);
+      inp.value = "";
+      setTimeout(() => addMsg(getReply(v), false), 680);
+    }
+    function qReply(t) {
+      addMsg(t, true);
+      setTimeout(() => addMsg(getReply(t), false), 680);
+    }
+    const chatInput = document.getElementById("chatInput");
+    if (chatInput) {
+      chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") sendMsg();
+      });
+    }
+  </script>
+</body>
+
+</html>

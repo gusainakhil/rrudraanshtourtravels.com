@@ -1,0 +1,2821 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Tour & Travel — Our Story, Our Team, Our Mission. India's most trusted trekking & tour company since 2020."
+    />
+    <title>About Us | Tour & Travel — Travel That Feels Like Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --ink: #0a1a0f;
+        --ink-soft: #1c3322;
+        --forest: #183023;
+        --forest-mid: #214532;
+        --moss: #2d5c3a;
+        --sage: #4a8a58;
+        --sage-lt: #6daf7d;
+        --terra: #b83a0a;
+        --terra-lt: #d4501e;
+        --amber: #c9861a;
+        --gold: #e8aa2e;
+        --gold-lt: #f5c95a;
+        --cream: #f5f0e8;
+        --paper: #fdfaf4;
+        --white: #ffffff;
+        --muted: #7a6e62;
+        --muted-dk: #4a4238;
+
+        --grad-fire: linear-gradient(
+          135deg,
+          #e8aa2e 0%,
+          #d4501e 50%,
+          #b83a0a 100%
+        );
+        --grad-fire-h: linear-gradient(
+          135deg,
+          #f5c95a 0%,
+          #e05a22 50%,
+          #c0420e 100%
+        );
+        --grad-forest: linear-gradient(135deg, #183023, #2d5c3a);
+        --grad-gold: linear-gradient(135deg, #e8aa2e, #f5c95a);
+
+        --sh-xs: 0 2px 10px rgba(10, 26, 15, 0.08);
+        --sh-sm: 0 6px 24px rgba(10, 26, 15, 0.12);
+        --sh-md: 0 16px 48px rgba(10, 26, 15, 0.16);
+        --sh-lg: 0 32px 80px rgba(10, 26, 15, 0.22);
+        --sh-fire: 0 10px 32px rgba(180, 58, 10, 0.3);
+        --sh-gold: 0 8px 28px rgba(232, 170, 46, 0.28);
+
+        --r-sm: 6px;
+        --r-md: 12px;
+        --r-lg: 18px;
+        --r-xl: 28px;
+        --r-pill: 100px;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+        --nav-h: 80px;
+        --font-display: "Playfair Display", serif;
+        --font-serif: "DM Serif Display", serif;
+        --font-body: "DM Sans", sans-serif;
+      }
+      .img-suraj {
+        object-position: 50% 15%; /* 👈 upar shift */
+      }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-body);
+        background: var(--cream);
+        color: var(--ink);
+        overflow-x: hidden;
+        line-height: 1.65;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        font-family: var(--font-body);
+        cursor: pointer;
+      }
+      .wrap {
+        max-width: 1260px;
+        margin: 0 auto;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 0.9rem;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--grad-fire);
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .sec-title {
+        font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+        color: var(--ink);
+        margin-bottom: 0.65rem;
+      }
+      .sec-sub {
+        font-size: 0.9rem;
+        color: var(--muted);
+        max-width: 460px;
+        line-height: 1.85;
+        font-weight: 400;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 30px;
+        border-radius: var(--r-pill);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.38s var(--ease);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-fire {
+        background: var(--grad-fire);
+        color: #fff;
+        box-shadow: var(--sh-fire);
+      }
+      .btn-fire:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 18px 44px rgba(180, 58, 10, 0.38);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: #fff;
+      }
+      .btn-dark:hover {
+        background: var(--forest-mid);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--ink);
+        border: 1.5px solid rgba(10, 26, 15, 0.2);
+      }
+      .btn-outline:hover {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: rgba(255, 255, 255, 0.55);
+      }
+      .btn-wa {
+        background: #25d366;
+        color: #fff;
+        box-shadow: 0 8px 28px rgba(37, 211, 102, 0.32);
+      }
+      .btn-wa:hover {
+        transform: translateY(-3px);
+      }
+
+      .rv {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-l {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-l.vis {
+        opacity: 1;
+        transform: none;
+      }
+      .rv-r {
+        opacity: 0;
+        transform: translateX(30px);
+        transition:
+          opacity 0.75s var(--ease),
+          transform 0.75s var(--ease);
+      }
+      .rv-r.vis {
+        opacity: 1;
+        transform: none;
+      }
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden !important;
+      }
+
+      /* ═══════════════════════════════════════════════
+   HEADER
+═══════════════════════════════════════════════ */
+
+      /* ═══════════════════════════════════════════════
+   ABOUT PAGE HERO
+═══════════════════════════════════════════════ */
+      .about-hero {
+        min-height: 72vh;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        padding-top: var(--nav-h);
+      }
+      .about-hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=90&auto=format&fit=crop")
+          center/cover no-repeat;
+      }
+      .about-hero-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            to right,
+            rgba(10, 26, 15, 0.88) 0%,
+            rgba(10, 26, 15, 0.2) 55%,
+            rgba(10, 26, 15, 0) 80%
+          ),
+          linear-gradient(
+            to top,
+            rgba(10, 26, 15, 0.98) 0%,
+            rgba(10, 26, 15, 0.05) 60%
+          );
+      }
+      .hero-breadcrumb {
+        position: absolute;
+        top: calc(var(--nav-h) + 2rem);
+        left: clamp(1.2rem, 4vw, 2.8rem);
+        z-index: 4;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        animation: fadeUp 0.7s 0.2s both;
+      }
+      .hero-breadcrumb a,
+      .hero-breadcrumb span {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        transition: color 0.25s;
+      }
+      .hero-breadcrumb a:hover {
+        color: var(--gold);
+      }
+      .hero-breadcrumb i {
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 0.52rem;
+      }
+      .hero-breadcrumb span:last-child {
+        color: var(--gold);
+      }
+
+      .about-hero-content {
+        position: relative;
+        z-index: 3;
+        padding: 0 clamp(1.2rem, 4vw, 2.8rem) clamp(4rem, 8vh, 6rem);
+        max-width: 1440px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .about-hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        padding: 8px 20px 8px 8px;
+        border-radius: var(--r-pill);
+        margin-bottom: 1.5rem;
+        animation: fadeUp 0.9s 0.3s both;
+      }
+      .about-hero-pill .pill-dot {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(180, 58, 10, 0.4);
+      }
+      .about-hero-pill .pill-dot i {
+        color: #fff;
+        font-size: 0.65rem;
+      }
+      .about-hero-pill span {
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .about-hero-h1 {
+        font-size: clamp(3rem, 7.5vw, 6rem);
+        font-weight: 900;
+        color: #fff;
+        line-height: 0.95;
+        margin-bottom: 1.2rem;
+        animation: fadeUp 0.95s 0.44s both;
+      }
+      .about-hero-h1 em {
+        font-style: italic;
+        font-weight: 400;
+        color: var(--gold);
+        display: block;
+      }
+      .about-hero-p {
+        font-size: clamp(0.88rem, 1.3vw, 1rem);
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.88;
+        max-width: 520px;
+        margin-bottom: 2.2rem;
+        font-weight: 300;
+        animation: fadeUp 0.95s 0.58s both;
+      }
+      .about-hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        animation: fadeUp 0.95s 0.72s both;
+      }
+      .about-hero-stats {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        margin-top: 2.5rem;
+        animation: fadeUp 0.95s 0.88s both;
+      }
+      .ahs {
+        text-align: left;
+      }
+      .ahs-num {
+        font-family: var(--font-display);
+        font-size: 2.2rem;
+        font-weight: 900;
+        background: var(--grad-fire);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .ahs-lbl {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.38);
+        margin-top: 4px;
+      }
+
+      .marquee-strip {
+        background: var(--grad-fire);
+        padding: 12px 0;
+        overflow: hidden;
+      }
+      .marquee-tr {
+        display: flex;
+        gap: 3rem;
+        white-space: nowrap;
+        animation: marqueeAnim 28s linear infinite;
+      }
+      .marquee-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        font-size: 0.64rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      .marquee-item i {
+        font-size: 0.58rem;
+        opacity: 0.6;
+      }
+      .marquee-dot {
+        color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* ═══════════════════════════════════════════════
+   STORY SECTION
+═══════════════════════════════════════════════ */
+      #story {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--paper);
+        position: relative;
+        overflow: hidden;
+        margin-top: -10rem;
+      }
+      #story::before {
+        content: "";
+        position: absolute;
+        right: -80px;
+        top: -100px;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(180, 58, 10, 0.04),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 8rem);
+        align-items: center;
+      }
+
+      .story-media {
+        position: relative;
+        height: clamp(420px, 52vw, 640px);
+      }
+      .story-img-main {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 68%;
+        height: 82%;
+        object-fit: cover;
+        border-radius: var(--r-xl);
+        box-shadow: var(--sh-lg);
+      }
+      .story-img-accent {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 54%;
+        height: 52%;
+        object-fit: cover;
+        border-radius: var(--r-xl);
+        box-shadow: var(--sh-md);
+        border: 6px solid var(--paper);
+      }
+      .story-yrs {
+        position: absolute;
+        top: 40%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--grad-fire);
+        box-shadow: 0 14px 36px rgba(180, 58, 10, 0.42);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+      .story-yrs .big {
+        font-family: var(--font-display);
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: #fff;
+        line-height: 1;
+      }
+      .story-yrs .sml {
+        font-size: 0.42rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        line-height: 1.4;
+      }
+      .story-eco {
+        position: absolute;
+        bottom: 28%;
+        left: -18px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: var(--moss);
+        color: #fff;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 18px rgba(45, 92, 58, 0.4);
+      }
+
+      .story-lead {
+        font-family: var(--font-display);
+        font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+        color: var(--ink);
+        line-height: 1.72;
+        margin-bottom: 1.2rem;
+        font-weight: 500;
+        font-style: italic;
+        padding-left: 1.2rem;
+        border-left: 3px solid var(--terra);
+      }
+      .story-body p {
+        font-size: 0.88rem;
+        color: var(--muted);
+        line-height: 1.92;
+        margin-bottom: 1.1rem;
+      }
+      .story-milestones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 1.8rem 0;
+      }
+      .mile {
+        padding: 1.2rem;
+        background: var(--white);
+        border-radius: var(--r-md);
+        box-shadow: var(--sh-xs);
+        border-bottom: 3px solid transparent;
+        transition: all 0.35s;
+      }
+      .mile:hover {
+        border-bottom-color: var(--terra);
+        transform: translateY(-3px);
+        box-shadow: var(--sh-sm);
+      }
+      .mile-yr {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 900;
+        background: var(--grad-fire);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .mile-lbl {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+        margin-bottom: 3px;
+      }
+      .mile-desc {
+        font-size: 0.7rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* ═══════════════════════════════════════════════
+   MISSION / VISION / VALUES
+═══════════════════════════════════════════════ */
+      #mvv {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: #09150d;
+        position: relative;
+        overflow: hidden;
+      }
+      #mvv::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.028) 1px,
+          transparent 1px
+        );
+        background-size: 30px 30px;
+        pointer-events: none;
+      }
+      .mvv-glow {
+        position: absolute;
+        pointer-events: none;
+        border-radius: 50%;
+      }
+      .mvv-glow-1 {
+        left: -200px;
+        top: -150px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(180, 58, 10, 0.09),
+          transparent 70%
+        );
+      }
+      .mvv-glow-2 {
+        right: -180px;
+        bottom: -120px;
+        width: 520px;
+        height: 520px;
+        background: radial-gradient(
+          circle,
+          rgba(45, 92, 58, 0.1),
+          transparent 70%
+        );
+      }
+
+      .mvv-inner {
+        position: relative;
+        z-index: 2;
+      }
+      .mvv-head {
+        text-align: center;
+        margin-bottom: clamp(2.5rem, 5vw, 5rem);
+      }
+      .mvv-head .eyebrow {
+        color: var(--terra-lt);
+        justify-content: center;
+      }
+      .mvv-head .eyebrow::before {
+        background: linear-gradient(90deg, var(--terra-lt), var(--gold));
+      }
+      .mvv-head .sec-title {
+        color: #fff;
+      }
+      .mvv-head .sec-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .mvv-head .sec-sub {
+        color: rgba(255, 255, 255, 0.4);
+        max-width: 520px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .mvv-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .mvv-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--r-xl);
+        padding: 2.8rem 2.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.42s var(--ease);
+      }
+      .mvv-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--grad-fire);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s var(--ease);
+      }
+      .mvv-card:hover {
+        background: rgba(255, 255, 255, 0.045);
+        border-color: rgba(180, 58, 10, 0.15);
+        transform: translateY(-6px);
+      }
+      .mvv-card:hover::before {
+        transform: scaleX(1);
+      }
+      .mvv-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        border: 1px solid rgba(180, 58, 10, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra-lt);
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        transition: all 0.4s var(--ease-spring);
+      }
+      .mvv-card:hover .mvv-icon {
+        background: var(--grad-fire);
+        border-color: transparent;
+        color: #fff;
+        box-shadow: var(--sh-fire);
+        transform: scale(1.1) translateY(-3px);
+      }
+      .mvv-card h3 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: #fff;
+        margin-bottom: 0.7rem;
+      }
+      .mvv-card p {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.42);
+        line-height: 1.92;
+        font-weight: 300;
+        transition: color 0.3s;
+      }
+      .mvv-card:hover p {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .mvv-values {
+        margin-top: clamp(2rem, 4vw, 4rem);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .val-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 1.4rem 1.6rem;
+        background: rgba(255, 255, 255, 0.018);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: var(--r-lg);
+        transition: all 0.35s;
+      }
+      .val-item:hover {
+        background: rgba(255, 255, 255, 0.038);
+        border-color: rgba(180, 58, 10, 0.15);
+      }
+      .val-ico {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          rgba(180, 58, 10, 0.18),
+          rgba(200, 130, 26, 0.08)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        font-size: 0.85rem;
+        flex-shrink: 0;
+      }
+      .val-item h4 {
+        font-family: var(--font-body);
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 3px;
+      }
+      .val-item p {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.36);
+        line-height: 1.7;
+      }
+
+      /* ═══════════════════════════════════════════════
+   FOUNDERS / TEAM
+═══════════════════════════════════════════════ */
+      #team {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--cream);
+      }
+      .team-intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 7rem);
+        align-items: center;
+        margin-bottom: clamp(3rem, 6vw, 6rem);
+      }
+      .founders-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 4rem;
+      }
+      .founder-card {
+        background: var(--white);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+        box-shadow: var(--sh-xs);
+        transition: all 0.45s var(--ease);
+      }
+      .founder-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--sh-lg);
+      }
+      .fc-img {
+        height: 280px;
+        overflow: hidden;
+        position: relative;
+      }
+      .fc-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.65s var(--ease);
+      }
+      .founder-card:hover .fc-img img {
+        transform: scale(1.08);
+      }
+      .fc-img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 26, 15, 0.7) 0%,
+          transparent 50%
+        );
+        opacity: 0;
+        transition: opacity 0.35s;
+      }
+      .founder-card:hover .fc-img-overlay {
+        opacity: 1;
+      }
+      .fc-social {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: opacity 0.35s 0.1s;
+      }
+      .founder-card:hover .fc-social {
+        opacity: 1;
+      }
+      .fc-soc {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        transition: all 0.25s;
+      }
+      .fc-soc:hover {
+        background: var(--grad-fire);
+        border-color: transparent;
+      }
+      .fc-body {
+        padding: 1.4rem 1.5rem;
+      }
+      .fc-role {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 4px;
+      }
+      .fc-body h3 {
+        font-size: 1.3rem;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+      .fc-body p {
+        font-size: 0.76rem;
+        color: var(--muted);
+        line-height: 1.72;
+        margin-bottom: 1rem;
+      }
+      .fc-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .fc-tag {
+        padding: 4px 10px;
+        background: var(--cream);
+        border-radius: 4px;
+        font-size: 0.62rem;
+        font-weight: 600;
+        color: var(--muted-dk);
+      }
+
+      .team-grid-title {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .team-grid-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: rgba(10, 26, 15, 0.1);
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+      .tm {
+        background: var(--white);
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        box-shadow: var(--sh-xs);
+        transition: all 0.38s;
+      }
+      .tm:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--sh-md);
+      }
+      .tm-img {
+        height: 180px;
+        overflow: hidden;
+      }
+      .tm-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.55s;
+      }
+      .tm:hover .tm-img img {
+        transform: scale(1.1);
+      }
+      .tm-body {
+        padding: 1.1rem;
+      }
+      .tm-role {
+        font-size: 0.58rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--terra);
+        margin-bottom: 3px;
+      }
+      .tm h4 {
+        font-size: 1rem;
+        color: var(--ink);
+        margin-bottom: 3px;
+      }
+      .tm p {
+        font-size: 0.7rem;
+        color: var(--muted);
+      }
+
+      /* ═══════════════════════════════════════════════
+   ACHIEVEMENTS / AWARDS
+═══════════════════════════════════════════════ */
+      #awards {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+      .awards-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: clamp(3rem, 6vw, 7rem);
+        align-items: center;
+      }
+      .awards-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .award-card {
+        padding: 1.8rem;
+        background: var(--cream);
+        border-radius: var(--r-lg);
+        border: 1px solid rgba(10, 26, 15, 0.07);
+        transition: all 0.4s;
+        text-align: center;
+      }
+      .award-card:hover {
+        background: var(--white);
+        box-shadow: var(--sh-md);
+        transform: translateY(-4px);
+        border-color: rgba(180, 58, 10, 0.1);
+      }
+      .award-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        margin: 0 auto 1rem;
+        background: linear-gradient(
+          135deg,
+          rgba(180, 58, 10, 0.1),
+          rgba(200, 130, 26, 0.06)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--terra);
+        font-size: 1.3rem;
+        transition: all 0.4s var(--ease-spring);
+      }
+      .award-card:hover .award-icon {
+        background: var(--grad-fire);
+        color: #fff;
+        box-shadow: var(--sh-fire);
+        transform: scale(1.1) translateY(-2px);
+      }
+      .award-card h4 {
+        font-size: 1rem;
+        color: var(--ink);
+        margin-bottom: 4px;
+      }
+      .award-card p {
+        font-size: 0.72rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .award-card .award-yr {
+        font-size: 0.6rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        color: var(--terra);
+        margin-top: 0.5rem;
+      }
+
+      .certs-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1.8rem;
+      }
+      .cert {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.9rem 1.2rem;
+        background: var(--cream);
+        border-radius: var(--r-md);
+        border: 1px solid rgba(10, 26, 15, 0.07);
+      }
+      .cert i {
+        color: var(--moss);
+        font-size: 1.1rem;
+      }
+      .cert span {
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      /* ═══════════════════════════════════════════════
+   JOURNEY TIMELINE — FIXED TWO-SIDED LAYOUT
+═══════════════════════════════════════════════ */
+      #timeline {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--paper);
+      }
+      .timeline-head {
+        text-align: center;
+        margin-bottom: clamp(2.5rem, 5vw, 5rem);
+      }
+      .timeline-head .eyebrow {
+        justify-content: center;
+      }
+
+      /* === DESKTOP TIMELINE (≥769px) === */
+      .timeline {
+        position: relative;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+
+      /* Central vertical line */
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          to bottom,
+          var(--terra),
+          var(--gold),
+          var(--moss)
+        );
+        transform: translateX(-50%);
+      }
+
+      /* Each timeline row */
+      .tl-item {
+        display: grid;
+        grid-template-columns: 1fr 60px 1fr;
+        gap: 0;
+        margin-bottom: 3rem;
+        align-items: start;
+        position: relative;
+      }
+
+      /* The dot in the middle column */
+      .tl-dot {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: var(--white);
+        border: 3px solid var(--terra);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        box-shadow: var(--sh-sm);
+        transition: all 0.35s var(--ease-spring);
+        margin: 0 auto;
+        position: relative;
+        top: 1.2rem;
+        flex-shrink: 0;
+      }
+      .tl-item:hover .tl-dot {
+        background: var(--grad-fire);
+        border-color: transparent;
+        box-shadow: var(--sh-fire);
+        transform: scale(1.15);
+      }
+      .tl-dot i {
+        color: var(--terra);
+        font-size: 0.9rem;
+        transition: color 0.35s;
+      }
+      .tl-item:hover .tl-dot i {
+        color: #fff;
+      }
+
+      /* Left content (odd items) */
+      .tl-left {
+        padding: 0 2rem 0 0;
+        text-align: right;
+      }
+
+      /* Right content (even items) */
+      .tl-right {
+        padding: 0 0 0 2rem;
+        text-align: left;
+      }
+
+      /* Empty placeholder cell */
+      .tl-empty {
+        /* nothing needed */
+      }
+
+      .tl-yr {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 900;
+        background: var(--grad-fire);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 4px;
+      }
+      .tl-left .tl-yr,
+      .tl-right .tl-yr {
+        display: block;
+      }
+
+      .tl-content-box {
+        padding: 1.4rem 1.6rem;
+        background: var(--white);
+        border-radius: var(--r-lg);
+        box-shadow: var(--sh-xs);
+        transition: all 0.35s;
+      }
+      .tl-item:hover .tl-content-box {
+        box-shadow: var(--sh-md);
+        transform: translateY(-3px);
+      }
+      .tl-left .tl-content-box {
+        border-right: 4px solid var(--terra);
+      }
+      .tl-right .tl-content-box {
+        border-left: 4px solid var(--terra);
+      }
+      .tl-content-box h3 {
+        font-size: 1.1rem;
+        color: var(--ink);
+        margin-bottom: 0.4rem;
+      }
+      .tl-content-box p {
+        font-size: 0.78rem;
+        color: var(--muted);
+        line-height: 1.78;
+      }
+
+      /* Horizontal connector lines from content box to dot */
+      .tl-left::after {
+        content: "";
+        position: absolute;
+        top: calc(1.2rem + 26px);
+        right: 30px;
+        width: calc(30px);
+        height: 2px;
+        background: var(--terra);
+        opacity: 0.3;
+      }
+      .tl-right::before {
+        content: "";
+        position: absolute;
+        top: calc(1.2rem + 26px);
+        left: 30px;
+        width: calc(30px);
+        height: 2px;
+        background: var(--terra);
+        opacity: 0.3;
+      }
+
+      /* ═══════════════════════════════════════════════
+   IMPACT / ECO SECTION
+═══════════════════════════════════════════════ */
+      #impact {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--forest);
+        position: relative;
+        overflow: hidden;
+      }
+      #impact::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+      }
+      .impact-inner {
+        position: relative;
+        z-index: 2;
+      }
+      .impact-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: clamp(3rem, 6vw, 7rem);
+        align-items: center;
+      }
+      .impact-copy .eyebrow {
+        color: var(--terra-lt);
+      }
+      .impact-copy .eyebrow::before {
+        background: linear-gradient(90deg, var(--terra-lt), var(--gold));
+      }
+      .impact-copy .sec-title {
+        color: #fff;
+      }
+      .impact-copy .sec-title em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .impact-copy p {
+        font-size: 0.88rem;
+        color: rgba(255, 255, 255, 0.48);
+        line-height: 1.92;
+        margin-bottom: 1rem;
+      }
+      .impact-points {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        margin-top: 1.5rem;
+      }
+      .ip {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      .ip-ico {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(45, 92, 58, 0.3);
+        border: 1px solid rgba(45, 92, 58, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--sage-lt);
+        font-size: 0.82rem;
+        flex-shrink: 0;
+      }
+      .ip p {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.72;
+      }
+      .ip p strong {
+        color: #fff;
+        display: block;
+        font-size: 0.84rem;
+        margin-bottom: 2px;
+      }
+
+      .impact-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .is {
+        padding: 1.8rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--r-lg);
+        text-align: center;
+        transition: all 0.38s;
+      }
+      .is:hover {
+        background: rgba(45, 92, 58, 0.12);
+        border-color: rgba(45, 92, 58, 0.25);
+        transform: translateY(-4px);
+      }
+      .is-num {
+        font-family: var(--font-display);
+        font-size: 2.6rem;
+        font-weight: 900;
+        background: var(--grad-gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+      .is-lbl {
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.35);
+      }
+      .is-icon {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      /* ═══════════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════════ */
+      #a-testi {
+        padding: clamp(5rem, 10vw, 10rem) 0;
+        background: var(--cream);
+      }
+      .a-testi-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+      .a-tc {
+        background: var(--white);
+        border-radius: var(--r-xl);
+        padding: 2rem;
+        box-shadow: var(--sh-xs);
+        transition: all 0.38s;
+        border-bottom: 3px solid transparent;
+      }
+      .a-tc:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--sh-md);
+        border-bottom-color: var(--terra);
+      }
+      .a-stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 0.9rem;
+      }
+      .a-stars i {
+        color: var(--gold);
+        font-size: 0.78rem;
+      }
+      .a-tc q {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-style: italic;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        display: block;
+        margin-bottom: 1.4rem;
+      }
+      .a-auth {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+      }
+      .a-av {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid var(--terra);
+      }
+      .a-name {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .a-trip {
+        font-size: 0.65rem;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      /* ═══════════════════════════════════════════════
+   CTA BANNER
+═══════════════════════════════════════════════ */
+      #cta {
+        padding: clamp(5rem, 10vw, 9rem) 0;
+        background: var(--forest-mid);
+        position: relative;
+        overflow: hidden;
+      }
+      #cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=60")
+          center/cover;
+        opacity: 0.1;
+      }
+      .cta-body {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .cta-body .eyebrow {
+        color: rgba(255, 255, 255, 0.55);
+        justify-content: center;
+      }
+      .cta-body .eyebrow::before {
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+      }
+      .cta-body h2 {
+        font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+        color: #fff;
+        margin-bottom: 0.75rem;
+      }
+      .cta-body p {
+        font-size: 0.98rem;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 2.8rem;
+        font-weight: 300;
+      }
+      .cta-row {
+        display: flex;
+        gap: 0.9rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+      footer {
+        background: #060f09;
+      }
+      .footer-body {
+        padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 5rem);
+        display: grid;
+        grid-template-columns: 2.4fr 1fr 1fr 1.8fr;
+        gap: clamp(2rem, 4vw, 5rem);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .foot-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 1.2rem;
+      }
+      .foot-desc {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.32);
+        line-height: 1.88;
+        max-width: 270px;
+        margin-bottom: 1.6rem;
+      }
+      .foot-soc {
+        display: flex;
+        gap: 0.6rem;
+        margin-bottom: 2rem;
+      }
+      .foot-soc a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        color: rgba(255, 255, 255, 0.38);
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .foot-soc a:hover {
+        background: var(--grad-fire);
+        color: #fff;
+        border-color: transparent;
+      }
+      .foot-nl p {
+        font-size: 0.74rem;
+        color: rgba(255, 255, 255, 0.32);
+        margin-bottom: 0.75rem;
+      }
+      .nl-box {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nl-box input {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.04);
+        border: none;
+        outline: none;
+        padding: 11px 14px;
+        font-size: 0.74rem;
+        font-family: var(--font-body);
+        color: #fff;
+      }
+      .nl-box input::placeholder {
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .nl-box button {
+        background: var(--grad-fire);
+        color: #fff;
+        border: none;
+        padding: 0 18px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: opacity 0.25s;
+      }
+      .nl-box button:hover {
+        opacity: 0.85;
+      }
+      .foot-col h5 {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 1.3rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid rgba(180, 58, 10, 0.18);
+      }
+      .foot-col ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+      }
+      .foot-col a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        transition: all 0.28s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .foot-col a::before {
+        content: "→";
+        color: var(--terra-lt);
+        font-size: 0.58rem;
+        opacity: 0;
+        transform: translateX(-4px);
+        transition: all 0.25s;
+      }
+      .foot-col a:hover {
+        color: rgba(255, 255, 255, 0.78);
+        padding-left: 5px;
+      }
+      .foot-col a:hover::before {
+        opacity: 1;
+        transform: none;
+      }
+      .foot-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .fc-inf {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .fc-inf i {
+        color: var(--terra-lt);
+        font-size: 0.82rem;
+        margin-top: 3px;
+        width: 14px;
+        flex-shrink: 0;
+      }
+      .fc-inf p,
+      .fc-inf a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.36);
+        line-height: 1.7;
+        transition: color 0.25s;
+      }
+      .fc-inf a:hover {
+        color: var(--terra-lt);
+      }
+      .footer-btm {
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-btm p {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.2);
+      }
+      .footer-btm p span {
+        color: var(--terra-lt);
+      }
+      .btm-links {
+        display: flex;
+        gap: 1.8rem;
+      }
+      .btm-links a {
+        font-size: 0.68rem;
+        color: rgba(255, 255, 255, 0.2);
+        transition: color 0.25s;
+      }
+      .btm-links a:hover {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* ═══════════════════════════════════════════════
+   FLOATING BUTTONS
+═══════════════════════════════════════════════ */
+      .right-floats {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        animation: popIn 0.5s 2s both;
+      }
+      .rf {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .rf-tip {
+        position: absolute;
+        right: 66px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--ink);
+        color: #fff;
+        font-size: 0.64rem;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.22s;
+      }
+      .rf-tip::after {
+        content: "";
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right: none;
+        border-left-color: var(--ink);
+      }
+      .rf:hover .rf-tip {
+        opacity: 1;
+      }
+      .wa-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.42rem;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .wa-btn:hover {
+        transform: scale(1.12);
+      }
+      .call-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--forest-mid);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 24px rgba(24, 48, 35, 0.4);
+        transition: all 0.35s var(--ease-spring);
+      }
+      .call-btn:hover {
+        transform: scale(1.12);
+        background: var(--moss);
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes popIn {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      @keyframes marqueeAnim {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .nav-links,
+        .nav-phone,
+        .nav-right .btn {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+        .story-media {
+          height: clamp(300px, 60vw, 460px);
+        }
+        .mvv-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .mvv-values {
+          grid-template-columns: 1fr;
+        }
+        .team-intro {
+          grid-template-columns: 1fr;
+        }
+        .founders-strip {
+          grid-template-columns: 1fr 1fr;
+        }
+        .team-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .awards-layout {
+          grid-template-columns: 1fr;
+        }
+        .awards-right {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .impact-grid {
+          grid-template-columns: 1fr;
+        }
+        .a-testi-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-body {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        /* Timeline tablet: still two-sided but narrower */
+        .timeline {
+          max-width: 100%;
+        }
+        .tl-content-box h3 {
+          font-size: 1rem;
+        }
+      }
+
+      /* ═══════════════════════════════════════════════
+   MOBILE TIMELINE — Single column, left aligned
+═══════════════════════════════════════════════ */
+      @media (max-width: 768px) {
+        .founders-strip {
+          grid-template-columns: 1fr;
+        }
+        .mvv-cards {
+          grid-template-columns: 1fr;
+        }
+        .about-hero-stats {
+          gap: 1.5rem;
+        }
+        .team-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .story-milestones {
+          grid-template-columns: 1fr;
+        }
+        .awards-right {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        /* ── MOBILE TIMELINE RESET ── */
+        .timeline::before {
+          left: 28px;
+          transform: none;
+        }
+
+        .tl-item {
+          display: flex;
+          flex-direction: column;
+          padding-left: 70px;
+          position: relative;
+          margin-bottom: 2rem;
+        }
+
+        .tl-dot {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 44px;
+          height: 44px;
+          margin: 0;
+          transform: none !important;
+        }
+        .tl-item:hover .tl-dot {
+          transform: scale(1.12) !important;
+        }
+
+        /* Hide the empty placeholder on mobile */
+        .tl-empty {
+          display: none;
+        }
+
+        .tl-left,
+        .tl-right {
+          padding: 0;
+          text-align: left;
+        }
+
+        /* Remove pseudo connector lines on mobile */
+        .tl-left::after,
+        .tl-right::before {
+          display: none;
+        }
+
+        /* Left-side border on all cards */
+        .tl-left .tl-content-box,
+        .tl-right .tl-content-box {
+          border-left: 4px solid var(--terra);
+          border-right: none;
+        }
+      }
+
+      @media (max-width: 640px) {
+        :root {
+          --nav-h: 66px;
+        }
+        .logo-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 11px;
+        }
+        .logo-name {
+          font-size: 1.22rem;
+        }
+        .about-hero h1 {
+          font-size: clamp(2.6rem, 12vw, 3.8rem);
+        }
+        .a-testi-grid {
+          grid-template-columns: 1fr;
+        }
+        .team-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .impact-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-body {
+          grid-template-columns: 1fr;
+        }
+        .foot-col:nth-child(3),
+        .foot-col:nth-child(4) {
+          display: none;
+        }
+        .footer-btm {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .btm-links {
+          justify-content: center;
+        }
+        .about-hero-btns .btn:last-child {
+          display: none;
+        }
+        .mvv-values {
+          grid-template-columns: 1fr;
+        }
+        .awards-right {
+          grid-template-columns: 1fr;
+        }
+        .a-testi-grid {
+          grid-template-columns: 1fr;
+        }
+        .timeline::before {
+          left: 22px;
+        }
+        .tl-item {
+          padding-left: 58px;
+        }
+        .tl-dot {
+          width: 38px;
+          height: 38px;
+        }
+      }
+    </style>
+
+    <!-- <link rel="stylesheet" href="style/trek-details.css"> -->
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+
+    <script>
+      // Load navbar from nav.html
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("navbar-container").innerHTML = html;
+          // Initialize navbar functions after loading
+          initNavbar();
+        })
+        .catch((error) => console.log("Error loading navbar:", error));
+
+      function initNavbar() {
+        const hamBtn = document.getElementById("hdrNavHamBtn");
+        const mobDrawer = document.getElementById("hdrNavMobDrawer");
+        const mobOverlay = document.getElementById("hdrNavMobOverlay");
+        const hdr = document.getElementById("hdrNav");
+
+        if (!hamBtn || !mobDrawer || !mobOverlay) return;
+
+        function openMob() {
+          mobDrawer.classList.add("open");
+          mobOverlay.classList.add("open");
+          hamBtn.classList.add("open");
+          hamBtn.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+          mobDrawer.setAttribute("aria-hidden", "false");
+        }
+        function closeMob() {
+          mobDrawer.classList.remove("open");
+          mobOverlay.classList.remove("open");
+          hamBtn.classList.remove("open");
+          hamBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+          mobDrawer.setAttribute("aria-hidden", "true");
+        }
+        hamBtn.addEventListener("click", () =>
+          mobDrawer.classList.contains("open") ? closeMob() : openMob(),
+        );
+        mobOverlay.addEventListener("click", closeMob);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeMob();
+        });
+
+        // Header scroll effect
+        if (hdr) {
+          // Check initial scroll position
+          hdr.classList.toggle("scrolled", scrollY > 50);
+
+          // Listen for scroll changes
+          window.addEventListener(
+            "scroll",
+            () => hdr.classList.toggle("scrolled", scrollY > 50),
+            { passive: true },
+          );
+        }
+
+        // Dropdown click handler
+        const navDrops = document.querySelectorAll(".hdr-nav-drop");
+        navDrops.forEach((drop) => {
+          const dropLink = drop.querySelector("button");
+          if (dropLink) {
+            dropLink.addEventListener("click", (e) => {
+              e.preventDefault();
+              // Close all other dropdowns
+              navDrops.forEach((d) => {
+                if (d !== drop) d.classList.remove("open");
+              });
+              // Toggle current dropdown
+              drop.classList.toggle("open");
+            });
+          }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+          const navLinks = document.querySelector(".hdr-nav-links");
+          if (navLinks && !navLinks.contains(e.target)) {
+            navDrops.forEach((drop) => drop.classList.remove("open"));
+          }
+        });
+
+        window.openMob = openMob;
+        window.closeMob = closeMob;
+        window.toggleSub = function (id, e) {
+          e.stopPropagation();
+          document.getElementById(id).classList.toggle("open");
+        };
+      }
+    </script>
+
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="about-hero-bg"></div>
+
+      <div class="about-hero-content">
+        <h1 class="about-hero-h1">We Are<br /><em>Tour & Travel</em></h1>
+        <p class="about-hero-p">
+          Born in the mountains, raised by wanderers. We are not just a travel
+          company — we are a family of passionate adventurers who believe every
+          journey should change you from the inside out.
+        </p>
+        <div class="about-hero-btns">
+          <a href="contact.html" class="btn btn-fire"
+            ><i class="fas fa-paper-plane"></i> Plan Your Journey</a
+          >
+          <a href="#story" class="btn btn-ghost"
+            ><i class="fas fa-scroll"></i> Our Story</a
+          >
+        </div>
+        <div class="about-hero-stats">
+          <div class="ahs">
+            <div class="ahs-num">500+</div>
+            <div class="ahs-lbl">Happy Travellers</div>
+          </div>
+          <div class="ahs">
+            <div class="ahs-num">8+</div>
+            <div class="ahs-lbl">Years Experience</div>
+          </div>
+          <div class="ahs">
+            <div class="ahs-num">50+</div>
+            <div class="ahs-lbl">Destinations</div>
+          </div>
+          <div class="ahs">
+            <div class="ahs-num">4.9★</div>
+            <div class="ahs-lbl">Google Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section id="story">
+      <div class="wrap">
+        <div class="story-grid">
+          <div class="story-media rv-l">
+            <img
+              class="story-img-main"
+              src="images/logo.png"
+              alt="Founder trekking"
+              loading="lazy"
+            />
+            <img
+              class="story-img-accent"
+              src="images/logo.png"
+              alt="Mountain camp"
+              loading="lazy"
+            />
+            <div class="story-yrs">
+              <div class="big">8+</div>
+              <div class="sml">Years of<br />Excellence</div>
+            </div>
+            <div class="story-eco"><i class="fas fa-leaf"></i></div>
+          </div>
+          <div class="rv-r">
+            <p class="eyebrow">Our Story</p>
+            <h2 class="sec-title">A Dream Born<br />in the Himalayas</h2>
+            <p class="story-lead">
+              "We didn't start a business. We started a movement — to make the
+              mountains accessible, safe, and magical for every Indian."
+            </p>
+            <p class="sec-sub" style="max-width: 100%">
+              Tour & Travel started in 2020 when our founder Arjun Rawat, a
+              passionate mountaineer from Rishikesh, noticed that most travel
+              companies treated the mountains as a backdrop — not a destination
+              with a soul. He set out to change that.
+            </p>
+            <p class="sec-sub" style="max-width: 100%; margin-top: 0.8rem">
+              What began as a small group of 8 friends trekking to Kedarnath has
+              grown into one of India's most trusted travel companies — serving
+              over 500 travellers every year across Uttarakhand, Himachal
+              Pradesh, Rajasthan, and beyond.
+            </p>
+            <div class="story-milestones">
+              <div class="mile">
+                <div class="mile-yr">2018</div>
+                <div class="mile-lbl">Company Founded</div>
+                <div class="mile-desc">
+                  First group of 8 friends trek to Kedarnath, the seed of
+                  Tour & Travel.
+                </div>
+              </div>
+              <div class="mile">
+                <div class="mile-yr">2020</div>
+                <div class="mile-lbl">First 100 Travellers</div>
+                <div class="mile-desc">
+                  Word-of-mouth grew fast. We crossed 100 happy travellers
+                  within 2 years.
+                </div>
+              </div>
+              <div class="mile">
+                <div class="mile-yr">2022</div>
+                <div class="mile-lbl">Rajasthan &amp; Himachal</div>
+                <div class="mile-desc">
+                  Expanded beyond Uttarakhand. New destinations, same heart.
+                </div>
+              </div>
+              <div class="mile">
+                <div class="mile-yr">2026</div>
+                <div class="mile-lbl">500+ Family Strong</div>
+                <div class="mile-desc">
+                  Rated #1 on Google with 4.9 stars from 500+ verified
+                  travellers.
+                </div>
+              </div>
+            </div>
+            <a
+              href="contact.html"
+              class="btn btn-dark"
+              style="margin-top: 0.8rem"
+              >Join Our Family <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION / VISION / VALUES -->
+    <section id="mvv">
+      <div class="mvv-glow mvv-glow-1"></div>
+      <div class="mvv-glow mvv-glow-2"></div>
+      <div class="wrap mvv-inner">
+        <div class="mvv-head rv">
+          <p class="eyebrow">Our Core</p>
+          <h2 class="sec-title">Mission, Vision &amp; <em>Values</em></h2>
+          <p class="sec-sub">
+            The principles that guide every decision, every route, and every
+            experience we create.
+          </p>
+        </div>
+        <div class="mvv-cards rv">
+          <div class="mvv-card">
+            <div class="mvv-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <p>
+              To make extraordinary travel accessible to every Indian by
+              combining local expertise, complete safety, and deeply personal
+              service. We believe a great journey is not about where you go —
+              it's about how you feel when you return.
+            </p>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-icon"><i class="fas fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <p>
+              To become India's most loved travel company — one where every
+              traveller feels cared for like family. We envision a world where
+              sustainable tourism empowers local communities and protects the
+              landscapes we love.
+            </p>
+          </div>
+          <div class="mvv-card">
+            <div class="mvv-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3>Our Promise</h3>
+            <p>
+              Every tour is a personal promise from us to you. We promise
+              safety, authenticity, fair pricing, and experiences that will stay
+              with you long after you return home. We keep our promises —
+              always.
+            </p>
+          </div>
+        </div>
+        <div class="mvv-values rv">
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h4>Safety Above All</h4>
+              <p>
+                Every trek and tour is led by certified guides with full safety
+                equipment, first-aid kits, and emergency protocols. Your safety
+                is never compromised.
+              </p>
+            </div>
+          </div>
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-users"></i></div>
+            <div>
+              <h4>Community First</h4>
+              <p>
+                We hire local guides, partner with local homestays, and reinvest
+                in the communities that make our journeys possible. Travel
+                should uplift, not exploit.
+              </p>
+            </div>
+          </div>
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-leaf"></i></div>
+            <div>
+              <h4>Eco-Responsibility</h4>
+              <p>
+                All our tours follow Leave No Trace principles. We carry out
+                what we carry in, ban single-use plastics, and actively
+                participate in trail clean-up drives.
+              </p>
+            </div>
+          </div>
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-gem"></i></div>
+            <div>
+              <h4>Authentic Experiences</h4>
+              <p>
+                No cookie-cutter itineraries. We create journeys that connect
+                you with real India — its people, food, traditions, and
+                untouched natural beauty.
+              </p>
+            </div>
+          </div>
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-heart"></i></div>
+            <div>
+              <h4>Traveller-Centric Care</h4>
+              <p>
+                From your first enquiry to your safe return, our team is
+                available 24/7. You are never alone on this journey — we walk
+                every step with you.
+              </p>
+            </div>
+          </div>
+          <div class="val-item">
+            <div class="val-ico"><i class="fas fa-rupee-sign"></i></div>
+            <div>
+              <h4>Honest Pricing</h4>
+              <p>
+                No hidden charges, no last-minute surprises. What we quote is
+                what you pay. We believe in complete transparency because trust
+                is our most valuable currency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDERS & TEAM -->
+    <!-- <section id="team">
+  <div class="wrap">
+    <div class="team-intro">
+      <div class="rv-l">
+        <p class="eyebrow">Meet the Team</p>
+        <h2 class="sec-title">The Hearts Behind<br>Every Journey</h2>
+        <p class="sec-sub">Our team is a mix of seasoned mountaineers, passionate explorers, and hospitality experts. Every person on our team has personally trekked and toured every destination we offer.</p>
+        <a href="contact.html" class="btn btn-dark" style="margin-top:1.5rem">Get in Touch <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="rv-r" style="background:var(--white);border-radius:var(--r-xl);padding:2rem;box-shadow:var(--sh-sm);">
+        <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;">Why Our Team Stands Out</p>
+        <div style="display:flex;flex-direction:column;gap:0.9rem;">
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;background:var(--cream);border-radius:var(--r-md);">
+            <div style="width:38px;height:38px;border-radius:10px;background:var(--grad-fire);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;flex-shrink:0;"><i class="fas fa-certificate"></i></div>
+            <div><p style="font-size:0.84rem;font-weight:700;color:var(--ink);margin-bottom:2px;">Certified Mountain Guides</p><p style="font-size:0.74rem;color:var(--muted);">All guides hold IMF/NIM certifications with 5+ years of Himalayan experience.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;background:var(--cream);border-radius:var(--r-md);">
+            <div style="width:38px;height:38px;border-radius:10px;background:var(--grad-fire);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;flex-shrink:0;"><i class="fas fa-first-aid"></i></div>
+            <div><p style="font-size:0.84rem;font-weight:700;color:var(--ink);margin-bottom:2px;">Wilderness First Aid Trained</p><p style="font-size:0.74rem;color:var(--muted);">Every team member is trained in WFA and altitude sickness management.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:1rem;padding:1rem;background:var(--cream);border-radius:var(--r-md);">
+            <div style="width:38px;height:38px;border-radius:10px;background:var(--grad-fire);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;flex-shrink:0;"><i class="fas fa-language"></i></div>
+            <div><p style="font-size:0.84rem;font-weight:700;color:var(--ink);margin-bottom:2px;">Multilingual Team</p><p style="font-size:0.74rem;color:var(--muted);">Hindi, English, Garhwali — we communicate in your comfort language.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="founders-strip rv">
+      <div class="founder-card">
+        <div class="fc-img">
+          <img src="images/parul.jpeg" alt="Arjun Rawat — Founder" loading="lazy"/>
+          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Founder &amp; Lead Mountaineer</div>
+          <h3>Parul</h3>
+          <p>Born in Delhi, Parul has summited 23 Himalayan peaks and led over 300 treks. His philosophy: "The mountain teaches more than any classroom."</p>
+          <div class="fc-tags"><span class="fc-tag">🏔 300+ Treks</span><span class="fc-tag">IMF Certified</span><span class="fc-tag">8 Yrs</span></div>
+        </div>
+      </div>
+     
+      <div class="founder-card">
+        <div class="fc-img">
+          <img src="images/pri.jpeg" alt="Rahul Singh — Operations Head" loading="lazy"/>
+          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Trek Leader &amp; Safety</div>
+          <h3>Priyanshu Sahu</h3>
+          <p>Priyanshu Sahu  
+A highly experienced mountain professional specializing in expedition safety and high-altitude navigation. His calm leadership and sharp decision-making ensure every trek is secure and well-managed.
+
+Known for maintaining exceptional safety standards across all journeys.</p>
+          <div class="fc-tags"><span class="fc-tag">WFA Certified</span><span class="fc-tag">7 Yrs</span></div>
+        </div>
+      </div>
+       <div class="founder-card">
+        <div class="fc-img">
+          <img src="images/yog.jpeg" alt="Rahul Singh — Operations Head" loading="lazy"/>
+          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Marketing Head</div>
+          <h3>Yogesh vashisht</h3>
+          <p>Yogesh vashisht 
+Driving the brand’s vision forward, he leads marketing with a focus on storytelling and digital growth. He ensures every journey is not just experienced, but remembered and shared.
+
+Bridging adventure with modern travel experiences.</p>
+          <div class="fc-tags"><span class="fc-tag">WFA Certified</span><span class="fc-tag">7 Yrs</span></div>
+        </div>
+      </div>
+        <div class="founder-card">
+        <div class="fc-img">
+<img src="images/sood.jpeg" class="img-suraj" alt="Suraj Rawat" loading="lazy"/>          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Trek Leader</div>
+          <h3>Gautam sood</h3>
+          <p>An experienced trek leader with a deep passion for the mountains, Gautam ensures every journey is safe, smooth, and memorable. From high-altitude trails to hidden Himalayan routes, he leads with confidence and local expertise.</p>
+          <div class="fc-tags"><span class="fc-tag">✨ 40+ Packages</span><span class="fc-tag">Hospitality Expert</span><span class="fc-tag">6 Yrs</span></div>
+        </div>
+      </div>
+        <div class="founder-card">
+        <div class="fc-img">
+<img src="images/suu.jpeg" class="img-suraj" alt="Suraj Rawat" loading="lazy"/>          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Technical Head</div>
+          <h3>Suraj Rawat</h3>
+          <p>A former hospitality professional from Jaipur, Priya brings the warmth of Rajasthani culture to every tour. She has personally designed 40+ signature experiences.</p>
+          <div class="fc-tags"><span class="fc-tag">✨ 40+ Packages</span><span class="fc-tag">Hospitality Expert</span><span class="fc-tag">6 Yrs</span></div>
+        </div>
+      </div>
+       <div class="founder-card">
+        <div class="fc-img">
+<img src="images/isha.jpeg" class="img-suraj" alt="Suraj Rawat" loading="lazy"/>          <div class="fc-img-overlay"></div>
+          <div class="fc-social">
+            <a href="#" class="fc-soc"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fc-soc"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="fc-body">
+          <div class="fc-role">Content Head</div>
+          <h3>Isha </h3>
+          <p>Isha brings stories to life. From crafting travel experiences into engaging narratives to managing brand communication, she ensures every journey is presented with clarity and emotion. Her work connects travelers with destinations even before the trip begins.</p>
+          <div class="fc-tags"><span class="fc-tag">✨ 40+ Packages</span><span class="fc-tag">Hospitality Expert</span><span class="fc-tag">6 Yrs</span></div>
+        </div>
+      </div>
+    </div>
+
+ 
+</section> -->
+
+    <!-- AWARDS & CERTIFICATIONS -->
+    <section id="awards">
+      <div class="wrap">
+        <div class="awards-layout">
+          <div class="rv-l">
+            <p class="eyebrow">Recognition</p>
+            <h2 class="sec-title">Awards &amp; Achievements</h2>
+            <p class="sec-sub" style="max-width: 100%">
+              Every award we've received is a reflection of the trust our
+              travellers place in us. We are humbled and motivated to keep
+              delivering excellence.
+            </p>
+            <div class="certs-strip" style="margin-top: 1.5rem">
+              <div class="cert">
+                <i class="fas fa-check-circle"></i
+                ><span>Ministry of Tourism Registered</span>
+              </div>
+              <div class="cert">
+                <i class="fas fa-check-circle"></i
+                ><span>IMF Certified Guides</span>
+              </div>
+              <div class="cert">
+                <i class="fas fa-check-circle"></i
+                ><span>IATA Travel Agency Member</span>
+              </div>
+              <div class="cert">
+                <i class="fas fa-check-circle"></i
+                ><span>Leave No Trace Partner</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-fire" style="margin-top: 2rem"
+              ><i class="fas fa-paper-plane"></i> Plan With Us</a
+            >
+          </div>
+          <div class="awards-right rv-r">
+            <div class="award-card">
+              <div class="award-icon"><i class="fas fa-trophy"></i></div>
+              <h4>Best Trekking Company</h4>
+              <p>
+                Uttarakhand Tourism Award for Best Adventure Travel Company in
+                North India.
+              </p>
+              <div class="award-yr">2023</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon"><i class="fab fa-tripadvisor"></i></div>
+              <h4>TripAdvisor Certificate</h4>
+              <p>
+                Certificate of Excellence — awarded 4 consecutive years by
+                TripAdvisor travellers.
+              </p>
+              <div class="award-yr">2020–2024</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon"><i class="fab fa-google"></i></div>
+              <h4>Google 4.9★ Rating</h4>
+              <p>
+                Consistently rated 4.9/5 on Google with 400+ verified five-star
+                reviews.
+              </p>
+              <div class="award-yr">500+ Reviews</div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon"><i class="fas fa-leaf"></i></div>
+              <h4>Eco-Tourism Recognition</h4>
+              <p>
+                National Eco-Tourism Board recognition for sustainable and
+                responsible travel practices.
+              </p>
+              <div class="award-yr">2022</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT / ECO -->
+    <section id="impact">
+      <div class="wrap impact-inner">
+        <div class="impact-grid">
+          <div class="impact-copy rv-l">
+            <p class="eyebrow">Our Impact</p>
+            <h2 class="sec-title">Travel That Gives <em>Back</em></h2>
+            <p>
+              We believe tourism should be a force for good — not just for the
+              traveller, but for the mountains, forests, and communities that
+              make it possible.
+            </p>
+            <p>
+              Every booking with Tour & Travel contributes directly to local
+              economies, environmental conservation, and the preservation of
+              Himalayan culture.
+            </p>
+            <div class="impact-points">
+              <div class="ip">
+                <div class="ip-ico"><i class="fas fa-leaf"></i></div>
+                <p>
+                  <strong>1,000+ Trees Planted</strong>Along Kedarnath,
+                  Roopkund, and Valley of Flowers trekking routes since 2019.
+                </p>
+              </div>
+              <div class="ip">
+                <div class="ip-ico"><i class="fas fa-hands-helping"></i></div>
+                <p>
+                  <strong>Local Employment First</strong>90% of our guides,
+                  cooks, and porters are hired from mountain communities,
+                  providing stable income.
+                </p>
+              </div>
+              <div class="ip">
+                <div class="ip-ico"><i class="fas fa-trash-alt"></i></div>
+                <p>
+                  <strong>Zero Waste Policy</strong>We conduct trail clean-ups
+                  on every trek. Over 2 tonnes of waste removed from Himalayan
+                  trails.
+                </p>
+              </div>
+              <div class="ip">
+                <div class="ip-ico"><i class="fas fa-graduation-cap"></i></div>
+                <p>
+                  <strong>Education Fund</strong>2% of every booking goes to our
+                  Himalayan Youth Education Fund supporting local children's
+                  schooling.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="impact-stats rv-r">
+            <div class="is">
+              <div class="is-icon">🌳</div>
+              <div class="is-num">1,000+</div>
+              <div class="is-lbl">Trees Planted</div>
+            </div>
+            <div class="is">
+              <div class="is-icon">🏔</div>
+              <div class="is-num">2 Tonnes</div>
+              <div class="is-lbl">Trail Waste Removed</div>
+            </div>
+            <div class="is">
+              <div class="is-icon">👨‍👩‍👧</div>
+              <div class="is-num">120+</div>
+              <div class="is-lbl">Local Families Supported</div>
+            </div>
+            <div class="is">
+              <div class="is-icon">📚</div>
+              <div class="is-num">45</div>
+              <div class="is-lbl">Children in Our Fund</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="a-testi">
+      <div class="wrap">
+        <div class="rv" style="text-align: center">
+          <p class="eyebrow" style="justify-content: center">What People Say</p>
+          <h2 class="sec-title">Stories From Our Travellers</h2>
+          <p class="sec-sub" style="max-width: 580px; margin: 0 auto 0.5rem">
+            Real experiences, real emotions, real people who trusted us with
+            their most precious memories.
+          </p>
+        </div>
+        <div class="a-testi-grid rv">
+          <div class="a-tc">
+            <div class="a-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <q
+              >Arjun and his team are unlike any travel operator I've ever used.
+              They truly care — not just about the trip, but about you as a
+              person. The Kedarnath trek was life-changing.</q
+            >
+            <div class="a-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=32"
+                alt="Priya S"
+                class="a-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="a-name">Priya Sharma</div>
+                <div class="a-trip">Kedarnath Trek, 2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="a-tc">
+            <div class="a-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <q
+              >I was sceptical about a tour company at first, but Tour & Travel
+              completely won me over. The local knowledge, the personal
+              attention, the food — everything was exceptional.</q
+            >
+            <div class="a-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=12"
+                alt="Rahul V"
+                class="a-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="a-name">Rahul Verma</div>
+                <div class="a-trip">Spiti Valley Circuit, 2023</div>
+              </div>
+            </div>
+          </div>
+          <div class="a-tc">
+            <div class="a-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
+            </div>
+            <q
+              >As a solo female traveller, safety is everything. Tour & Travel
+              made me feel completely protected and welcome throughout the
+              Rajasthan tour. Priya is an incredible host!</q
+            >
+            <div class="a-auth">
+              <img
+                src="https://i.pravatar.cc/100?img=25"
+                alt="Ananya G"
+                class="a-av"
+                loading="lazy"
+              />
+              <div>
+                <div class="a-name">Ananya Gupta</div>
+                <div class="a-trip">Golden Rajasthan Tour, 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="wrap">
+        <div class="cta-body rv">
+          <p class="eyebrow">Ready to Begin?</p>
+          <h2>Become Part of the<br />Tour & Travel Family</h2>
+          <p>
+            Join 500+ travellers who've made their dream journeys a reality.
+            Let's plan yours today.
+          </p>
+          <div class="cta-row">
+            <a href="contact.html" class="btn btn-fire"
+              ><i class="fas fa-paper-plane"></i> Plan My Trip</a
+            >
+            <a href="tours.html" class="btn btn-ghost"
+              ><i class="fas fa-map-marked-alt"></i> Explore Tours</a
+            >
+            <a
+              href="https://wa.me/9310461449"
+              class="btn btn-wa"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-whatsapp"></i> WhatsApp Us</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer-container"></div>
+
+    <script>
+      // Load footer from footer.html
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("footer-container").innerHTML = html;
+        })
+        .catch((error) => console.log("Error loading footer:", error));
+    </script>
+
+    <script>
+      const hdr = document.getElementById("hdr");
+      const stickyBar = document.getElementById("stickyBar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          const s = scrollY > 60;
+          if (hdr) hdr.classList.toggle("scrolled", s);
+          stickyBar.style.top = s ? "68px" : "80px";
+          stickyBar.classList.toggle(
+            "show",
+            scrollY > window.innerHeight * 0.6,
+          );
+        },
+        { passive: true },
+      );
+
+      function toggleAcc(id) {
+        document.getElementById(id).classList.toggle("open");
+      }
+
+      // Initialize reveal animations when header loads
+      function initRevealAnimations() {
+        const revObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e, i) => {
+              if (e.isIntersecting) {
+                setTimeout(() => e.target.classList.add("vis"), i * 55);
+                revObs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.07, rootMargin: "0px 0px -30px 0px" },
+        );
+        document
+          .querySelectorAll(".rv,.rv-l,.rv-r")
+          .forEach((el) => revObs.observe(el));
+      }
+
+      // Run immediately and when DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initRevealAnimations);
+      } else {
+        initRevealAnimations();
+      }
+    </script>
+  </body>
+</html>

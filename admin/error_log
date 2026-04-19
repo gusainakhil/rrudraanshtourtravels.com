@@ -1,0 +1,2 @@
+[09-Apr-2026 11:46:05 UTC] PHP Warning:  file_get_contents(/tmp/php6r62Ea): Failed to open stream: No such file or directory in /home/uzu7kgd05u96/public_html/admin-travel/treks.php on line 596
+[09-Apr-2026 11:50:41 UTC] PHP Warning:  file_get_contents(/tmp/phpkjTr7G): Failed to open stream: No such file or directory in /home/uzu7kgd05u96/public_html/admin-travel/treks.php on line 617
